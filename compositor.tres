@@ -1,0 +1,16 @@
+[gd_resource type="Compositor" load_steps=3 format=3 uid="uid://dyclq4u3o58os"]
+
+[ext_resource type="Script" uid="uid://c5s5qrjhc0i43" path="res://sobel_effect.gd" id="1_xypbc"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_gqo3b"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_xypbc")
+metadata/_custom_type_script = "uid://c5s5qrjhc0i43"
+
+[resource]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_gqo3b")])

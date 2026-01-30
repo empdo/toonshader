@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bc5vvloa4sont"]
+
+[ext_resource type="Shader" uid="uid://dltvgimu4x47p" path="res://shaders/test2.gdshader" id="1_ifoj6"]
+[ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="2_xepoq"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("1_ifoj6")
+shader_parameter/base_color = Color(0.636637, 0.621354, 0.528855, 1)
+shader_parameter/use_albedo_tex = false
+shader_parameter/hatch_tex = ExtResource("2_xepoq")
+shader_parameter/ink_color = Color(0, 0, 0, 1)
+shader_parameter/hatch_world_scale = 0.1
+shader_parameter/hatch_strength = 1.398
+shader_parameter/light_position_ws = Vector3(0, 5, 0)
+shader_parameter/band1 = 0.6
+shader_parameter/band2 = 0.4
+shader_parameter/band3 = 0.2
+shader_parameter/band_softness = 0.05
+shader_parameter/line_thickness = 0.325
+shader_parameter/edge_sensitivity = 0.665
+shader_parameter/line_color = Color(0, 0, 0, 1)
