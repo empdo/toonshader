@@ -18,6 +18,10 @@ config/name="alve???"
 run/main_scene="uid://b7sabdyydx066"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[autoload]
+
+Globals="*uid://6onej7fmem45"
+
 [display]
 
 window/size/viewport_width=1920
