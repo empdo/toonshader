@@ -29,12 +29,12 @@ func on_player_leaving_table_game():
 	prevent_move = false
 	cam.global_position = cam_return.global_position
 	cam.global_rotation = cam_return.global_rotation
+
 	
 func on_player_entered_table_area(player_target: Node3D, camera_target: Node3D):
 	# freeze
 	prevent_move = true
-	$AnimationTree/AnimationPlayer.play("idle")
-	
+
 	# move player
 	position = player_target.position
 	rotation = player_target.rotation
