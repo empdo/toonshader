@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
 [ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="12_j8b8d"]
-[ext_resource type="AudioStream" uid="uid://c4ikm0rn1ixs1" path="res://sounds/soundque_table_roaming.wav" id="12_jtreq"]
+[ext_resource type="AudioStream" uid="uid://bu1krbrt13c2g" path="res://sounds/roaming_table.ogg" id="12_jtreq"]
 [ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
@@ -381,6 +381,7 @@ offset_bottom = 1080.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=593042751]
 handle_input_locally = false
+audio_listener_enable_3d = true
 physics_object_picking = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -467,7 +468,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 1.9477087, -7
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="table" unique_id=80270620]
 stream = ExtResource("12_jtreq")
-volume_db = 80.0
+unit_size = 4.4
 autoplay = true
 
 [node name="opponent" parent="." unique_id=724776570 instance=ExtResource("13_lc52x")]
