@@ -1,7 +1,5 @@
 extends Control
 
-signal dialog_finished(dialog: DialogResource)
-
 @onready var label: Label = $Label
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
@@ -11,88 +9,67 @@ var is_playing: bool = false
 func _ready():
 	label.text = ""
 	visible = false
-	add_to_group("dialog_ui")
+	DialogManager.dialog_requested.connect(_on_dialog_requested)
+	DialogManager.dialog_stop_requested.connect(_stop)
+	DialogManager.ui_ready()
 
-func show_dialog(dialog: DialogResource):
+func _on_dialog_requested(dialog: DialogResource):
 	if is_playing:
-		stop_dialog()
-	
+		_stop()
 	current_dialog = dialog
 	is_playing = true
 	visible = true
-	
-	# Start displaying dialog lines
-	_display_dialog_lines()
+	_display_lines()
 
-func _display_dialog_lines():
-	if not current_dialog:
-		return
-	
-	# Display each line
-	for line_index in range(current_dialog.lines.size()):
-		var line = current_dialog.lines[line_index]
+func _display_lines():
+	for i in range(current_dialog.lines.size()):
+		var line = current_dialog.lines[i]
 		
-		# Check for pause marker @X (e.g. @12 means 12 second pause)
-		var pause_time = _parse_pause_marker(line)
-		if pause_time > 0:
-			# This line is a pause marker, wait and continue
-			await get_tree().create_timer(pause_time).timeout
+		# Pause marker (@2 = 2 sek paus)
+		var pause = _parse_pause(line)
+		if pause > 0:
+			await get_tree().create_timer(pause).timeout
 			continue
 		
 		label.text = ""
 		
-		# Get audio for this line (if available)
+		# Audio för denna rad
 		var line_audio: AudioStream = null
-		if line_index < current_dialog.line_audio.size():
-			line_audio = current_dialog.line_audio[line_index]
+		if i < current_dialog.line_audio.size():
+			line_audio = current_dialog.line_audio[i]
 		
-		# Calculate time per character based on audio length or default
+		# Beräkna tid per tecken
 		var time_per_char: float
 		if line_audio and line_audio.get_length() > 0:
-			# Use audio length to determine typing speed
-			var audio_length = line_audio.get_length()
-			time_per_char = audio_length / float(line.length()) if line.length() > 0 else 0.0
-			
-			# Play the audio for this line
+			time_per_char = line_audio.get_length() / float(line.length()) if line.length() > 0 else 0.0
 			audio_player.stream = line_audio
 			audio_player.play()
 		else:
-			# No audio - use default characters per second
-			time_per_char = 1.0 / Globals.DEFAULT_CHARS_PER_SECOND
+			time_per_char = 1.0 / DialogManager.DEFAULT_CHARS_PER_SECOND
 		
-		# Typewriter effect for this line
-		for char_index in range(line.length() + 1):
+		# Typewriter-effekt
+		for c in range(line.length() + 1):
 			if not is_playing:
-				return  # Dialog was stopped
-			label.text = line.substr(0, char_index)
+				return
+			label.text = line.substr(0, c)
 			await get_tree().create_timer(time_per_char).timeout
 		
-		# Wait a moment before next line (except for last line)
-		if line_index < current_dialog.lines.size() - 1:
+		if i < current_dialog.lines.size() - 1:
 			await get_tree().create_timer(0.5).timeout
 	
-	# Wait a bit after the last line before closing dialog
 	await get_tree().create_timer(1.5).timeout
-	
-	# All lines complete
-	finish_dialog()
+	_finish()
 
-# Parse pause marker like @12 and return the pause duration in seconds
-# Returns 0 if not a valid pause marker
-func _parse_pause_marker(line: String) -> float:
-	var trimmed = line.strip_edges()
-	if not trimmed.begins_with("@"):
+func _parse_pause(line: String) -> float:
+	var t = line.strip_edges()
+	if not t.begins_with("@"):
 		return 0.0
-	
-	var number_part = trimmed.substr(1)
-	if number_part.is_valid_float():
-		return number_part.to_float()
-	elif number_part.is_valid_int():
-		return float(number_part.to_int())
-	
+	var num = t.substr(1)
+	if num.is_valid_float():
+		return num.to_float()
 	return 0.0
 
-func stop_dialog():
+func _stop():
 	is_playing = false
 	visible = false
 	label.text = ""
@@ -100,7 +77,6 @@ func stop_dialog():
 	if audio_player.playing:
 		audio_player.stop()
 
-func finish_dialog():
-	var finished_dialog = current_dialog
-	stop_dialog()
-	dialog_finished.emit(finished_dialog)
+func _finish():
+	_stop()
+	DialogManager._on_finished()
