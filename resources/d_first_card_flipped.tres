@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://csb3wmfa6pggn"]
+
+[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_h6nur"]
+
+[resource]
+script = ExtResource("1_h6nur")
+lines = Array[String](["Arthur: You do not know the game as I do, sister. Permit me control for but a moment…"])
+metadata/_custom_type_script = "uid://datp6bamk0nb5"

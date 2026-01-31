@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://cuw1l36x5y8u5"]
+
+[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_hwwm8"]
+
+[resource]
+script = ExtResource("1_hwwm8")
+lines = Array[String](["Guillaume: Ah, you smell of salt and tide, of il labirinto.", "@2", "Guillaume: What desecration is this? Two Masks share a faceless…", "@1", "Ivy: Not by choice, I assure you.", "@1", "Guillaume: Sigh. Come. Sit. Let us play the oldest game."])
+metadata/_custom_type_script = "uid://datp6bamk0nb5"
