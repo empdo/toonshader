@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_qoax6")
-lines = Array[String](["Hello world!", "@5", "This is me speaking", "Does it work?!"])
+lines = Array[String](["Guillaume: Enfin! An end to my solitude.", "@2", "Ivy: I feared we’d wander these woods forever. ", "@1", "Arthur: Woe be me, who cannot wander among the beauty of the woods for more than mere days – lest I grow bored.", "@1", "Ivy: I could leave you here, brother, to be with your precious woods.", "@1", "Arthur: An empty threat, sister. ", "@0.5", "Ivy: Sigh."])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"
