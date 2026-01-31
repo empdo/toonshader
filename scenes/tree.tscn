@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cmmvik3jcofr"]
+[gd_scene format=4 uid="uid://cmmvik3jcofr"]
 
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="1_avsvi"]
 
@@ -35,9 +35,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1ftms")
 
-[node name="Tree" type="Node3D"]
+[node name="Tree" type="Node3D" unique_id=980142351]
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=130471934]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vplca")
 skeleton = NodePath("")

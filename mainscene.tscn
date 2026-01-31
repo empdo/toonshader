@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://c1c8ixsyyirlu" path="res://scripts/light_controller.gd" id="3_1ftms"]
 [ext_resource type="Script" uid="uid://d3atvm5ayhpth" path="res://scripts/Forestgenerator.gd" id="5_8bn17"]
 [ext_resource type="PackedScene" uid="uid://cmmvik3jcofr" path="res://scenes/tree.tscn" id="6_0lhry"]
-[ext_resource type="PackedScene" path="res://scenes/game_table.tscn" id="6_1ftms"]
+[ext_resource type="PackedScene" uid="uid://hsq4yhuosu4g" path="res://scenes/game_table.tscn" id="6_1ftms"]
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="6_8bn17"]
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
 [ext_resource type="PackedScene" uid="uid://b6hqjaxaoeeei" path="res://scenes/playerbarn.tscn" id="8_8bn17"]
 [ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="9_0lhry"]
+[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 
@@ -60,304 +61,304 @@ script = ExtResource("5_8bn17")
 scene = ExtResource("6_0lhry")
 metadata/_custom_type_script = "uid://d3atvm5ayhpth"
 
-[node name="Tree" type="Node3D" parent="world/ForestGenerator" unique_id=920801491 instance=ExtResource("6_0lhry")]
+[node name="Tree" parent="world/ForestGenerator" unique_id=920801491 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.79451454, 0, -0.37313375, 0, 0.87777114, 0, 0.37313375, 0, 0.79451454, 13.471359, 0, 14.570412)
 
-[node name="@Node3D@43780" type="Node3D" parent="world/ForestGenerator" unique_id=1649665948 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43780" parent="world/ForestGenerator" unique_id=1649665948 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.84929025, 0, 0.6402418, 0, 1.0635805, 0, -0.6402418, 0, -0.84929025, -5.084301, 0, -24.843422)
 
-[node name="@Node3D@43781" type="Node3D" parent="world/ForestGenerator" unique_id=659701326 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43781" parent="world/ForestGenerator" unique_id=659701326 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.6537741, 0, 0.7336275, 0, 0.9826647, 0, -0.7336275, 0, 0.6537741, 18.537712, 0, 14.7621155)
 
-[node name="@Node3D@43782" type="Node3D" parent="world/ForestGenerator" unique_id=178961660 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43782" parent="world/ForestGenerator" unique_id=178961660 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.48751128, 0, 0.72799665, 0, 0.8761543, 0, -0.72799665, 0, -0.48751128, -23.912218, 0, 32.781883)
 
-[node name="@Node3D@43783" type="Node3D" parent="world/ForestGenerator" unique_id=2066611966 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43783" parent="world/ForestGenerator" unique_id=2066611966 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.7295373, 0, -0.51409185, 0, 0.892477, 0, 0.51409185, 0, -0.7295373, -22.652122, 0, 8.001541)
 
-[node name="@Node3D@43784" type="Node3D" parent="world/ForestGenerator" unique_id=854271911 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43784" parent="world/ForestGenerator" unique_id=854271911 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.7349747, 0, 0.42495373, 0, 0.84898376, 0, -0.42495373, 0, -0.7349747, 15.185059, 0, 1.7975693)
 
-[node name="@Node3D@43785" type="Node3D" parent="world/ForestGenerator" unique_id=1651489730 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43785" parent="world/ForestGenerator" unique_id=1651489730 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.1562413, 0, 0.06529491, 0, 1.1580834, 0, -0.06529491, 0, 1.1562413, -30.783098, 0, -7.7018394)
 
-[node name="@Node3D@43786" type="Node3D" parent="world/ForestGenerator" unique_id=1661125210 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43786" parent="world/ForestGenerator" unique_id=1661125210 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.09989551, 0, -0.9293581, 0, 0.9347115, 0, 0.9293581, 0, -0.09989551, 19.257996, 0, 19.982353)
 
-[node name="@Node3D@43787" type="Node3D" parent="world/ForestGenerator" unique_id=1803251165 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43787" parent="world/ForestGenerator" unique_id=1803251165 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.64957565, 0, -0.4791568, 0, 0.80718017, 0, 0.4791568, 0, 0.64957565, 11.946785, 0, -21.444637)
 
-[node name="@Node3D@43788" type="Node3D" parent="world/ForestGenerator" unique_id=1952305985 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43788" parent="world/ForestGenerator" unique_id=1952305985 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.7922127, 0, -0.75753045, 0, 1.0961083, 0, 0.75753045, 0, -0.7922127, -39.057846, 0, 19.122543)
 
-[node name="@Node3D@43789" type="Node3D" parent="world/ForestGenerator" unique_id=552666431 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43789" parent="world/ForestGenerator" unique_id=552666431 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.52357304, 0, 0.8718269, 0, 1.0169616, 0, -0.8718269, 0, 0.52357304, 17.870834, 0, 21.121574)
 
-[node name="@Node3D@43790" type="Node3D" parent="world/ForestGenerator" unique_id=1464244732 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43790" parent="world/ForestGenerator" unique_id=1464244732 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.296023, 0, -0.77558166, 0, 0.83015454, 0, 0.77558166, 0, 0.296023, 43.90764, 0, 1.7006569)
 
-[node name="@Node3D@43791" type="Node3D" parent="world/ForestGenerator" unique_id=2009258981 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43791" parent="world/ForestGenerator" unique_id=2009258981 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.019409725, 0, 0.8948009, 0, 0.8950114, 0, -0.8948009, 0, -0.019409725, -1.9826965, 0, 26.20906)
 
-[node name="@Node3D@43792" type="Node3D" parent="world/ForestGenerator" unique_id=1381492909 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43792" parent="world/ForestGenerator" unique_id=1381492909 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.40816134, 0, 1.099875, 0, 1.173167, 0, -1.099875, 0, -0.40816134, -20.415195, 0, 36.43814)
 
-[node name="@Node3D@43793" type="Node3D" parent="world/ForestGenerator" unique_id=1301342627 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43793" parent="world/ForestGenerator" unique_id=1301342627 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.9681834, 0, 0.08940527, 0, 0.9723026, 0, -0.08940527, 0, -0.9681834, -47.09749, 0, 5.0360336)
 
-[node name="@Node3D@43794" type="Node3D" parent="world/ForestGenerator" unique_id=1724035086 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43794" parent="world/ForestGenerator" unique_id=1724035086 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.1849304, 0, 0.031644467, 0, 1.1853529, 0, -0.031644467, 0, 1.1849304, -38.09189, 0, -34.60848)
 
-[node name="@Node3D@43795" type="Node3D" parent="world/ForestGenerator" unique_id=603430688 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43795" parent="world/ForestGenerator" unique_id=603430688 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7313391, 0, 0.37252358, 0, 0.8207501, 0, -0.37252358, 0, 0.7313391, 28.792221, 0, -5.9481544)
 
-[node name="@Node3D@43796" type="Node3D" parent="world/ForestGenerator" unique_id=2051127735 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43796" parent="world/ForestGenerator" unique_id=2051127735 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.838261, 0, 0.3554375, 0, 0.9105039, 0, -0.3554375, 0, -0.838261, 43.570908, 0, -40.902725)
 
-[node name="@Node3D@43797" type="Node3D" parent="world/ForestGenerator" unique_id=387648488 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43797" parent="world/ForestGenerator" unique_id=387648488 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.1809909, 0, -0.051933933, 0, 1.1821322, 0, 0.051933933, 0, 1.1809909, 43.163773, 0, 31.922684)
 
-[node name="@Node3D@43798" type="Node3D" parent="world/ForestGenerator" unique_id=953108537 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43798" parent="world/ForestGenerator" unique_id=953108537 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.735371, 0, -0.8932578, 0, 1.1570134, 0, 0.8932578, 0, -0.735371, 2.0756378, 0, 27.268364)
 
-[node name="@Node3D@43799" type="Node3D" parent="world/ForestGenerator" unique_id=348799006 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43799" parent="world/ForestGenerator" unique_id=348799006 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.89437807, 0, 0.51859146, 0, 1.0338516, 0, -0.51859146, 0, -0.89437807, 45.20481, 0, 18.748016)
 
-[node name="@Node3D@43800" type="Node3D" parent="world/ForestGenerator" unique_id=888363449 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43800" parent="world/ForestGenerator" unique_id=888363449 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7661245, 0, -0.24623814, 0, 0.8047235, 0, 0.24623814, 0, 0.7661245, 48.692284, 0, -45.66128)
 
-[node name="@Node3D@43801" type="Node3D" parent="world/ForestGenerator" unique_id=856752138 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43801" parent="world/ForestGenerator" unique_id=856752138 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.8305019, 0, -0.19292268, 0, 0.8526151, 0, 0.19292268, 0, 0.8305019, 5.8515625, 0, 12.141079)
 
-[node name="@Node3D@43802" type="Node3D" parent="world/ForestGenerator" unique_id=751697600 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43802" parent="world/ForestGenerator" unique_id=751697600 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-1.0789565, 0, -0.3457701, 0, 1.1330066, 0, 0.3457701, 0, -1.0789565, 15.59523, 0, 13.014488)
 
-[node name="@Node3D@43803" type="Node3D" parent="world/ForestGenerator" unique_id=1082435940 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43803" parent="world/ForestGenerator" unique_id=1082435940 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-1.0213903, 0, -0.14252335, 0, 1.0312861, 0, 0.14252335, 0, -1.0213903, -6.131115, 0, 12.617596)
 
-[node name="@Node3D@43804" type="Node3D" parent="world/ForestGenerator" unique_id=1983583496 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43804" parent="world/ForestGenerator" unique_id=1983583496 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.7801796, 0, 0.38747212, 0, 0.8710998, 0, -0.38747212, 0, -0.7801796, -32.873024, 0, -17.423046)
 
-[node name="@Node3D@43805" type="Node3D" parent="world/ForestGenerator" unique_id=331145874 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43805" parent="world/ForestGenerator" unique_id=331145874 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.8810086, 0, 0.3077986, 0, 0.9332289, 0, -0.3077986, 0, -0.8810086, 23.954185, 0, -2.0855484)
 
-[node name="@Node3D@43806" type="Node3D" parent="world/ForestGenerator" unique_id=68843500 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43806" parent="world/ForestGenerator" unique_id=68843500 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.15211515, 0, 0.88331145, 0, 0.8963136, 0, -0.88331145, 0, -0.15211515, -42.12612, 0, -38.72929)
 
-[node name="@Node3D@43807" type="Node3D" parent="world/ForestGenerator" unique_id=151199456 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43807" parent="world/ForestGenerator" unique_id=151199456 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.9133876, 0, -0.019459968, 0, 0.91359484, 0, 0.019459968, 0, 0.9133876, 14.590752, 0, 34.939217)
 
-[node name="@Node3D@43808" type="Node3D" parent="world/ForestGenerator" unique_id=114611020 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43808" parent="world/ForestGenerator" unique_id=114611020 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.82123965, 0, -0.115579434, 0, 0.82933295, 0, 0.115579434, 0, 0.82123965, 13.535004, 0, 39.736794)
 
-[node name="@Node3D@43809" type="Node3D" parent="world/ForestGenerator" unique_id=163462802 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43809" parent="world/ForestGenerator" unique_id=163462802 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.0896045, 0, 0.16124941, 0, 1.1014714, 0, -0.16124941, 0, 1.0896045, -29.387707, 0, -41.62901)
 
-[node name="@Node3D@43810" type="Node3D" parent="world/ForestGenerator" unique_id=253708125 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43810" parent="world/ForestGenerator" unique_id=253708125 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.051879298, 0, 0.87332183, 0, 0.87486136, 0, -0.87332183, 0, 0.051879298, 19.916306, 0, -46.63859)
 
-[node name="@Node3D@43811" type="Node3D" parent="world/ForestGenerator" unique_id=2085767039 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43811" parent="world/ForestGenerator" unique_id=2085767039 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.20741168, 0, 0.81584036, 0, 0.8417928, 0, -0.81584036, 0, 0.20741168, 38.10298, 0, -8.799034)
 
-[node name="@Node3D@43812" type="Node3D" parent="world/ForestGenerator" unique_id=1932363162 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43812" parent="world/ForestGenerator" unique_id=1932363162 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.79683465, 0, 0.12558822, 0, 0.80667084, 0, -0.12558822, 0, 0.79683465, -10.736286, 0, -38.78927)
 
-[node name="@Node3D@43813" type="Node3D" parent="world/ForestGenerator" unique_id=1916551589 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43813" parent="world/ForestGenerator" unique_id=1916551589 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7797878, 0, -0.44368976, 0, 0.8971787, 0, 0.44368976, 0, 0.7797878, -30.058062, 0, -48.435112)
 
-[node name="@Node3D@43814" type="Node3D" parent="world/ForestGenerator" unique_id=1753368073 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43814" parent="world/ForestGenerator" unique_id=1753368073 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-1.1878389, 0, -0.10264389, 0, 1.1922655, 0, 0.10264389, 0, -1.1878389, 4.44355, 0, -37.96178)
 
-[node name="@Node3D@43815" type="Node3D" parent="world/ForestGenerator" unique_id=1979499532 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43815" parent="world/ForestGenerator" unique_id=1979499532 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.6069811, 0, 0.52751017, 0, 0.8041723, 0, -0.52751017, 0, -0.6069811, -43.050896, 0, 13.376987)
 
-[node name="@Node3D@43816" type="Node3D" parent="world/ForestGenerator" unique_id=366970283 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43816" parent="world/ForestGenerator" unique_id=366970283 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.8052357, 0, -0.547975, 0, 0.9740026, 0, 0.547975, 0, -0.8052357, -46.658073, 0, 2.222908)
 
-[node name="@Node3D@43817" type="Node3D" parent="world/ForestGenerator" unique_id=344745593 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43817" parent="world/ForestGenerator" unique_id=344745593 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.9173525, 0, -0.5887948, 0, 1.0900527, 0, 0.5887948, 0, 0.9173525, 9.187084, 0, -12.248051)
 
-[node name="@Node3D@43818" type="Node3D" parent="world/ForestGenerator" unique_id=778673496 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43818" parent="world/ForestGenerator" unique_id=778673496 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.8984008, 0, 0.28766873, 0, 0.943333, 0, -0.28766873, 0, -0.8984008, 34.62278, 0, -2.488575)
 
-[node name="@Node3D@43819" type="Node3D" parent="world/ForestGenerator" unique_id=106335413 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43819" parent="world/ForestGenerator" unique_id=106335413 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.33621845, 0, 0.8265658, 0, 0.8923306, 0, -0.8265658, 0, -0.33621845, 46.31263, 0, -47.746883)
 
-[node name="@Node3D@43820" type="Node3D" parent="world/ForestGenerator" unique_id=14070263 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43820" parent="world/ForestGenerator" unique_id=14070263 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.95934004, 0, -0.63351077, 0, 1.1496388, 0, 0.63351077, 0, -0.95934004, 34.450905, 0, 46.304962)
 
-[node name="@Node3D@43821" type="Node3D" parent="world/ForestGenerator" unique_id=993839073 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43821" parent="world/ForestGenerator" unique_id=993839073 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.77882314, 0, 0.8577587, 0, 1.1585834, 0, -0.8577587, 0, 0.77882314, 18.277306, 0, 7.8404922)
 
-[node name="@Node3D@43822" type="Node3D" parent="world/ForestGenerator" unique_id=504820429 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43822" parent="world/ForestGenerator" unique_id=504820429 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.70380276, 0, 0.5799784, 0, 0.9119832, 0, -0.5799784, 0, -0.70380276, -16.120785, 0, -6.7161827)
 
-[node name="@Node3D@43823" type="Node3D" parent="world/ForestGenerator" unique_id=977515773 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43823" parent="world/ForestGenerator" unique_id=977515773 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.757106, 0, 0.29662773, 0, 0.8131406, 0, -0.29662773, 0, -0.757106, 4.733509, 0, 32.47033)
 
-[node name="@Node3D@43824" type="Node3D" parent="world/ForestGenerator" unique_id=589806099 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43824" parent="world/ForestGenerator" unique_id=589806099 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.12972906, 0, -0.8401886, 0, 0.85014504, 0, 0.8401886, 0, -0.12972906, 18.435913, 0, -26.137423)
 
-[node name="@Node3D@43825" type="Node3D" parent="world/ForestGenerator" unique_id=2107139798 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43825" parent="world/ForestGenerator" unique_id=2107139798 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.8034907, 0, 0.5927005, 0, 0.9984444, 0, -0.5927005, 0, 0.8034907, 16.964928, 0, -26.462479)
 
-[node name="@Node3D@43826" type="Node3D" parent="world/ForestGenerator" unique_id=1699769158 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43826" parent="world/ForestGenerator" unique_id=1699769158 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.6245121, 0, 0.9909246, 0, 1.1713014, 0, -0.9909246, 0, -0.6245121, -27.362675, 0, 32.26641)
 
-[node name="@Node3D@43827" type="Node3D" parent="world/ForestGenerator" unique_id=1920792309 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43827" parent="world/ForestGenerator" unique_id=1920792309 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.014948, 0, -0.575377, 0, 1.1666954, 0, 0.575377, 0, 1.014948, 29.670036, 0, -38.810146)
 
-[node name="@Node3D@43828" type="Node3D" parent="world/ForestGenerator" unique_id=2056722399 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43828" parent="world/ForestGenerator" unique_id=2056722399 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.39399365, 0, -0.81578916, 0, 0.90594864, 0, 0.81578916, 0, -0.39399365, 7.158886, 0, -27.25798)
 
-[node name="@Node3D@43829" type="Node3D" parent="world/ForestGenerator" unique_id=42889061 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43829" parent="world/ForestGenerator" unique_id=42889061 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.5483403, 0, -0.6702993, 0, 0.8660129, 0, 0.6702993, 0, 0.5483403, -24.15184, 0, -27.097124)
 
-[node name="@Node3D@43830" type="Node3D" parent="world/ForestGenerator" unique_id=1661612039 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43830" parent="world/ForestGenerator" unique_id=1661612039 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.8825056, 0, -0.19208652, 0, 0.9031685, 0, 0.19208652, 0, 0.8825056, 22.551231, 0, 47.5664)
 
-[node name="@Node3D@43831" type="Node3D" parent="world/ForestGenerator" unique_id=1462059695 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43831" parent="world/ForestGenerator" unique_id=1462059695 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.4752505, 0, -0.6481638, 0, 0.8037284, 0, 0.6481638, 0, 0.4752505, 44.686806, 0, 45.488426)
 
-[node name="@Node3D@43832" type="Node3D" parent="world/ForestGenerator" unique_id=655322383 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43832" parent="world/ForestGenerator" unique_id=655322383 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.72672397, 0, -0.84545445, 0, 1.1148636, 0, 0.84545445, 0, 0.72672397, -41.099525, 0, -41.02457)
 
-[node name="@Node3D@43833" type="Node3D" parent="world/ForestGenerator" unique_id=1134420153 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43833" parent="world/ForestGenerator" unique_id=1134420153 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.82561356, 0, -0.83551663, 0, 1.1746173, 0, 0.83551663, 0, -0.82561356, 37.307457, 0, -36.65861)
 
-[node name="@Node3D@43834" type="Node3D" parent="world/ForestGenerator" unique_id=105620678 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43834" parent="world/ForestGenerator" unique_id=105620678 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.39868236, 0, 1.0895199, 0, 1.1601729, 0, -1.0895199, 0, 0.39868236, -8.933758, 0, 37.122643)
 
-[node name="@Node3D@43835" type="Node3D" parent="world/ForestGenerator" unique_id=839920218 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43835" parent="world/ForestGenerator" unique_id=839920218 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.8406257, 0, 0.5088068, 0, 0.9826169, 0, -0.5088068, 0, -0.8406257, -3.6403008, 0, 47.207253)
 
-[node name="@Node3D@43836" type="Node3D" parent="world/ForestGenerator" unique_id=1049811394 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43836" parent="world/ForestGenerator" unique_id=1049811394 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.036014553, 0, -0.826465, 0, 0.82724935, 0, 0.826465, 0, 0.036014553, 48.136436, 0, 37.332222)
 
-[node name="@Node3D@43837" type="Node3D" parent="world/ForestGenerator" unique_id=154552358 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43837" parent="world/ForestGenerator" unique_id=154552358 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.40874976, 0, -0.8766607, 0, 0.96726954, 0, 0.8766607, 0, -0.40874976, 43.239243, 0, -44.510715)
 
-[node name="@Node3D@43838" type="Node3D" parent="world/ForestGenerator" unique_id=2075155695 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43838" parent="world/ForestGenerator" unique_id=2075155695 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.8985416, 0, 0.2390244, 0, 0.92979014, 0, -0.2390244, 0, 0.8985416, -43.64192, 0, -12.253475)
 
-[node name="@Node3D@43839" type="Node3D" parent="world/ForestGenerator" unique_id=58541331 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43839" parent="world/ForestGenerator" unique_id=58541331 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.16977546, 0, 0.9240374, 0, 0.93950456, 0, -0.9240374, 0, 0.16977546, 29.090103, 0, -40.20146)
 
-[node name="@Node3D@43840" type="Node3D" parent="world/ForestGenerator" unique_id=236453444 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43840" parent="world/ForestGenerator" unique_id=236453444 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.8288283, 0, -0.7811401, 0, 1.1389189, 0, 0.7811401, 0, -0.8288283, -47.388462, 0, 15.163544)
 
-[node name="@Node3D@43841" type="Node3D" parent="world/ForestGenerator" unique_id=505528499 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43841" parent="world/ForestGenerator" unique_id=505528499 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.9317176, 0, -0.002618216, 0, 0.9317212, 0, 0.002618216, 0, -0.9317176, -4.1304855, 0, 21.421501)
 
-[node name="@Node3D@43842" type="Node3D" parent="world/ForestGenerator" unique_id=2003754630 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43842" parent="world/ForestGenerator" unique_id=2003754630 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.9770536, 0, -0.54345095, 0, 1.1180217, 0, 0.54345095, 0, 0.9770536, -48.90792, 0, 40.11136)
 
-[node name="@Node3D@43843" type="Node3D" parent="world/ForestGenerator" unique_id=2041340091 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43843" parent="world/ForestGenerator" unique_id=2041340091 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.04387531, 0, -0.9534948, 0, 0.9545037, 0, 0.9534948, 0, -0.04387531, 11.246143, 0, 6.9949226)
 
-[node name="@Node3D@43844" type="Node3D" parent="world/ForestGenerator" unique_id=155734612 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43844" parent="world/ForestGenerator" unique_id=155734612 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7299716, 0, -0.6148949, 0, 0.9544393, 0, 0.6148949, 0, 0.7299716, -34.349487, 0, -47.03041)
 
-[node name="@Node3D@43845" type="Node3D" parent="world/ForestGenerator" unique_id=452358972 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43845" parent="world/ForestGenerator" unique_id=452358972 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-1.065793, 0, -0.5192967, 0, 1.1855732, 0, 0.5192967, 0, -1.065793, -5.089039, 0, -35.45555)
 
-[node name="@Node3D@43846" type="Node3D" parent="world/ForestGenerator" unique_id=1373401620 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43846" parent="world/ForestGenerator" unique_id=1373401620 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.9132726, 0, -0.2216482, 0, 0.9397844, 0, 0.2216482, 0, 0.9132726, -7.363018, 0, -26.827768)
 
-[node name="@Node3D@43847" type="Node3D" parent="world/ForestGenerator" unique_id=1877498224 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43847" parent="world/ForestGenerator" unique_id=1877498224 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.35920146, 0, 0.9813452, 0, 1.0450187, 0, -0.9813452, 0, 0.35920146, 45.93039, 0, -12.520447)
 
-[node name="@Node3D@43848" type="Node3D" parent="world/ForestGenerator" unique_id=1495374709 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43848" parent="world/ForestGenerator" unique_id=1495374709 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.5950813, 0, 0.55547315, 0, 0.8140468, 0, -0.55547315, 0, 0.5950813, -26.398052, 0, 21.525238)
 
-[node name="@Node3D@43849" type="Node3D" parent="world/ForestGenerator" unique_id=1740412164 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43849" parent="world/ForestGenerator" unique_id=1740412164 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.97429913, 0, -0.0370586, 0, 0.97500366, 0, 0.0370586, 0, -0.97429913, 5.5347633, 0, 23.861526)
 
-[node name="@Node3D@43850" type="Node3D" parent="world/ForestGenerator" unique_id=1556798142 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43850" parent="world/ForestGenerator" unique_id=1556798142 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.20628864, 0, -0.9272527, 0, 0.94992244, 0, 0.9272527, 0, 0.20628864, -5.909996, 0, -7.448883)
 
-[node name="@Node3D@43851" type="Node3D" parent="world/ForestGenerator" unique_id=476011083 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43851" parent="world/ForestGenerator" unique_id=476011083 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.13450699, 0, -1.0186512, 0, 1.0274934, 0, 1.0186512, 0, -0.13450699, 38.959816, 0, 42.343742)
 
-[node name="@Node3D@43852" type="Node3D" parent="world/ForestGenerator" unique_id=1291997018 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43852" parent="world/ForestGenerator" unique_id=1291997018 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.535429, 0, -0.84935826, 0, 1.0040387, 0, 0.84935826, 0, 0.535429, -33.31067, 0, 32.938866)
 
-[node name="@Node3D@43853" type="Node3D" parent="world/ForestGenerator" unique_id=677576727 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43853" parent="world/ForestGenerator" unique_id=677576727 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7160138, 0, 0.6795639, 0, 0.98715895, 0, -0.6795639, 0, 0.7160138, -19.260454, 0, -42.86641)
 
-[node name="@Node3D@43854" type="Node3D" parent="world/ForestGenerator" unique_id=1095777829 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43854" parent="world/ForestGenerator" unique_id=1095777829 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.48646826, 0, 0.6815905, 0, 0.83738697, 0, -0.6815905, 0, -0.48646826, 38.318375, 0, -5.3419037)
 
-[node name="@Node3D@43855" type="Node3D" parent="world/ForestGenerator" unique_id=1894021969 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43855" parent="world/ForestGenerator" unique_id=1894021969 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.9808467, 0, 0.24207479, 0, 1.0102774, 0, -0.24207479, 0, -0.9808467, 41.467606, 0, 37.05178)
 
-[node name="@Node3D@43856" type="Node3D" parent="world/ForestGenerator" unique_id=1026793348 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43856" parent="world/ForestGenerator" unique_id=1026793348 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.2854715, 0, 0.8711248, 0, 0.91670734, 0, -0.8711248, 0, 0.2854715, -7.9272194, 0, 31.16314)
 
-[node name="@Node3D@43857" type="Node3D" parent="world/ForestGenerator" unique_id=1186546611 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43857" parent="world/ForestGenerator" unique_id=1186546611 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.40293187, 0, -1.0623902, 0, 1.1362337, 0, 1.0623902, 0, -0.40293187, 37.500443, 0, -33.132355)
 
-[node name="@Node3D@43858" type="Node3D" parent="world/ForestGenerator" unique_id=911415879 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43858" parent="world/ForestGenerator" unique_id=911415879 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.1661052, 0, -0.11309217, 0, 1.1715763, 0, 0.11309217, 0, 1.1661052, 43.698296, 0, 40.37229)
 
-[node name="@Node3D@43859" type="Node3D" parent="world/ForestGenerator" unique_id=134786044 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43859" parent="world/ForestGenerator" unique_id=134786044 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.18610089, 0, 0.9373588, 0, 0.95565426, 0, -0.9373588, 0, -0.18610089, 42.670456, 0, -16.85376)
 
-[node name="@Node3D@43860" type="Node3D" parent="world/ForestGenerator" unique_id=2021476020 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43860" parent="world/ForestGenerator" unique_id=2021476020 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.9796463, 0, 0.501637, 0, 1.1006119, 0, -0.501637, 0, -0.9796463, 49.558037, 0, 27.920982)
 
-[node name="@Node3D@43861" type="Node3D" parent="world/ForestGenerator" unique_id=991275702 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43861" parent="world/ForestGenerator" unique_id=991275702 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.21843608, 0, -0.8656291, 0, 0.8927643, 0, 0.8656291, 0, -0.21843608, -45.881866, 0, -47.204697)
 
-[node name="@Node3D@43862" type="Node3D" parent="world/ForestGenerator" unique_id=62495321 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43862" parent="world/ForestGenerator" unique_id=62495321 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.0493135, 0, 0.9367971, 0, 0.93809414, 0, -0.9367971, 0, 0.0493135, -22.712385, 0, 36.678436)
 
-[node name="@Node3D@43863" type="Node3D" parent="world/ForestGenerator" unique_id=230274003 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43863" parent="world/ForestGenerator" unique_id=230274003 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.525623, 0, -1.0115155, 0, 1.1399312, 0, 1.0115155, 0, -0.525623, -28.743221, 0, 38.127495)
 
-[node name="@Node3D@43864" type="Node3D" parent="world/ForestGenerator" unique_id=360176638 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43864" parent="world/ForestGenerator" unique_id=360176638 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.24731404, 0, -0.93584126, 0, 0.9679686, 0, 0.93584126, 0, -0.24731404, 46.929375, 0, -7.552456)
 
-[node name="@Node3D@43865" type="Node3D" parent="world/ForestGenerator" unique_id=234629180 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43865" parent="world/ForestGenerator" unique_id=234629180 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.459555, 0, -0.74846965, 0, 0.87829244, 0, 0.74846965, 0, -0.459555, -32.036705, 0, -29.519281)
 
-[node name="@Node3D@43866" type="Node3D" parent="world/ForestGenerator" unique_id=512699137 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43866" parent="world/ForestGenerator" unique_id=512699137 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.0018078352, 0, 1.1082735, 0, 1.1082749, 0, -1.1082735, 0, 0.0018078352, -9.146473, 0, 12.250912)
 
-[node name="@Node3D@43867" type="Node3D" parent="world/ForestGenerator" unique_id=731668563 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43867" parent="world/ForestGenerator" unique_id=731668563 instance=ExtResource("6_0lhry")]
 transform = Transform3D(1.0973275, 0, 0.14967033, 0, 1.1074876, 0, -0.14967033, 0, 1.0973275, -21.86719, 0, 24.157127)
 
-[node name="@Node3D@43868" type="Node3D" parent="world/ForestGenerator" unique_id=603822669 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43868" parent="world/ForestGenerator" unique_id=603822669 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.26396254, 0, -0.86116797, 0, 0.90071446, 0, 0.86116797, 0, 0.26396254, 32.320816, 0, -5.694214)
 
-[node name="@Node3D@43869" type="Node3D" parent="world/ForestGenerator" unique_id=148236721 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43869" parent="world/ForestGenerator" unique_id=148236721 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.07491583, 0, 1.0284686, 0, 1.0311935, 0, -1.0284686, 0, 0.07491583, -2.5148964, 0, 26.990738)
 
-[node name="@Node3D@43870" type="Node3D" parent="world/ForestGenerator" unique_id=2103666040 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43870" parent="world/ForestGenerator" unique_id=2103666040 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.83252037, 0, 0.304345, 0, 0.88640624, 0, -0.304345, 0, -0.83252037, -2.7264404, 0, -6.7897034)
 
-[node name="@Node3D@43871" type="Node3D" parent="world/ForestGenerator" unique_id=198888913 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43871" parent="world/ForestGenerator" unique_id=198888913 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.9121025, 0, 0.5963096, 0, 1.0897322, 0, -0.5963096, 0, -0.9121025, 2.421833, 0, 43.21895)
 
-[node name="@Node3D@43872" type="Node3D" parent="world/ForestGenerator" unique_id=462987684 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43872" parent="world/ForestGenerator" unique_id=462987684 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.8874981, 0, -0.67640555, 0, 1.1158751, 0, 0.67640555, 0, 0.8874981, 35.63614, 0, 27.862778)
 
-[node name="@Node3D@43873" type="Node3D" parent="world/ForestGenerator" unique_id=1823862546 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43873" parent="world/ForestGenerator" unique_id=1823862546 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.5351553, 0, 1.0396925, 0, 1.1693382, 0, -1.0396925, 0, 0.5351553, 20.680984, 0, 1.6050262)
 
-[node name="@Node3D@43874" type="Node3D" parent="world/ForestGenerator" unique_id=59527261 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43874" parent="world/ForestGenerator" unique_id=59527261 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.84003365, 0, 0.3854953, 0, 0.9242636, 0, -0.3854953, 0, 0.84003365, -20.700064, 0, 19.780937)
 
-[node name="@Node3D@43875" type="Node3D" parent="world/ForestGenerator" unique_id=1105192267 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43875" parent="world/ForestGenerator" unique_id=1105192267 instance=ExtResource("6_0lhry")]
 transform = Transform3D(0.7446204, 0, -0.7497783, 0, 1.0567057, 0, 0.7497783, 0, 0.7446204, -28.691013, 0, -4.7628326)
 
-[node name="@Node3D@43876" type="Node3D" parent="world/ForestGenerator" unique_id=1723444300 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43876" parent="world/ForestGenerator" unique_id=1723444300 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.07872045, 0, 1.0148336, 0, 1.0178821, 0, -1.0148336, 0, -0.07872045, -22.218388, 0, 10.64592)
 
-[node name="@Node3D@43877" type="Node3D" parent="world/ForestGenerator" unique_id=296559018 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43877" parent="world/ForestGenerator" unique_id=296559018 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.74021536, 0, 0.6481358, 0, 0.98386925, 0, -0.6481358, 0, -0.74021536, -25.529457, 0, 39.61125)
 
-[node name="@Node3D@43878" type="Node3D" parent="world/ForestGenerator" unique_id=1105597924 instance=ExtResource("6_0lhry")]
+[node name="@Node3D@43878" parent="world/ForestGenerator" unique_id=1105597924 instance=ExtResource("6_0lhry")]
 transform = Transform3D(-0.39482972, 0, 0.84586334, 0, 0.9334749, 0, -0.84586334, 0, -0.39482972, -9.9575, 0, 37.42547)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="world" unique_id=1758159345]
@@ -382,9 +383,8 @@ physics_object_picking = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1839484697]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 0)
-light_energy = 1.0
 shadow_enabled = true
 
 [node name="Playerbarn" parent="SubViewportContainer/SubViewport" unique_id=390143538 instance=ExtResource("8_8bn17")]
@@ -401,6 +401,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 texture = SubResource("ViewportTexture_ow83g")
+
+[node name="DialogUI" parent="SubViewportContainer/CanvasLayer" unique_id=156064482 instance=ExtResource("10_dialog")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=431628393]
 transform = Transform3D(0.245341, 0, 0.969437, 0.769806, -0.607819, -0.194819, 0.589243, 0.794075, -0.149123, -4.22834, 4.11179, -1.05669)

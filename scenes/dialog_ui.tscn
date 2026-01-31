@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://8dc2uwjapx3r"]
+
+[ext_resource type="Script" uid="uid://bbraoy25t8cnd" path="res://scripts/dialog_ui.gd" id="1_dialog"]
+
+[node name="DialogUI" type="Control" unique_id=310542640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dialog")
+
+[node name="Label" type="Label" parent="." unique_id=1275306275]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 50.0
+offset_right = 800.0
+offset_bottom = 150.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=57104163]
