@@ -45,6 +45,14 @@ func _display_dialog_lines():
 	# Display each line
 	for line_index in range(current_dialog.lines.size()):
 		var line = current_dialog.lines[line_index]
+		
+		# Check for pause marker @X (e.g. @12 means 12 second pause)
+		var pause_time = _parse_pause_marker(line)
+		if pause_time > 0:
+			# This line is a pause marker, wait and continue
+			await get_tree().create_timer(pause_time).timeout
+			continue
+		
 		label.text = ""
 		
 		# Typewriter effect for this line
@@ -63,6 +71,21 @@ func _display_dialog_lines():
 	
 	# All lines complete
 	finish_dialog()
+
+# Parse pause marker like @12 and return the pause duration in seconds
+# Returns 0 if not a valid pause marker
+func _parse_pause_marker(line: String) -> float:
+	var trimmed = line.strip_edges()
+	if not trimmed.begins_with("@"):
+		return 0.0
+	
+	var number_part = trimmed.substr(1)
+	if number_part.is_valid_float():
+		return number_part.to_float()
+	elif number_part.is_valid_int():
+		return float(number_part.to_int())
+	
+	return 0.0
 
 func stop_dialog():
 	is_playing = false
