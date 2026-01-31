@@ -7,8 +7,13 @@ uniform sampler2D albedo_tex : source_color, filter_linear_mipmap_anisotropic;
 uniform bool use_albedo_tex = false;
 uniform sampler2D hatch_tex : filter_nearest, repeat_enable;
 uniform vec3 ink_color : source_color = vec3(0.0);
-uniform float hatch_world_scale : hint_range(0.0, 10.0) = 1.0;
-uniform float hatch_strength : hint_range(0.0, 2.0) = 1.0;
+uniform float hatch_world_scale : hint_range(0.0, 10.0) = 0.1;
+uniform float hatch_strength : hint_range(0.0, 4.0) = 2.0;
+
+// --- ANTI-ALIASING FÖR HATCHING PÅ AVSTÅND ---
+uniform float hatch_fade_start : hint_range(1.0, 200.0) = 10.0;
+uniform float hatch_fade_end : hint_range(1.0, 400.0) = 20.0;
+uniform bool use_distance_fade = true;
 
 // --- LIGHTING ---
 uniform vec3 light_position_ws = vec3(0.0, 5.0, 0.0);
@@ -100,7 +105,15 @@ void fragment() {
     float h3 = hatch_triplanar(v_world_pos, v_world_nrm, radians(0.0));
 
     float combined_hatch = max(max(h1 * g1, h2 * g2), h3 * g3);
-    float ink = clamp(combined_hatch * hatch_strength, 0.0, 1.0);
+    
+    // Tona ut på avstånd (beräknas per-pixel för korrekt resultat på stora ytor)
+    float distance_fade = 1.0;
+    if (use_distance_fade) {
+        float cam_distance = length(v_world_pos - CAMERA_POSITION_WORLD);
+        distance_fade = 1.0 - smoothstep(hatch_fade_start, hatch_fade_end, cam_distance);
+    }
+    
+    float ink = clamp(combined_hatch * hatch_strength * distance_fade, 0.0, 1.0);
 
     vec3 final_color = base_color.rgb;
     if (use_albedo_tex) final_color *= texture(albedo_tex, UV).rgb;
