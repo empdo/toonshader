@@ -43,15 +43,20 @@ transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.3781
 [node name="SeeMask" parent="." unique_id=1753715017 instance=ExtResource("3_kg635")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064204514, 1.6723828, 1.2567589)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=36434291]
+[node name="Area3D" type="Area3D" parent="." unique_id=36434291 node_paths=PackedStringArray("player_target", "camera_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.3132086)
 script = ExtResource("4_oxme1")
+player_target = NodePath("../PlayerTarget")
+camera_target = NodePath("../CameraTarget")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1333282225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10147667, 0.90467834, -0.55963135)
 shape = SubResource("BoxShape3D_oxme1")
 
-[node name="PlayersPosition" type="Node3D" parent="." unique_id=484047269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6074418, 2.7946424)
+[node name="PlayerTarget" type="Node3D" parent="." unique_id=484047269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028, 2.795)
+
+[node name="CameraTarget" type="Node3D" parent="." unique_id=1735828515]
+transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.378164, 0, 4.855357, 1.2641009)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

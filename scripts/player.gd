@@ -9,13 +9,48 @@ const SPEED = 8.0
 const LERP_VAL = .15
 var focused = false
 
+var prevent_move = false
+
+const camera_move_to_table_duration = 1 
+
+var camera_local_when_entered: Transform3D
+
+@onready var cam = $SpringArmPivot/SpringArm3D/Camera3D
+@onready var cam_return = $Camreturn
+
 func _ready():
+	Globals.player_entered_table_area.connect(on_player_entered_table_area)
+	Globals.player_leaving_table_game.connect(on_player_leaving_table_game)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-func _unhandled_input(event: InputEvent) -> void:
 	
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+func on_player_leaving_table_game():
+	cam.reparent($SpringArmPivot/SpringArm3D)
+	prevent_move = false
+	cam.global_position = cam_return.global_position
+	cam.global_rotation = cam_return.global_rotation
+	
+func on_player_entered_table_area(player_target: Node3D, camera_target: Node3D):
+	# freeze
+	prevent_move = true
+	$AnimationTree/AnimationPlayer.play("idle")
+	
+	# move player
+	position = player_target.position
+	rotation = player_target.rotation
+	
+	# move camera
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(cam, "global_position", camera_target.global_position, camera_move_to_table_duration)
+	tween.tween_property(cam, "global_rotation", camera_target.global_rotation, camera_move_to_table_duration)
+	cam.reparent(camera_target)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if prevent_move:
+		return
 		
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if focused else Input.MOUSE_MODE_VISIBLE
@@ -28,6 +63,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI / 4, PI / 4)
 
 func _physics_process(delta: float) -> void:
+	if prevent_move:
+		return
+		
+	cam_return.global_position = cam.global_position
+	cam_return.global_rotation = cam.global_rotation
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

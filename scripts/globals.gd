@@ -62,3 +62,10 @@ func _on_dialog_finished(dialog: DialogResource):
 	dialog_finished.emit(dialog)
 	current_dialog = null
 	_process_dialog_queue()
+signal player_entered_table_area(player_target: Node3D, camera_target: Node3D)
+signal player_leaving_table_game
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		player_leaving_table_game.emit()

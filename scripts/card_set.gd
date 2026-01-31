@@ -32,13 +32,17 @@ func clear_cards():
 
 func add_new_cards():
 	var id_increment = 0
+	var ids = []
+	for i in range(nr_cards.x * nr_cards.y):
+		ids.append(i)
+	ids.shuffle()
 	var pos = Vector3.ZERO
 	for y in range(nr_cards.y):
 		for x in range(nr_cards.x):
 			var random_x_add = randf_range(-cards_random_spacing.x, cards_random_spacing.x)
 			var random_z_add = randf_range(-cards_random_spacing.z, cards_random_spacing.z)
 			var p = pos + Vector3(random_x_add, 0, random_z_add)
-			spawn_card(id_increment, p)
+			spawn_card(ids[id_increment], p)
 			id_increment += 1
 			pos.x += cards_spacing.x
 		pos.x = 0
