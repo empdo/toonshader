@@ -5,6 +5,13 @@ var card_type_id = -1
 
 func _ready():
 	$area/Label3D.text = str(card_type_id)
+	$area/Label3D2.text = $area/Label3D.text
+	
+	Globals.see_through_cards.connect(on_see_through_cards)
+	
+func on_see_through_cards(see: bool):
+	$area/Top.visible = not see
+
 
 func _on_area_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	var mouse_click = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
