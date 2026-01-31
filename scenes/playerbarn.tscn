@@ -528,7 +528,7 @@ blend_shape_mode = 0
 
 [sub_resource type="Environment" id="Environment_5jk82"]
 background_mode = 1
-background_color = Color(0.635294, 0.619608, 0.529412, 1)
+background_color = Color(0.10, 0.08, 0.06, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0frsm"]
 radius = 0.43603516

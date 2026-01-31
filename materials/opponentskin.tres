@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://r73ee2knveiu"]
 
-[ext_resource type="Shader" uid="uid://dltvgimu4x47p" path="res://shaders/test2.gdshader" id="1_esheu"]
+[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="1_esheu"]
 [ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="2_rncmr"]
 
 [resource]
