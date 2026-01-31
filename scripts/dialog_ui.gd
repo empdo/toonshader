@@ -58,6 +58,9 @@ func _display_dialog_lines():
 		if line_index < current_dialog.lines.size() - 1:
 			await get_tree().create_timer(0.5).timeout
 	
+	# Wait a bit after the last line before closing dialog
+	await get_tree().create_timer(1.5).timeout
+	
 	# All lines complete
 	finish_dialog()
 
