@@ -69,8 +69,8 @@ script = ExtResource("1_rkhd4")
 [node name="barn" parent="." unique_id=1923717643 instance=ExtResource("1_agfs1")]
 
 [node name="Skeleton3D" parent="barn/Armature" parent_id_path=PackedInt32Array(1923717643, 1478585079) index="0" unique_id=1964332919]
-bones/0/position = Vector3(-0.024007713, 0.9900449, -0.07118874)
-bones/0/rotation = Quaternion(0.040343292, 0.008125297, -0.00032807913, 0.99915284)
+bones/0/position = Vector3(-0.024007713, 0.9889424, -0.07118874)
+bones/0/rotation = Quaternion(0.04034428, -0.0040920046, 0.00016522496, 0.9991775)
 bones/1/rotation = Quaternion(0.65300035, -0.48912036, -0.49945647, -0.2913676)
 bones/2/rotation = Quaternion(-0.28620756, 0.4037971, -0.2982837, 0.8161249)
 bones/3/rotation = Quaternion(-0.014484717, 0.13422918, -0.11520044, 0.98412484)
@@ -87,12 +87,12 @@ bones/11/rotation = Quaternion(0.18161409, -0.09461621, -0.24163485, 0.9485129)
 bones/12/rotation = Quaternion(-0.36615118, -0.42058772, 0.16130586, 0.81426024)
 bones/13/position = Vector3(0.008174622, 0.987016, -0.008415567)
 bones/13/rotation = Quaternion(-0.028918575, 0.013429294, 0.018754955, 0.9993156)
-bones/14/rotation = Quaternion(-0.0122595765, -0.012578506, -0.019675728, 0.9996522)
-bones/15/rotation = Quaternion(0.99900585, -0.003048147, 0.0064139944, 0.044009496)
+bones/14/rotation = Quaternion(-0.013445067, -0.012555939, -0.019677915, 0.9996372)
+bones/15/rotation = Quaternion(0.99931735, -0.0045671538, -0.004818664, 0.036343843)
 bones/15/scale = Vector3(1.0000002, 1.0000002, 1.0000298)
-bones/16/rotation = Quaternion(-0.0030731966, 0.002909256, -0.00066409446, 0.9999909)
+bones/16/rotation = Quaternion(-0.019821865, 0.0029086708, -0.0042832075, 0.9997902)
 bones/16/scale = Vector3(1, 0.9999999, 1.0000002)
-bones/17/rotation = Quaternion(0.66503865, -0.0025139768, -0.0012680483, 0.74680376)
+bones/17/rotation = Quaternion(0.6718132, -0.0015223542, 0.0012500234, 0.74071807)
 bones/17/scale = Vector3(1, 1.0000101, 0.9999995)
 bones/18/rotation = Quaternion(0.7208205, 0.46422285, 0.4684544, -0.21322668)
 bones/19/rotation = Quaternion(-0.22060405, -0.28517705, 0.33377966, 0.87097585)
@@ -108,14 +108,14 @@ bones/26/rotation = Quaternion(0.038354877, -0.03788118, 0.16504301, 0.984812)
 bones/27/rotation = Quaternion(-0.06395365, 0.04815308, 0.26560503, 0.9607524)
 bones/28/rotation = Quaternion(0.14214098, 0.035213295, 0.28065386, 0.9485723)
 bones/29/rotation = Quaternion(-0.372771, 0.5039424, -0.026217286, 0.7787146)
-bones/30/rotation = Quaternion(0.99867284, 0.0005805002, 0.015797216, 0.04901683)
+bones/30/rotation = Quaternion(0.9993389, 0.00043169523, 0.0044546067, 0.036080293)
 bones/30/scale = Vector3(1.0000001, 0.99999994, 1.0000434)
-bones/31/rotation = Quaternion(-0.001907134, 0.0070509627, -0.00014984295, 0.9999734)
+bones/31/rotation = Quaternion(-0.020763624, 0.007049442, -0.0016313054, 0.99975824)
 bones/31/scale = Vector3(0.9999999, 0.9999998, 0.9999995)
-bones/32/rotation = Quaternion(0.6678753, -0.010923689, 0.0098787835, 0.74412745)
+bones/32/rotation = Quaternion(0.67224824, -0.010619798, 0.01158341, 0.74015903)
 bones/32/scale = Vector3(1.0000002, 1.0000145, 0.9999993)
-bones/33/rotation = Quaternion(0.6314981, -0.4902478, -0.5204062, -0.30007446)
-bones/34/rotation = Quaternion(0.6337384, 0.4848003, 0.51968014, -0.30541265)
+bones/33/rotation = Quaternion(0.6302387, -0.49325472, -0.52079445, -0.2971064)
+bones/34/rotation = Quaternion(0.631681, 0.4898083, 0.5203486, -0.30050695)
 bones/36/position = Vector3(-0.1694788, 0.09058595, 0.012711535)
 bones/37/position = Vector3(0.13642444, 0.6133966, -0.53483474)
 
@@ -123,6 +123,7 @@ bones/37/position = Vector3(0.13642444, 0.6133966, -0.53483474)
 surface_material_override/0 = ExtResource("3_8yvht")
 
 [node name="hair" parent="barn/Armature/Skeleton3D" index="1" unique_id=1027167268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024507761, 0)
 surface_material_override/0 = ExtResource("10_cicko")
 
 [node name="hand" parent="barn/Armature/Skeleton3D" index="2" unique_id=12358065]
@@ -175,9 +176,11 @@ surface_material_override/0 = ExtResource("13_7qyni")
 surface_material_override/0 = ExtResource("14_sougf")
 
 [node name="skulleyes" parent="barn/Armature/Skeleton3D" index="18" unique_id=1044837807]
+visible = false
 surface_material_override/0 = ExtResource("9_u0pwc")
 
 [node name="skullnose" parent="barn/Armature/Skeleton3D" index="19" unique_id=1959408490]
+visible = false
 surface_material_override/0 = ExtResource("9_u0pwc")
 
 [node name="wings" parent="barn/Armature/Skeleton3D" index="20" unique_id=481493137]
