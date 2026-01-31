@@ -3,7 +3,8 @@ extends Node
 const MAX_SHOWABLE_CARDS = 1
 var number_of_cards_showed = 0
 
-var allowed_to_use_mask
+var time_used_seeingmask = 0
+const max_time_used_seeingmask_until_collapse = 4
 
 signal guess_button_clicked(bool)
 signal see_through_cards(bool)
@@ -81,5 +82,7 @@ func _on_dialog_finished(dialog: DialogResource):
 	
 
 func _process(delta: float) -> void:
+	if time_used_seeingmask >= max_time_used_seeingmask_until_collapse:
+		lost_game_by_mask.emit()
 	if Input.is_action_just_pressed("ui_accept"):
 		player_leaving_table_game.emit()

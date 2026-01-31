@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://iofi0k4l8pv6"]
+
+[ext_resource type="Script" uid="uid://1cg6l168d64n" path="res://scripts/obelisk_portal.gd" id="1_5u6c7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_535us"]
+
+[node name="ObeliskPortal" type="Node3D" unique_id=1078687172]
+script = ExtResource("1_5u6c7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1684904854]
+transform = Transform3D(2.725, 0, 0, 0, 2.725, 0, 0, 0, 2.725, 0, 1.3700583, 0)
+mesh = SubResource("BoxMesh_535us")
