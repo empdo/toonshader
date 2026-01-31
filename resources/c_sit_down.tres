@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://di0ck15tq3pdc"]
+
+[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_3mkyf"]
+
+[resource]
+script = ExtResource("1_3mkyf")
+lines = Array[String](["Guillaume: I will warn you. Now that you sit, only one of us will leave. Only one will reach… Éternité."])
+metadata/_custom_type_script = "uid://datp6bamk0nb5"

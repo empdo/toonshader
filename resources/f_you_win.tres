@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://dd4m5oi85wwk3"]
+
+[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_5n7ik"]
+
+[resource]
+script = ExtResource("1_5n7ik")
+lines = Array[String](["Guillaume: Deep sigh. You may rise then, mademoiselle, and proceed to the Silver Sands. You, monsieur, however. You must stay behind, without a host. I shall keep you company ‘til next someone comes around."])
+metadata/_custom_type_script = "uid://datp6bamk0nb5"
