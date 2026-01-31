@@ -21,26 +21,12 @@ func show_dialog(dialog: DialogResource):
 	is_playing = true
 	visible = true
 	
-	# Play audio if provided
-	if dialog.audio:
-		audio_player.stream = dialog.audio
-		audio_player.play()
-	
 	# Start displaying dialog lines
 	_display_dialog_lines()
 
 func _display_dialog_lines():
 	if not current_dialog:
 		return
-	
-	# Calculate characters per second (use dialog override or default)
-	var chars_per_second: float
-	if current_dialog.characters_per_second > 0:
-		chars_per_second = current_dialog.characters_per_second
-	else:
-		chars_per_second = Globals.DEFAULT_CHARS_PER_SECOND
-	
-	var time_per_char = 1.0 / chars_per_second
 	
 	# Display each line
 	for line_index in range(current_dialog.lines.size()):
@@ -54,6 +40,25 @@ func _display_dialog_lines():
 			continue
 		
 		label.text = ""
+		
+		# Get audio for this line (if available)
+		var line_audio: AudioStream = null
+		if line_index < current_dialog.line_audio.size():
+			line_audio = current_dialog.line_audio[line_index]
+		
+		# Calculate time per character based on audio length or default
+		var time_per_char: float
+		if line_audio and line_audio.get_length() > 0:
+			# Use audio length to determine typing speed
+			var audio_length = line_audio.get_length()
+			time_per_char = audio_length / float(line.length()) if line.length() > 0 else 0.0
+			
+			# Play the audio for this line
+			audio_player.stream = line_audio
+			audio_player.play()
+		else:
+			# No audio - use default characters per second
+			time_per_char = 1.0 / Globals.DEFAULT_CHARS_PER_SECOND
 		
 		# Typewriter effect for this line
 		for char_index in range(line.length() + 1):

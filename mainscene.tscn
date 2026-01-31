@@ -9,11 +9,11 @@
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
 [ext_resource type="Shader" path="res://materials/pupil.tres" id="8_4p23x"]
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
-[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
-[ext_resource type="Material" uid="uid://3lin4uhk21mp" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
-[ext_resource type="PackedScene" uid="uid://tasviocptipd" uid="uid://tasviocptipd" path="res://glb/table.glb" id="12_j8b8d"]
+[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
+[ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
+[ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="12_j8b8d"]
 [ext_resource type="AudioStream" uid="uid://bu1krbrt13c2g" path="res://sounds/roaming_table.ogg" id="12_jtreq"]
-[ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
+[ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 

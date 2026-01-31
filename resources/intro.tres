@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://df7e8sc2qn5bh"]
 
+[ext_resource type="AudioStream" uid="uid://bkjlrd864kb11" path="res://sounds/heartbeat.wav" id="1_cu65r"]
 [ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_qoax6"]
 
 [resource]
 script = ExtResource("1_qoax6")
 lines = Array[String](["Guillaume: Enfin! An end to my solitude.", "@2", "Ivy: I feared we’d wander these woods forever. ", "@1", "Arthur: Woe be me, who cannot wander among the beauty of the woods for more than mere days – lest I grow bored.", "@1", "Ivy: I could leave you here, brother, to be with your precious woods.", "@1", "Arthur: An empty threat, sister. ", "@0.5", "Ivy: Sigh."])
+line_audio = Array[AudioStream]([ExtResource("1_cu65r"), null, ExtResource("1_cu65r")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"
