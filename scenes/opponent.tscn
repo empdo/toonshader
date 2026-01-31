@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://c0fyofa7xtgbm"]
+
+[ext_resource type="PackedScene" uid="uid://c8mm850qmbp8u" path="res://glb/motstandare.glb" id="1_ocjdi"]
+[ext_resource type="Material" uid="uid://r73ee2knveiu" path="res://materials/opponentskin.tres" id="2_dymdi"]
+[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="3_d171x"]
+[ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="4_xmp2k"]
+[ext_resource type="Shader" uid="uid://dltvgimu4x47p" path="res://shaders/test2.gdshader" id="5_ays1t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q22jk"]
+render_priority = 0
+shader = ExtResource("3_d171x")
+shader_parameter/base_color = Color(0.670261, 0.66339135, 0.46877617, 1)
+shader_parameter/use_albedo_tex = false
+shader_parameter/hatch_tex = ExtResource("4_xmp2k")
+shader_parameter/ink_color = Color(0, 0, 0, 1)
+shader_parameter/hatch_world_scale = 0.6000000285
+shader_parameter/hatch_strength = 4.0
+shader_parameter/hatch_fade_start = 10.0
+shader_parameter/hatch_fade_end = 20.0
+shader_parameter/use_distance_fade = true
+shader_parameter/distance_fade_color = Color(0.15, 0.12, 0.1, 1)
+shader_parameter/light_position_ws = Vector3(0, 5, 0)
+shader_parameter/band1 = 0.6
+shader_parameter/band2 = 0.4
+shader_parameter/band3 = 0.2
+shader_parameter/band_softness = 0.05
+shader_parameter/line_thickness = 10.0
+shader_parameter/edge_sensitivity = 1.0
+shader_parameter/line_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgfjn"]
+render_priority = 0
+shader = ExtResource("5_ays1t")
+shader_parameter/base_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+shader_parameter/use_albedo_tex = false
+shader_parameter/hatch_tex = ExtResource("4_xmp2k")
+shader_parameter/ink_color = Color(0, 0, 0, 1)
+shader_parameter/hatch_world_scale = 0.2390000113525
+shader_parameter/hatch_strength = 2.0
+shader_parameter/hatch_fade_start = 10.0
+shader_parameter/hatch_fade_end = 20.0
+shader_parameter/use_distance_fade = true
+shader_parameter/distance_fade_color = Color(0.15, 0.12, 0.1, 1)
+shader_parameter/light_position_ws = Vector3(0, 5, 0)
+shader_parameter/band1 = 0.6
+shader_parameter/band2 = 0.4
+shader_parameter/band3 = 0.2
+shader_parameter/band_softness = 0.05
+shader_parameter/line_thickness = 2.0
+shader_parameter/edge_sensitivity = 0.05
+shader_parameter/line_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ocjdi"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ha0xr"]
+graph_offset = Vector2(-129.43048, -15.083618)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ocjdi")
+nodes/Animation/position = Vector2(40, 160)
+node_connections = [&"output", 0, &"Animation"]
+
+[node name="opponent" type="Node3D" unique_id=724776570]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="motstandare" parent="." unique_id=482425575 instance=ExtResource("1_ocjdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.727162, 13.129591, -6.872338)
+
+[node name="Skeleton3D" parent="motstandare/Armature" parent_id_path=PackedInt32Array(482425575, 811925825) index="0" unique_id=335349062]
+bones/0/position = Vector3(-0.1809134, 1.0537382, -1.0290886)
+bones/0/rotation = Quaternion(-0.2859567, 0.03386841, -0.014205416, 0.9575385)
+bones/1/rotation = Quaternion(0.1942685, -0.020157028, 0.0037037618, 0.9807343)
+bones/2/rotation = Quaternion(0.14807682, 0.016908592, -0.01882488, 0.9886521)
+bones/3/rotation = Quaternion(0.21129465, 0.038059805, -0.02043723, 0.97646725)
+bones/4/rotation = Quaternion(0.010689511, -0.0054318607, -0.8171958, 0.5762354)
+bones/5/rotation = Quaternion(0.12691522, -0.057096772, -0.1693776, 0.97567606)
+bones/6/rotation = Quaternion(0.7807789, 0.48911873, 0.13053869, 0.3662061)
+bones/7/rotation = Quaternion(0.013692429, 0.058637965, 0.8400196, 0.5392042)
+bones/8/rotation = Quaternion(0.41846025, 0.30674532, -0.1638735, 0.8390137)
+bones/9/rotation = Quaternion(0.9248384, 0.2736482, 0.18750902, 0.1860941)
+bones/10/rotation = Quaternion(-0.04541014, -0.014499716, -0.009708379, 0.998816)
+bones/11/rotation = Quaternion(0.072261445, 0.02307362, 0.015448985, 0.9969991)
+bones/12/rotation = Quaternion(-1.1641532e-09, 1.8626594e-09, -5.5879354e-09, 1)
+bones/13/position = Vector3(0.52682763, -0.30298552, 0.012388771)
+bones/13/rotation = Quaternion(0.17047748, 0.86421186, 0.42918006, 0.19969967)
+bones/14/rotation = Quaternion(-0.13311426, 0.012095242, 0.09958114, 0.98601115)
+bones/15/rotation = Quaternion(-0.84912515, 0.08327876, 0.50156343, 0.14312738)
+bones/16/position = Vector3(-0.5268276, -0.33050174, -0.012389272)
+bones/16/rotation = Quaternion(-0.00750471, 0.58877456, 0.69345593, 0.41521928)
+bones/17/rotation = Quaternion(-0.18770503, 0.03998093, -0.073135026, 0.9786826)
+bones/18/rotation = Quaternion(-0.73458505, 0.26039383, -0.04460325, 0.62497234)
+
+[node name="body" parent="motstandare/Armature/Skeleton3D" index="0" unique_id=2068251248]
+surface_material_override/0 = ExtResource("2_dymdi")
+
+[node name="face" parent="motstandare/Armature/Skeleton3D" index="1" unique_id=1383993771]
+surface_material_override/0 = SubResource("ShaderMaterial_q22jk")
+
+[node name="hair" parent="motstandare/Armature/Skeleton3D" index="2" unique_id=1379647774]
+surface_material_override/0 = SubResource("ShaderMaterial_mgfjn")
+
+[node name="head" parent="motstandare/Armature/Skeleton3D" index="3" unique_id=2115490254]
+surface_material_override/0 = ExtResource("2_dymdi")
+
+[node name="AnimationTree" type="AnimationTree" parent="motstandare" unique_id=1476637961]
+tree_root = SubResource("AnimationNodeBlendTree_ha0xr")
+anim_player = NodePath("../AnimationPlayer")
+
+[editable path="motstandare"]
