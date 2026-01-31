@@ -21,7 +21,7 @@ var moving_camera: Camera3D
 @onready var player_return: Transform3D
 
 func _ready():
-	Globals.player_entered_table_area.connect(on_player_entered_table_area)
+	Globals.player_entered_table_area_with_targets.connect(on_player_entered_table_area_with_targets)
 	Globals.player_leaving_table_game.connect(on_player_leaving_table_game)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -41,7 +41,7 @@ func on_player_leaving_table_game():
 	moving_camera.queue_free()
 
 	
-func on_player_entered_table_area(player_target: Node3D, camera_target: Node3D):
+func on_player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D):
 	prevent_move = true
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 

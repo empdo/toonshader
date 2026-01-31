@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://05mfxr11sr75" path="res://scripts/table_entrance.gd" id="4_oxme1"]
 [ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="5_0o1um"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="6_6mw1m"]
+[ext_resource type="Script" uid="uid://cda6ci5hkrwhv" path="res://scripts/temp_card_highlighter.gd" id="7_6mw1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wq7v"]
 size = Vector3(3.7475586, 1.5623779, 3.449707)
@@ -15,6 +16,10 @@ size = Vector3(7.198704, 1.2431335, 4.2088623)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0o1um"]
 size = Vector3(4.7925262, 1.328125, 5.062134)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8w3p3"]
+radius = 0.05
+height = 0.545
 
 [node name="GameTable" type="StaticBody3D" unique_id=1138061513]
 
@@ -91,6 +96,18 @@ surface_material_override/0 = ExtResource("6_6mw1m")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=881055247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16020966, 0.8515625, -0.38897705)
 shape = SubResource("BoxShape3D_0o1um")
+
+[node name="TempCardHighlighter" type="Node3D" parent="." unique_id=10203201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36023396, 2.0571787, 0)
+visible = false
+script = ExtResource("7_6mw1m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TempCardHighlighter" unique_id=522810933]
+mesh = SubResource("CapsuleMesh_8w3p3")
+
+[node name="Label3D" type="Label3D" parent="TempCardHighlighter" unique_id=1067805650]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.46048164, 0)
+text = "1"
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 

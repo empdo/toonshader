@@ -3,8 +3,24 @@ extends Node
 const MAX_SHOWABLE_CARDS = 1
 var number_of_cards_showed = 0
 
+var allowed_to_use_mask
+
 signal guess_button_clicked(bool)
 signal see_through_cards(bool)
+signal player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D)
+signal player_entered_table_area
+signal player_leaving_table_game
+signal highlight_card(Node3D)
+signal say_card_type(int)
+
+signal won_game
+signal lost_game
+signal lost_game_by_mask
+
+
+
+
+
 
 # Dialog system
 const DEFAULT_CHARS_PER_SECOND = 30.0
@@ -62,9 +78,7 @@ func _on_dialog_finished(dialog: DialogResource):
 	dialog_finished.emit(dialog)
 	current_dialog = null
 	_process_dialog_queue()
-signal player_entered_table_area(player_target: Node3D, camera_target: Node3D)
-signal player_leaving_table_game
-
+	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):

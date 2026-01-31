@@ -58,6 +58,8 @@ func spawn_card(id: int, pos: Vector3):
 func _ready():
 	refresh_layout()
 
+func _process(delta: float) -> void:
+	CardgameManager.cards = cards
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.

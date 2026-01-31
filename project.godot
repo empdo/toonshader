@@ -21,6 +21,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 Globals="*uid://6onej7fmem45"
+CardgameManager="*uid://b12gd715g3ra1"
 
 [display]
 
