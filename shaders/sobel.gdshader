@@ -14,6 +14,7 @@ uniform float hatch_strength : hint_range(0.0, 4.0) = 2.0;
 uniform float hatch_fade_start : hint_range(1.0, 200.0) = 10.0;
 uniform float hatch_fade_end : hint_range(1.0, 400.0) = 20.0;
 uniform bool use_distance_fade = true;
+uniform vec3 distance_fade_color : source_color = vec3(0.15, 0.12, 0.1);
 
 // --- DYNAMISK POSITION FÖR LJUS ---
 uniform vec3 light_position_ws = vec3(0.0, 5.0, 0.0);
@@ -112,9 +113,11 @@ void fragment() {
     
     // Tona ut på avstånd (beräknas per-pixel för korrekt resultat på stora ytor)
     float distance_fade = 1.0;
+    float fog_factor = 0.0;
     if (use_distance_fade) {
         float cam_distance = length(v_world_pos - CAMERA_POSITION_WORLD);
         distance_fade = 1.0 - smoothstep(hatch_fade_start, hatch_fade_end, cam_distance);
+        fog_factor = smoothstep(hatch_fade_start, hatch_fade_end, cam_distance);
     }
     
     float ink = clamp(combined_hatch * hatch_strength * distance_fade, 0.0, 1.0);
@@ -122,6 +125,9 @@ void fragment() {
     vec3 final_color = base_color.rgb;
     if (use_albedo_tex) final_color *= texture(albedo_tex, UV).rgb;
     final_color = mix(final_color, ink_color, ink);
+    
+    // Blend towards dark fog color at distance
+    final_color = mix(final_color, distance_fade_color, fog_factor);
 
     // --- 5. FINAL MIX ---
     ALBEDO = mix(final_color, line_color.rgb, edge_mask);

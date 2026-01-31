@@ -52,13 +52,8 @@ func _generate() -> void:
 		add_child(inst)
 		
 		if owner_node:
-			_set_owner_recursive(inst, owner_node)
+			inst.owner = owner_node
 
 func _clear() -> void:
 	for child in get_children():
 		child.free()
-
-func _set_owner_recursive(node: Node, new_owner: Node) -> void:
-	node.owner = new_owner
-	for child in node.get_children():
-		_set_owner_recursive(child, new_owner)
