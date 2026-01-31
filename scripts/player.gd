@@ -3,8 +3,8 @@ extends CharacterBody3D
 @onready var spring_arm_pivot = $SpringArmPivot
 @onready var spring_arm = $SpringArmPivot/SpringArm3D
 @onready var camera = $SpringArmPivot/SpringArm3D/Camera3D
-@onready var armature = $Armature
-@onready var animation_tree = $AnimationTree
+@onready var armature = $barn/Armature
+@onready var animation_tree = $barn/AnimationTree
 const SPEED = 8.0
 const LERP_VAL = .15
 var focused = false
