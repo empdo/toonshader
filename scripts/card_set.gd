@@ -31,7 +31,6 @@ func clear_cards():
 	cards.clear()
 
 func add_new_cards():
-	print ("hello")
 	var id_increment = 0
 	var pos = Vector3.ZERO
 	for y in range(nr_cards.y):
