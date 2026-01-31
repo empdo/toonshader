@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79580a1b0ca2d682357b4e32f815b816f8f24607a3b5feed6b025e8e6ba9b681
-size 2822
+[gd_scene format=3 uid="uid://hsq4yhuosu4g"]
+
+[ext_resource type="PackedScene" uid="uid://15liivtra6np" path="res://scenes/card_set.tscn" id="1_ii77m"]
+[ext_resource type="PackedScene" uid="uid://dnl8q4rsvjf3p" path="res://scenes/guess_button.tscn" id="2_4wq7v"]
+[ext_resource type="PackedScene" uid="uid://dpih8pl5iwtno" path="res://scenes/see_mask.tscn" id="3_kg635"]
+[ext_resource type="Script" uid="uid://05mfxr11sr75" path="res://scripts/table_entrance.gd" id="4_oxme1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2ted"]
+albedo_color = Color(0.32, 0.22442667, 0.115200005, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d2ted"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wq7v"]
+size = Vector3(3, 1.5097656, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxme1"]
+size = Vector3(7.198704, 1.2431335, 4.2088623)
+
+[node name="GameTable" type="StaticBody3D" unique_id=1138061513]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1041117298]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 3, 0, 0.75, 0)
+material_override = SubResource("StandardMaterial3D_d2ted")
+mesh = SubResource("BoxMesh_d2ted")
+
+[node name="CardSet" parent="." unique_id=1955352414 instance=ExtResource("1_ii77m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8124199, 1.501, -0.5405637)
+
+[node name="YesButton" parent="." unique_id=436893480 instance=ExtResource("2_4wq7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.5, 1.2)
+emit_true = true
+
+[node name="NoButton" parent="." unique_id=1956186392 instance=ExtResource("2_4wq7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.5, 1.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1653842365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_4wq7v")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1183441077]
+transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.378164, 0, 4.855357, 1.2641009)
+
+[node name="SeeMask" parent="." unique_id=1753715017 instance=ExtResource("3_kg635")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064204514, 1.6723828, 1.2567589)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=36434291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.3132086)
+script = ExtResource("4_oxme1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1333282225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10147667, 0.90467834, -0.55963135)
+shape = SubResource("BoxShape3D_oxme1")
+
+[node name="PlayersPosition" type="Node3D" parent="." unique_id=484047269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6074418, 2.7946424)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

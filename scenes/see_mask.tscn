@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43f953f74ea913cc4b2225600749ec968c1174d43363d8e9e2598946db88b914
-size 815
+[gd_scene format=3 uid="uid://dpih8pl5iwtno"]
+
+[ext_resource type="Script" uid="uid://dw0a4tjqada06" path="res://scripts/see_mask.gd" id="1_vyyq7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_enjwe"]
+radius = 0.2
+
+[sub_resource type="PrismMesh" id="PrismMesh_vyyq7"]
+size = Vector3(0.275, 0.335, 0.12)
+
+[node name="SeeMask" type="Node3D" unique_id=436893480]
+script = ExtResource("1_vyyq7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=822951677]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1455031174]
+shape = SubResource("SphereShape3D_enjwe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368458320]
+mesh = SubResource("PrismMesh_vyyq7")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48c08272cb52bd75053c404b20fed1685f49798f1fc1c2db8459e4964319bdfe
-size 237
+[gd_scene format=3 uid="uid://15liivtra6np"]
+
+[ext_resource type="Script" uid="uid://bwmblnaen2ve1" path="res://scripts/card_set.gd" id="1_r3wsh"]
+
+[node name="CardSet" type="Node3D" unique_id=1955352414]
+script = ExtResource("1_r3wsh")
