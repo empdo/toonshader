@@ -10,6 +10,7 @@ const LERP_VAL = .15
 var focused = false
 
 var prevent_move = false
+var has_moved = false
 
 const camera_move_to_table_duration = 1 
 
@@ -94,6 +95,9 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	direction = direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 	if direction:
+		if not has_moved:
+			has_moved = true
+			_play_intro()
 		velocity.x = lerp(velocity.x, direction.x * SPEED, LERP_VAL)
 		velocity.z = lerp(velocity.z, direction.z * SPEED, LERP_VAL)
 		armature.rotation.y = lerp_angle(armature.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VAL)
@@ -104,3 +108,8 @@ func _physics_process(delta: float) -> void:
 	animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length() / SPEED)
 
 	move_and_slide()
+
+func _play_intro():
+	var intro = load("res://resources/a_intro.tres") as DialogResource
+	if intro:
+		DialogManager.play(intro)

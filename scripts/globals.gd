@@ -17,12 +17,6 @@ signal won_game
 signal lost_game
 signal lost_game_by_mask
 
-func _ready():
-	# TEST: Play intro dialog
-	var intro = load("res://resources/a_intro.tres") as DialogResource
-	if intro:
-		DialogManager.play(intro)
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		player_leaving_table_game.emit()
