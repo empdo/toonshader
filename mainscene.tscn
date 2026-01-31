@@ -9,10 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6hqjaxaoeeei" path="res://scenes/playerbarn.tscn" id="8_8bn17"]
 [ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="9_0lhry"]
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
-[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
-[ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
-[ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="12_j8b8d"]
-[ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
+[ext_resource type="Material" path="res://materials/table.tres" id="11_jtreq"]
+[ext_resource type="PackedScene" path="res://scenes/opponent.tscn" id="13_lc52x"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 
@@ -394,10 +393,6 @@ shadow_enabled = true
 [node name="Playerbarn" parent="SubViewportContainer/SubViewport" unique_id=390143538 instance=ExtResource("8_8bn17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.026522)
 
-[node name="GameTable" parent="SubViewportContainer/SubViewport" unique_id=134784361 instance=ExtResource("6_1ftms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19848152, 0, -2.281754)
-visible = false
-
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer" unique_id=1569141736]
 
 [node name="TextureRect" type="TextureRect" parent="SubViewportContainer/CanvasLayer" unique_id=2093459029]
@@ -423,89 +418,55 @@ surface_material_override/0 = SubResource("ShaderMaterial_uohem")
 [node name="chair" parent="." unique_id=1035268763 instance=ExtResource("10_4p23x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 2.1023982, -6.872338)
 
-[node name="PINNE" parent="chair" index="0" unique_id=2123686238]
+[node name="PINNE" parent="chair" index="0" unique_id=8778128]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_001" parent="chair" index="1" unique_id=378201108]
+[node name="PINNE_001" parent="chair" index="1" unique_id=605863367]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_002" parent="chair" index="2" unique_id=39253999]
+[node name="PINNE_002" parent="chair" index="2" unique_id=124700894]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_003" parent="chair" index="3" unique_id=86259791]
+[node name="PINNE_003" parent="chair" index="3" unique_id=610799738]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_004" parent="chair" index="4" unique_id=304981657]
+[node name="PINNE_004" parent="chair" index="4" unique_id=1794434013]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_005" parent="chair" index="5" unique_id=884428942]
+[node name="PINNE_005" parent="chair" index="5" unique_id=250571747]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_006" parent="chair" index="6" unique_id=1952141749]
+[node name="PINNE_006" parent="chair" index="6" unique_id=1013794722]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_007" parent="chair" index="7" unique_id=2085839717]
+[node name="PINNE_007" parent="chair" index="7" unique_id=1906047502]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_008" parent="chair" index="8" unique_id=1185768701]
+[node name="PINNE_008" parent="chair" index="8" unique_id=1144127127]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_009" parent="chair" index="9" unique_id=92979221]
+[node name="PINNE_009" parent="chair" index="9" unique_id=178606505]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_010" parent="chair" index="10" unique_id=827052140]
+[node name="PINNE_010" parent="chair" index="10" unique_id=1312177325]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_011" parent="chair" index="11" unique_id=1787685488]
+[node name="PINNE_011" parent="chair" index="11" unique_id=1436428041]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_012" parent="chair" index="12" unique_id=48067634]
+[node name="PINNE_012" parent="chair" index="12" unique_id=287222625]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="Plane" parent="chair" index="13" unique_id=1376201916]
+[node name="Plane" parent="chair" index="13" unique_id=135117326]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="Plane_001" parent="chair" index="14" unique_id=1919329070]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="table" parent="." unique_id=859412500 instance=ExtResource("12_j8b8d")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 1.9477087, -7.2970896)
-
-[node name="PINNE_013" parent="table" index="0" unique_id=1253600968]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="PINNE_014" parent="table" index="1" unique_id=2036491456]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="PINNE_015" parent="table" index="2" unique_id=1288206122]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="PINNE_016" parent="table" index="3" unique_id=1286610719]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_003" parent="table" index="4" unique_id=473176513]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_005" parent="table" index="5" unique_id=546871762]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_006" parent="table" index="6" unique_id=138057955]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_004" parent="table" index="7" unique_id=1474958064]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_007" parent="table" index="8" unique_id=889469436]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_008" parent="table" index="9" unique_id=46892033]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_009" parent="table" index="10" unique_id=13578820]
+[node name="Plane_001" parent="chair" index="14" unique_id=1412614504]
 surface_material_override/0 = ExtResource("11_jtreq")
 
 [node name="opponent" parent="." unique_id=724776570 instance=ExtResource("13_lc52x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45436668, -4.733102, -3.1197538)
 
+[node name="GameTable" parent="." unique_id=1138061513 instance=ExtResource("6_1ftms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.184629, -0.00024473667, -2.3707976)
+
 [editable path="chair"]
-[editable path="table"]

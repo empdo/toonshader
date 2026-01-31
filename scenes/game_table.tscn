@@ -4,44 +4,37 @@
 [ext_resource type="PackedScene" uid="uid://dnl8q4rsvjf3p" path="res://scenes/guess_button.tscn" id="2_4wq7v"]
 [ext_resource type="PackedScene" uid="uid://dpih8pl5iwtno" path="res://scenes/see_mask.tscn" id="3_kg635"]
 [ext_resource type="Script" uid="uid://05mfxr11sr75" path="res://scripts/table_entrance.gd" id="4_oxme1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2ted"]
-albedo_color = Color(0.32, 0.22442667, 0.115200005, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_d2ted"]
+[ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="5_0o1um"]
+[ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="6_6mw1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wq7v"]
-size = Vector3(3, 1.5097656, 3)
+size = Vector3(3.7475586, 1.5623779, 3.449707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxme1"]
 size = Vector3(7.198704, 1.2431335, 4.2088623)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0o1um"]
+size = Vector3(4.7925262, 1.328125, 5.062134)
+
 [node name="GameTable" type="StaticBody3D" unique_id=1138061513]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1041117298]
-transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 3, 0, 0.75, 0)
-material_override = SubResource("StandardMaterial3D_d2ted")
-mesh = SubResource("BoxMesh_d2ted")
-
 [node name="CardSet" parent="." unique_id=1955352414 instance=ExtResource("1_ii77m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8124199, 1.501, -0.5405637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.315486, 1.6330642, -1.1631068)
 
 [node name="YesButton" parent="." unique_id=436893480 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.5, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79646206, 1.8048742, 1.834481)
 emit_true = true
 
 [node name="NoButton" parent="." unique_id=1956186392 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.5, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2679523, 1.8733056, 1.8883655)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1653842365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3737793, 0.77630615, -0.96362305)
 shape = SubResource("BoxShape3D_4wq7v")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1183441077]
-transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.378164, 0, 4.855357, 1.2641009)
+disabled = true
 
 [node name="SeeMask" parent="." unique_id=1753715017 instance=ExtResource("3_kg635")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064204514, 1.6723828, 1.2567589)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25577348, 1.8266919, 1.9143968)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=36434291 node_paths=PackedStringArray("player_target", "camera_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.3132086)
@@ -54,9 +47,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10147667, 0.90467834, -0.55
 shape = SubResource("BoxShape3D_oxme1")
 
 [node name="PlayerTarget" type="Node3D" parent="." unique_id=484047269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028, 2.795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6737622, -0.028, 0.947418)
 
 [node name="CameraTarget" type="Node3D" parent="." unique_id=1735828515]
-transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.378164, 0, 4.855357, 1.2641009)
+transform = Transform3D(1, 0, 0, 0, 0.378164, 0.92573863, 0, -0.92573863, 0.378164, 0, 6.150818, 2.7826262)
+
+[node name="table" parent="." unique_id=1791531552 instance=ExtResource("5_0o1um")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.45453012, 1.9477087, -4.9584312)
+
+[node name="PINNE_013" parent="table" index="0" unique_id=889302748]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="PINNE_014" parent="table" index="1" unique_id=1027697788]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="PINNE_015" parent="table" index="2" unique_id=1338605756]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="PINNE_016" parent="table" index="3" unique_id=101436496]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_003" parent="table" index="4" unique_id=2056502148]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_005" parent="table" index="5" unique_id=1614102989]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_006" parent="table" index="6" unique_id=1540684647]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_004" parent="table" index="7" unique_id=1602784072]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_007" parent="table" index="8" unique_id=1095585054]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_008" parent="table" index="9" unique_id=1154945561]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="Plane_009" parent="table" index="10" unique_id=1799096854]
+surface_material_override/0 = ExtResource("6_6mw1m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=881055247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16020966, 0.8515625, -0.38897705)
+shape = SubResource("BoxShape3D_0o1um")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+
+[editable path="table"]

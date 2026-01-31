@@ -16,7 +16,9 @@ const camera_move_to_table_duration = 1
 var camera_local_when_entered: Transform3D
 
 @onready var cam = $SpringArmPivot/SpringArm3D/Camera3D
+var moving_camera: Camera3D
 @onready var cam_return = $Camreturn
+@onready var player_return: Transform3D
 
 func _ready():
 	Globals.player_entered_table_area.connect(on_player_entered_table_area)
@@ -25,28 +27,42 @@ func _ready():
 	
 	
 func on_player_leaving_table_game():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#global_transform = player_return
+	#$CollisionShape3D.disabled = false
+	#$SpringArmPivot/SpringArm3D.set_process(true)
+	#$SpringArmPivot/SpringArm3D.set_physics_process(true)
 	cam.reparent($SpringArmPivot/SpringArm3D)
 	prevent_move = false
 	cam.global_position = cam_return.global_position
 	cam.global_rotation = cam_return.global_rotation
+	cam.current = true
+	moving_camera.current = false
+	moving_camera.queue_free()
 
 	
 func on_player_entered_table_area(player_target: Node3D, camera_target: Node3D):
-	# freeze
 	prevent_move = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
-	# move player
-	position = player_target.position
-	rotation = player_target.rotation
-	
-	# move camera
+	moving_camera = cam.duplicate()
+	add_child(moving_camera)
+	moving_camera.set_as_top_level(true)
+	moving_camera.global_transform = cam.global_transform
+	moving_camera.current = true
+
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(cam, "global_position", camera_target.global_position, camera_move_to_table_duration)
-	tween.tween_property(cam, "global_rotation", camera_target.global_rotation, camera_move_to_table_duration)
-	cam.reparent(camera_target)
+
+	tween.tween_property(moving_camera, "global_position", camera_target.global_position, camera_move_to_table_duration)
+	tween.tween_property(moving_camera, "global_basis", camera_target.global_basis, camera_move_to_table_duration)
+
+	#player_return = global_transform
+	position = player_target.position
+	rotation = player_target.rotation
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if prevent_move:
