@@ -20,9 +20,10 @@ func _on_area_input_event(camera: Node, event: InputEvent, event_position: Vecto
 			if Globals.number_of_cards_showed < Globals.MAX_SHOWABLE_CARDS:
 				hidden = false
 				show_card()
-		else:
-			hidden = true
-			hide_card()
+				var time = $AnimationPlayer.get_animation("show_card").length
+				await get_tree().create_timer(time).timeout
+				hidden = true
+				hide_card()
 
 func show_card():
 	Globals.number_of_cards_showed += 1
@@ -30,7 +31,7 @@ func show_card():
 
 func hide_card():
 	Globals.number_of_cards_showed -= 1
-	$AnimationPlayer.play("show_card", -1.0, -2.0, true)
+	$AnimationPlayer.play("show_card", -1.0, -5.0, true)
 
 func _on_area_mouse_exited() -> void:
 	pass
