@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://r73ee2knveiu" path="res://materials/opponentskin.tres" id="2_dymdi"]
 [ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="3_d171x"]
 [ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="4_xmp2k"]
-[ext_resource type="Shader" uid="uid://dltvgimu4x47p" path="res://shaders/test2.gdshader" id="5_ays1t"]
+[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="5_ays1t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q22jk"]
 render_priority = 0

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://r73ee2knveiu"]
 
-[ext_resource type="Shader" uid="uid://dltvgimu4x47p" path="res://shaders/test2.gdshader" id="1_esheu"]
+[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="1_esheu"]
 [ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="2_rncmr"]
 
 [resource]
@@ -21,6 +21,12 @@ shader_parameter/band1 = 0.6
 shader_parameter/band2 = 0.4
 shader_parameter/band3 = 0.2
 shader_parameter/band_softness = 0.05
+shader_parameter/enable_outlines = true
 shader_parameter/line_thickness = 2.0
-shader_parameter/edge_sensitivity = 0.05
+shader_parameter/normal_edge_sensitivity = 0.8
+shader_parameter/depth_edge_sensitivity = 15000.0
 shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/use_sobel_8_direction = true
+shader_parameter/enable_rim_outline = true
+shader_parameter/rim_threshold = 0.6
+shader_parameter/rim_smoothness = 0.02

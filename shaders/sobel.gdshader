@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, depth_draw_always;
+render_mode unshaded;
 
 // --- HATCH PARAMETRAR ---
 uniform vec4 base_color : source_color = vec4(1.0);
@@ -22,14 +22,6 @@ uniform float band1 = 0.6;
 uniform float band2 = 0.4;
 uniform float band3 = 0.2;
 uniform float band_softness = 0.05;
-
-// --- OUTLINE PARAMETRAR ---
-uniform float line_thickness : hint_range(0.0, 10.0) = 2.0;
-uniform float edge_sensitivity : hint_range(0.01, 1.0) = 0.2;
-uniform vec4 line_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
-
-uniform sampler2D depth_tex : hint_depth_texture;
-uniform sampler2D normal_tex : hint_normal_roughness_texture, filter_nearest;
 
 varying vec3 v_world_pos;
 varying vec3 v_world_nrm;
@@ -61,57 +53,24 @@ void vertex() {
 }
 
 void fragment() {
-    vec2 uv = SCREEN_UV;
-    vec2 pixel_size = 1.0 / VIEWPORT_SIZE;
-    vec2 offset = line_thickness * pixel_size;
+    vec3 normal = normalize(v_world_nrm);
 
-    // --- 1. SAMPLE DEPTH & NORMALS ---
-    // Central depth of the current object fragment
-    float depth_center = texture(depth_tex, uv).r;
-    
-    // Neighbor samples
-    vec3 n_u = texture(normal_tex, uv + vec2(0.0, offset.y)).rgb * 2.0 - 1.0;
-    vec3 n_d = texture(normal_tex, uv - vec2(0.0, offset.y)).rgb * 2.0 - 1.0;
-    vec3 n_l = texture(normal_tex, uv - vec2(offset.x, 0.0)).rgb * 2.0 - 1.0;
-    vec3 n_r = texture(normal_tex, uv + vec2(offset.x, 0.0)).rgb * 2.0 - 1.0;
-    
-    float d_u = texture(depth_tex, uv + vec2(0.0, offset.y)).r;
-    float d_d = texture(depth_tex, uv - vec2(0.0, offset.y)).r;
-    float d_l = texture(depth_tex, uv - vec2(offset.x, 0.0)).r;
-    float d_r = texture(depth_tex, uv + vec2(offset.x, 0.0)).r;
-
-    // --- 2. CALCULATE EDGES ---
-    float n_diff = length(n_u - n_d) + length(n_l - n_r);
-    float d_diff = (abs(d_u - d_d) + abs(d_l - d_r)) * 1000.0;
-    float raw_edge = step(edge_sensitivity, n_diff + d_diff);
-
-    // --- 3. THE FIX: DEPTH MASKING ---
-    // Compare the screen depth at the pixel to the depth of this specific object.
-    // FRAGCOORD.z is the depth of the current object being drawn.
-    // If the screen depth is significantly smaller than FRAGCOORD.z, 
-    // it means there is an object IN FRONT of this one, so we kill the outline.
-    float depth_mask = 1.0;
-    if (depth_center < FRAGCOORD.z - 0.0001) {
-        depth_mask = 0.0;
-    }
-    float edge_mask = raw_edge * depth_mask;
-
-    // --- 4. LIGHTING & HATCHING (Same as before) ---
+    // --- LIGHTING & HATCHING ---
     vec3 L = normalize(light_position_ws - v_world_pos);
-    float NdotL = dot(normalize(v_world_nrm), L);
+    float NdotL = dot(normal, L);
     float light_level = max(NdotL, 0.0);
 
     float g1 = smoothstep(band1 + band_softness, band1 - band_softness, light_level);
     float g2 = smoothstep(band2 + band_softness, band2 - band_softness, light_level);
     float g3 = smoothstep(band3 + band_softness, band3 - band_softness, light_level);
 
-    float h1 = hatch_triplanar(v_world_pos, v_world_nrm, radians(45.0));
-    float h2 = hatch_triplanar(v_world_pos, v_world_nrm, radians(-45.0));
-    float h3 = hatch_triplanar(v_world_pos, v_world_nrm, radians(0.0));
+    float h1 = hatch_triplanar(v_world_pos, normal, radians(45.0));
+    float h2 = hatch_triplanar(v_world_pos, normal, radians(-45.0));
+    float h3 = hatch_triplanar(v_world_pos, normal, radians(0.0));
 
     float combined_hatch = max(max(h1 * g1, h2 * g2), h3 * g3);
     
-    // Tona ut på avstånd (beräknas per-pixel för korrekt resultat på stora ytor)
+    // Tona ut på avstånd
     float distance_fade = 1.0;
     float fog_factor = 0.0;
     if (use_distance_fade) {
@@ -129,6 +88,5 @@ void fragment() {
     // Blend towards dark fog color at distance
     final_color = mix(final_color, distance_fade_color, fog_factor);
 
-    // --- 5. FINAL MIX ---
-    ALBEDO = mix(final_color, line_color.rgb, edge_mask);
+    ALBEDO = final_color;
 }
