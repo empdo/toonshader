@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hsq4yhuosu4g" path="res://scenes/game_table.tscn" id="6_1ftms"]
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="6_8bn17"]
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
-[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="9_0lhry"]
+[ext_resource type="Shader" uid="uid://dtvjtvmtglsov" path="res://materials/pupil.tres" id="8_4p23x"]
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
 [ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
@@ -34,7 +34,7 @@ viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uohem"]
 render_priority = 0
-shader = ExtResource("9_0lhry")
+shader = ExtResource("8_4p23x")
 shader_parameter/base_color = Color(1, 1, 1, 1)
 shader_parameter/use_albedo_tex = false
 shader_parameter/ink_color = Color(0, 0, 0, 1)
