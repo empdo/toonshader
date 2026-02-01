@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/crying_forest_loop.ogg-5fcca9c2f3241a86f6cf83
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
