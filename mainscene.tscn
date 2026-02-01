@@ -398,7 +398,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=503254309 instance=ExtResource("4_4p23x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.513605, -0.34921706, -6.294497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.972168, -0.34921706, -6.294497)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer" unique_id=1569141736]
 
