@@ -9,7 +9,7 @@ var first_card_clicked = false
 signal player_showed_chosen_cards
 
 var time_used_seeingmask = 0
-const max_time_used_seeingmask_until_collapse = 6
+const max_time_used_seeingmask_until_collapse = 4
 
 func reset():
 	time_used_seeingmask = 0
