@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://15liivtra6np"]
 
 [ext_resource type="Script" uid="uid://bwmblnaen2ve1" path="res://scripts/card_set.gd" id="1_r3wsh"]
+[ext_resource type="Resource" uid="uid://d3pkwfbcjulgq" path="res://card_images.tres" id="2_r3wsh"]
 
 [node name="CardSet" type="Node3D" unique_id=1955352414]
 script = ExtResource("1_r3wsh")
+card_images = ExtResource("2_r3wsh")
