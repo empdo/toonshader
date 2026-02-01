@@ -34,9 +34,7 @@ func _on_area_input_event(camera: Node, event: InputEvent, event_position: Vecto
 				# Check if this is the first card click
 				if not Globals.first_card_clicked:
 					Globals.first_card_clicked = true
-					var first_card_dialog = load("res://resources/e_first_card_flipped.tres") as DialogResource
-					if first_card_dialog:
-						DialogManager.play(first_card_dialog)
+					Globals.first_card_clicked_dialog_requested.emit()
 				
 				hidden = false
 				show_card()

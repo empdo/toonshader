@@ -29,6 +29,11 @@ signal won_game
 signal lost_game
 signal lost_game_by_mask
 
+# Dialog triggers
+signal approach_table_dialog_requested
+signal sit_down_dialog_requested
+signal first_card_clicked_dialog_requested
+
 
 # Dialog system
 const DEFAULT_CHARS_PER_SECOND = 30.0

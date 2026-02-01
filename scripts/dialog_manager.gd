@@ -10,6 +10,13 @@ var queue: Array[DialogResource] = []
 var current: DialogResource = null
 var _ui_ready: bool = false
 
+func _ready():
+	# Connect to dialog trigger signals
+	Globals.approach_table_dialog_requested.connect(_on_approach_table_dialog)
+	Globals.sit_down_dialog_requested.connect(_on_sit_down_dialog)
+	Globals.first_card_clicked_dialog_requested.connect(_on_first_card_clicked_dialog)
+	Globals.won_game.connect(_on_won_game_dialog)
+
 func play(dialog: DialogResource) -> void:
 	if dialog.prioritized:
 		queue.clear()
@@ -46,3 +53,24 @@ func ui_ready() -> void:
 	_ui_ready = true
 	if current:
 		dialog_requested.emit(current)
+
+# Dialog trigger handlers
+func _on_approach_table_dialog():
+	var dialog = load("res://resources/b_approach_table.tres") as DialogResource
+	if dialog:
+		play(dialog)
+
+func _on_sit_down_dialog():
+	var dialog = load("res://resources/c_sit_down.tres") as DialogResource
+	if dialog:
+		play(dialog)
+
+func _on_first_card_clicked_dialog():
+	var dialog = load("res://resources/e_first_card_flipped.tres") as DialogResource
+	if dialog:
+		play(dialog)
+
+func _on_won_game_dialog():
+	var dialog = load("res://resources/g_you_win.tres") as DialogResource
+	if dialog:
+		play(dialog)

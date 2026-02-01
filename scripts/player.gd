@@ -87,9 +87,7 @@ func on_player_entered_table_area_with_targets(player_target: Node3D, camera_tar
 	await tween.finished
 	
 	# Trigger sit down dialog after camera movement completes
-	var sit_down_dialog = load("res://resources/c_sit_down.tres") as DialogResource
-	if sit_down_dialog:
-		DialogManager.play(sit_down_dialog)
+	Globals.sit_down_dialog_requested.emit()
 
 	#player_return = global_transform
 	position = player_target.position
