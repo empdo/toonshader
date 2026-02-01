@@ -6,6 +6,8 @@ const nr_cards = Vector2(4, 3)
 const cards_spacing = Vector3(1, 0, 1.2)
 const cards_random_spacing = Vector3(0.06, 0, 0.06)
 
+@export var card_images: CardImages
+
 var cards: Array[Node3D] = []
 
 @export var refresh: bool = false:
@@ -32,9 +34,7 @@ func clear_cards():
 
 func add_new_cards():
 	var id_increment = 0
-	var ids = []
-	for i in range(nr_cards.x * nr_cards.y):
-		ids.append(i)
+	var ids = card_images.get_set_of_ids(nr_cards.x * nr_cards.y)
 	ids.shuffle()
 	var pos = Vector3.ZERO
 	for y in range(nr_cards.y):
