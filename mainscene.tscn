@@ -475,7 +475,7 @@ volume_db = -10.0
 stream = ExtResource("18_music_loop")
 volume_db = -10.0
 
-[node name="MusicController" type="Node" parent="."]
+[node name="MusicController" type="Node" parent="." unique_id=547860755]
 script = ExtResource("19_music_ctrl")
 
 [connection signal="body_entered" from="approach_table" to="approach_table" method="_on_body_entered"]
