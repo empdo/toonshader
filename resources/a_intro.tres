@@ -10,6 +10,6 @@
 
 [resource]
 script = ExtResource("1_vra8l")
-lines = Array[String](["Guillaume: Enfin! An end to my solitude.", "@2", "Ivy: I feared we’d wander these woods forever. ", "@1", "Arthur: Woe be me, who cannot wander among the beauty of the woods for more than mere days – lest I grow bored.", "@1", "Ivy: I could leave you here, brother, to be with your precious woods.", "@1", "Arthur: An empty threat, sister. ", "@0.5", "Ivy: Sigh."])
+lines = Array[String](["Guillaume: Enfin! An end to my solitude.", "@0.5", "Ivy: I feared we’d wander these woods forever. ", "", "Arthur: Woe be me, who cannot wander among the beauty of the woods for more than mere days – lest I grow bored.", "", "Ivy: I could leave you here, brother, to be with your precious woods.", "", "Arthur: An empty threat, sister. ", "", "Ivy: Sigh."])
 line_audio = Array[AudioStream]([ExtResource("1_m6bk3"), null, ExtResource("2_pmn1o"), null, ExtResource("3_vqrq4"), null, ExtResource("2_h2ty5"), null, ExtResource("5_pxda6"), null, ExtResource("3_kjcxa")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"

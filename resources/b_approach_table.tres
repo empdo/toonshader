@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource("1_hwwm8")
-lines = Array[String](["Guillaume: Ah, you smell of salt and tide, of il labirinto.", "@2", "Guillaume: What desecration is this? Two Masks share a faceless…", "@1", "Ivy: Not by choice, I assure you.", "@1", "Guillaume: Sigh. Come. Sit. Let us play the oldest game."])
+lines = Array[String](["Guillaume: Ah, you smell of salt and tide, of il labirinto.", "@0.5", "Guillaume: What desecration is this? Two Masks share a faceless…", "", "Ivy: Not by choice, I assure you.", "", "Guillaume: Sigh. Come. Sit. Let us play the oldest game."])
 line_audio = Array[AudioStream]([ExtResource("1_6rsdk"), null, ExtResource("2_5f7kj"), null, ExtResource("3_5f7kj"), null, ExtResource("3_5v0bt")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"

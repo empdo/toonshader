@@ -9,6 +9,6 @@
 
 [resource]
 script = ExtResource("1_h6nur")
-lines = Array[String](["Arthur: You do not know the game as I do, sister. Permit me control for but a moment…", "@3", "Guillaume: Tell me, why ascend the orders? Why leave Carceri d'invenzione?", "@1", "Ivy: Illness is my reason. The madness of my brother, my means.", "@1", "Arthur: The search for our father is madness then? How frigid. But expected, for one who so casually sacrificed our youngest kin.", "@1", "Guillaume: We share a common cause then, mademoiselle."])
+lines = Array[String](["Arthur: You do not know the game as I do, sister. Permit me control for but a moment…", "@3", "Guillaume: Tell me, why ascend the orders? Why leave Carceri d'invenzione?", "", "Ivy: Illness is my reason. The madness of my brother, my means.", "", "Arthur: The search for our father is madness then? How frigid. But expected, for one who so casually sacrificed our youngest kin.", "@0.4", "Guillaume: We share a common cause then, mademoiselle."])
 line_audio = Array[AudioStream]([ExtResource("1_acmgk"), null, ExtResource("1_qoii1"), null, ExtResource("2_acmgk"), null, ExtResource("4_d8dsb"), null, ExtResource("2_pvqo3")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"
