@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardImages" format=3 uid="uid://d3pkwfbcjulgq"]
 
-[ext_resource type="Script" path="res://card_data_res.gd" id="1_7oycl"]
-[ext_resource type="Script" path="res://card_images_res.gd" id="2_50dum"]
+[ext_resource type="Script" uid="uid://cpsct6vp34afk" path="res://card_data_res.gd" id="1_7oycl"]
+[ext_resource type="Script" uid="uid://phqabf70xexi" path="res://card_images_res.gd" id="2_50dum"]
 [ext_resource type="Texture2D" uid="uid://qbv20k0xxt1f" path="res://cards/the_fool.png" id="2_io4xj"]
 [ext_resource type="Texture2D" uid="uid://dasv47kj2lw3v" path="res://cards/wood.png" id="3_sd7t6"]
 [ext_resource type="Texture2D" uid="uid://vc8bm2cxe32x" path="res://cards/carce.png" id="4_a44gu"]

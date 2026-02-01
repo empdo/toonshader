@@ -49,6 +49,10 @@ shader_parameter/band2 = 0.4
 shader_parameter/band3 = 0.2
 shader_parameter/band_softness = 0.05
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4ofsq"]
+height = 100.0
+radius = 16.0
+
 [node name="Node3D" type="Node3D" unique_id=624565864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42942, -0.349218, -0.0437946)
 
@@ -467,5 +471,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45436668, -4.733102, 
 
 [node name="GameTable" parent="." unique_id=1138061513 instance=ExtResource("6_1ftms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1981097, -0.00024485588, -2.378471)
+
+[node name="approach_table" type="Area3D" parent="." unique_id=1624841721]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="approach_table" unique_id=261494628]
+shape = SubResource("CylinderShape3D_4ofsq")
 
 [editable path="chair"]
