@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dynlh44mhwika"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://qbh076h807rg"]
 
 [ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="1_pvjjy"]
 [ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="2_2esgo"]
@@ -10,7 +10,7 @@ shader_parameter/base_color = Color(0.22967562, 0.15333316, 0.014661661, 1)
 shader_parameter/use_albedo_tex = false
 shader_parameter/hatch_tex = ExtResource("2_2esgo")
 shader_parameter/ink_color = Color(0, 0, 0, 1)
-shader_parameter/hatch_world_scale = 1.0
+shader_parameter/hatch_world_scale = 0.250000011875
 shader_parameter/hatch_strength = 1.0
 shader_parameter/hatch_fade_start = 10.0
 shader_parameter/hatch_fade_end = 20.0

@@ -3,16 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ojtkdafy87y6" path="res://glb/barn.glb" id="1_agfs1"]
 [ext_resource type="Script" uid="uid://c52xmm5o7pl4f" path="res://scripts/player.gd" id="1_rkhd4"]
 [ext_resource type="Material" uid="uid://dy2vypy2b5eel" path="res://materials/playershirt.tres" id="3_8yvht"]
-[ext_resource type="Script" uid="uid://cruapmqxlu657" path="res://scripts/player_mask_switch.gd" id="3_ih8y6"]
+[ext_resource type="Script" path="res://scripts/player_mask_switch.gd" id="3_ih8y6"]
 [ext_resource type="Material" uid="uid://dl1xx5m4j2rav" path="res://materials/playerskin.tres" id="4_lagn4"]
-[ext_resource type="Material" uid="uid://ddddnd28dja5h" path="res://materials/player_second_mask.tres" id="5_x8k1v"]
+[ext_resource type="Material" path="res://materials/player_second_mask.tres" id="5_x8k1v"]
 [ext_resource type="Material" uid="uid://twmv006rxqct" path="res://materials/öga.tres" id="7_50cep"]
 [ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="7_rbud2"]
 [ext_resource type="Material" uid="uid://dwew3iaf5stvl" path="res://materials/playerhelmet.tres" id="8_vovfy"]
 [ext_resource type="Material" uid="uid://djvtkoveju5m1" path="res://materials/helmeteyes.tres" id="9_u0pwc"]
-[ext_resource type="Shader" uid="uid://dtvjtvmtglsov" path="res://materials/pupil.tres" id="9_x8k1v"]
-[ext_resource type="Material" uid="uid://3g4llnnw7gtu" path="res://materials/player_hair.tres" id="10_cicko"]
-[ext_resource type="Material" uid="uid://dynlh44mhwika" path="res://materials/player_second_mask_band.tres" id="11_bj47h"]
+[ext_resource type="Shader" path="res://materials/pupil.tres" id="9_x8k1v"]
+[ext_resource type="Material" path="res://materials/player_hair.tres" id="10_cicko"]
+[ext_resource type="Material" path="res://materials/player_second_mask_band.tres" id="11_bj47h"]
 [ext_resource type="Material" uid="uid://ys7xwadv0urt" path="res://materials/shoes2.tres" id="12_4lh0q"]
 [ext_resource type="Material" uid="uid://11y8fsbn01os" path="res://materials/shoes1.tres" id="13_7qyni"]
 [ext_resource type="Material" uid="uid://773xgy0lfkju" path="res://materials/playershorts.tres" id="14_sougf"]
@@ -25,7 +25,7 @@ shader_parameter/base_color = Color(0.46047062, 0, 0.13726199, 1)
 shader_parameter/use_albedo_tex = false
 shader_parameter/hatch_tex = ExtResource("7_rbud2")
 shader_parameter/ink_color = Color(0, 0, 0, 1)
-shader_parameter/hatch_world_scale = 0.29
+shader_parameter/hatch_world_scale = 0.250000011875
 shader_parameter/hatch_strength = 1.0
 shader_parameter/hatch_fade_start = 10.0
 shader_parameter/hatch_fade_end = 20.0
@@ -69,9 +69,9 @@ script = ExtResource("1_rkhd4")
 
 [node name="barn" parent="." unique_id=1923717643 instance=ExtResource("1_agfs1")]
 
-[node name="Skeleton3D" parent="barn/Armature" parent_id_path=PackedInt32Array(1923717643, 1463520303) index="0" unique_id=796318008]
-bones/0/position = Vector3(-0.024007713, 0.9895682, -0.07118874)
-bones/0/rotation = Quaternion(0.040344227, -0.004425487, 0.00017869026, 0.999176)
+[node name="Skeleton3D" parent="barn/Armature" parent_id_path=PackedInt32Array(1923717643, 956184305) index="0" unique_id=618566527]
+bones/0/position = Vector3(-0.024007713, 0.9893895, -0.07118874)
+bones/0/rotation = Quaternion(0.04034265, -0.00986443, 0.0003983013, 0.9991372)
 bones/1/rotation = Quaternion(0.65300035, -0.48912036, -0.49945647, -0.2913676)
 bones/2/rotation = Quaternion(-0.28620756, 0.4037971, -0.2982837, 0.8161249)
 bones/3/rotation = Quaternion(-0.014484717, 0.13422918, -0.11520044, 0.98412484)
@@ -88,12 +88,12 @@ bones/11/rotation = Quaternion(0.18161409, -0.09461621, -0.24163485, 0.9485129)
 bones/12/rotation = Quaternion(-0.36615118, -0.42058772, 0.16130586, 0.81426024)
 bones/13/position = Vector3(0.008174622, 0.987016, -0.008415567)
 bones/13/rotation = Quaternion(-0.028918575, 0.013429294, 0.018754955, 0.9993156)
-bones/14/rotation = Quaternion(-0.01275947, -0.01256899, -0.01967665, 0.999646)
-bones/15/rotation = Quaternion(0.9989238, -0.0024484866, -0.005194867, 0.046025652)
+bones/14/rotation = Quaternion(-0.013489874, -0.012555084, -0.019677993, 0.9996366)
+bones/15/rotation = Quaternion(0.99928707, -0.004618419, -0.010285567, 0.036032032)
 bones/15/scale = Vector3(1.0000002, 1.0000002, 1.0000298)
-bones/16/rotation = Quaternion(-0.0029919462, 0.0029092566, -0.00064653746, 0.99999106)
+bones/16/rotation = Quaternion(-0.022039521, 0.0029085295, -0.004762408, 0.99974155)
 bones/16/scale = Vector3(1, 0.9999999, 1.0000002)
-bones/17/rotation = Quaternion(0.6666016, -0.002553568, 0.00015074183, 0.74540985)
+bones/17/rotation = Quaternion(0.67321545, -0.0014153058, 0.0020481213, 0.7394421)
 bones/17/scale = Vector3(1, 1.0000101, 0.9999995)
 bones/18/rotation = Quaternion(0.7208205, 0.46422285, 0.4684544, -0.21322668)
 bones/19/rotation = Quaternion(-0.22060405, -0.28517705, 0.33377966, 0.87097585)
@@ -109,83 +109,83 @@ bones/26/rotation = Quaternion(0.038354877, -0.03788118, 0.16504301, 0.984812)
 bones/27/rotation = Quaternion(-0.06395365, 0.04815308, 0.26560503, 0.9607524)
 bones/28/rotation = Quaternion(0.14214098, 0.035213295, 0.28065386, 0.9485723)
 bones/29/rotation = Quaternion(-0.372771, 0.5039424, -0.026217286, 0.7787146)
-bones/30/rotation = Quaternion(0.99889064, 0.0011762944, 0.004120866, 0.046895817)
+bones/30/rotation = Quaternion(0.99947155, 0.0004654678, -0.0010581929, 0.032485824)
 bones/30/scale = Vector3(1.0000001, 0.99999994, 1.0000434)
-bones/31/rotation = Quaternion(-0.0019071363, 0.0070509636, -0.00014984247, 0.9999734)
+bones/31/rotation = Quaternion(-0.025245307, 0.0070487126, -0.0019834104, 0.9996545)
 bones/31/scale = Vector3(0.9999999, 0.9999998, 0.9999995)
-bones/32/rotation = Quaternion(0.66684675, -0.010953251, 0.011216793, 0.74503005)
+bones/32/rotation = Quaternion(0.67291313, -0.010568209, 0.012330519, 0.73954326)
 bones/32/scale = Vector3(1.0000002, 1.0000145, 0.9999993)
-bones/33/rotation = Quaternion(0.63118976, -0.49098766, -0.5205025, -0.29934555)
-bones/34/rotation = Quaternion(0.6332069, 0.48610488, 0.51985663, -0.30413875)
+bones/33/rotation = Quaternion(0.6295286, -0.49493313, -0.5210073, -0.295443)
+bones/34/rotation = Quaternion(0.63055205, 0.49251053, 0.5206991, -0.29784247)
 bones/36/position = Vector3(-0.1694788, 0.09058595, 0.012711535)
 bones/37/position = Vector3(0.13642444, 0.6133966, -0.53483474)
 script = ExtResource("3_ih8y6")
 
-[node name="arms" parent="barn/Armature/Skeleton3D" index="0" unique_id=495094537]
+[node name="arms" parent="barn/Armature/Skeleton3D" index="0" unique_id=222053119]
 surface_material_override/0 = ExtResource("3_8yvht")
 
-[node name="hair" parent="barn/Armature/Skeleton3D" index="1" unique_id=621112614]
+[node name="hair" parent="barn/Armature/Skeleton3D" index="1" unique_id=1481077160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024507761, 0)
 surface_material_override/0 = ExtResource("10_cicko")
 
-[node name="hand" parent="barn/Armature/Skeleton3D" index="2" unique_id=966073158]
+[node name="hand" parent="barn/Armature/Skeleton3D" index="2" unique_id=443392276]
 surface_material_override/0 = ExtResource("4_lagn4")
 
-[node name="head" parent="barn/Armature/Skeleton3D" index="3" unique_id=1347130600]
+[node name="head" parent="barn/Armature/Skeleton3D" index="3" unique_id=1481156279]
 surface_material_override/0 = ExtResource("4_lagn4")
 
-[node name="headband" parent="barn/Armature/Skeleton3D" index="4" unique_id=113515463]
+[node name="headband" parent="barn/Armature/Skeleton3D" index="4" unique_id=266664010]
 surface_material_override/0 = ExtResource("11_bj47h")
 
-[node name="legs" parent="barn/Armature/Skeleton3D" index="5" unique_id=794510035]
+[node name="legs" parent="barn/Armature/Skeleton3D" index="5" unique_id=1781094834]
 surface_material_override/0 = ExtResource("4_lagn4")
 
-[node name="mask1" parent="barn/Armature/Skeleton3D" index="6" unique_id=1463068166]
+[node name="mask1" parent="barn/Armature/Skeleton3D" index="6" unique_id=977383580]
 visible = false
 surface_material_override/0 = ExtResource("5_x8k1v")
 
-[node name="mask1eye" parent="barn/Armature/Skeleton3D" index="7" unique_id=1239019833]
+[node name="mask1eye" parent="barn/Armature/Skeleton3D" index="7" unique_id=724011235]
 visible = false
 surface_material_override/0 = ExtResource("7_50cep")
 
-[node name="mask1pupil" parent="barn/Armature/Skeleton3D" index="8" unique_id=1690094664]
+[node name="mask1pupil" parent="barn/Armature/Skeleton3D" index="8" unique_id=1804917605]
 visible = false
 surface_material_override/0 = SubResource("ShaderMaterial_ih8y6")
 
-[node name="mask2" parent="barn/Armature/Skeleton3D" index="9" unique_id=1582499037]
+[node name="mask2" parent="barn/Armature/Skeleton3D" index="9" unique_id=1015942411]
 surface_material_override/0 = ExtResource("8_vovfy")
 
-[node name="mouth" parent="barn/Armature/Skeleton3D" index="10" unique_id=382507640]
+[node name="mouth" parent="barn/Armature/Skeleton3D" index="10" unique_id=2012756278]
 surface_material_override/0 = ExtResource("9_u0pwc")
 
-[node name="nech" parent="barn/Armature/Skeleton3D" index="11" unique_id=605492059]
+[node name="nech" parent="barn/Armature/Skeleton3D" index="11" unique_id=1875101853]
 surface_material_override/0 = ExtResource("4_lagn4")
 
-[node name="shoes" parent="barn/Armature/Skeleton3D" index="12" unique_id=451672171]
+[node name="shoes" parent="barn/Armature/Skeleton3D" index="12" unique_id=577654951]
 surface_material_override/0 = ExtResource("12_4lh0q")
 
-[node name="shoes2" parent="barn/Armature/Skeleton3D" index="13" unique_id=383517682]
+[node name="shoes2" parent="barn/Armature/Skeleton3D" index="13" unique_id=395366495]
 surface_material_override/0 = ExtResource("13_7qyni")
 
-[node name="shoes3" parent="barn/Armature/Skeleton3D" index="14" unique_id=319552084]
+[node name="shoes3" parent="barn/Armature/Skeleton3D" index="14" unique_id=423748353]
 surface_material_override/0 = ExtResource("13_7qyni")
 
-[node name="shoes4" parent="barn/Armature/Skeleton3D" index="15" unique_id=3766242]
+[node name="shoes4" parent="barn/Armature/Skeleton3D" index="15" unique_id=469555011]
 surface_material_override/0 = ExtResource("13_7qyni")
 
-[node name="shoes5" parent="barn/Armature/Skeleton3D" index="16" unique_id=1920305364]
+[node name="shoes5" parent="barn/Armature/Skeleton3D" index="16" unique_id=1814590849]
 surface_material_override/0 = ExtResource("13_7qyni")
 
-[node name="shorrts" parent="barn/Armature/Skeleton3D" index="17" unique_id=693298748]
+[node name="shorrts" parent="barn/Armature/Skeleton3D" index="17" unique_id=645121523]
 surface_material_override/0 = ExtResource("14_sougf")
 
-[node name="skulleyes" parent="barn/Armature/Skeleton3D" index="18" unique_id=237716952]
+[node name="skulleyes" parent="barn/Armature/Skeleton3D" index="18" unique_id=1534094681]
 surface_material_override/0 = ExtResource("9_u0pwc")
 
-[node name="skullnose" parent="barn/Armature/Skeleton3D" index="19" unique_id=1538772631]
+[node name="skullnose" parent="barn/Armature/Skeleton3D" index="19" unique_id=331528604]
 surface_material_override/0 = ExtResource("9_u0pwc")
 
-[node name="wings" parent="barn/Armature/Skeleton3D" index="20" unique_id=1308534924]
+[node name="wings" parent="barn/Armature/Skeleton3D" index="20" unique_id=1415438588]
 surface_material_override/0 = ExtResource("15_lagn4")
 
 [node name="AnimationTree" type="AnimationTree" parent="barn" unique_id=120740065]
