@@ -1,7 +1,9 @@
 extends Node
 
 const MAX_SHOWABLE_CARDS = 1
-var number_of_cards_showed = 0
+var cards_currently_showing: Dictionary = {}
+var let_player_show_cards = false
+signal player_showed_chosen_cards
 
 var time_used_seeingmask = 0
 const max_time_used_seeingmask_until_collapse = 4
@@ -34,6 +36,10 @@ signal dialog_finished(dialog: DialogResource)
 func _ready():
 	# Find DialogUI in the scene tree (deferred to ensure scene is loaded)
 	call_deferred("_connect_dialog_ui")
+
+func _process(delta: float) -> void:
+	if time_used_seeingmask >= max_time_used_seeingmask_until_collapse:
+		lost_game_by_mask.emit()
 
 func _connect_dialog_ui():
 	dialog_ui = get_tree().get_first_node_in_group("dialog_ui")
@@ -79,10 +85,3 @@ func _on_dialog_finished(dialog: DialogResource):
 	dialog_finished.emit(dialog)
 	current_dialog = null
 	_process_dialog_queue()
-	
-
-func _process(delta: float) -> void:
-	if time_used_seeingmask >= max_time_used_seeingmask_until_collapse:
-		lost_game_by_mask.emit()
-	if Input.is_action_just_pressed("ui_accept"):
-		player_leaving_table_game.emit()
