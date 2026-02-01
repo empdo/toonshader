@@ -31,20 +31,50 @@ func on_guess_button_clicked(guess: bool):
 
 func on_player_entered_table_area():
 	reset()
+	
+	await get_tree().create_timer(3).timeout
+	
+	# show all cards
+	for c in cards:
+		c.show_card_then_hide_it()
+	
+	await get_tree().create_timer(9).timeout
+	
 	while !game_over:
 		await do_round()
 
 ##########################
 # the important thing
 func do_round():
-	await get_tree().create_timer(3).timeout
-	var chosen_card = opponent_chooses_and_points()
-	await Globals.guess_button_clicked
+	##### LET PLAYER CLICK CARD(s) TO PEEK AT
+	Globals.let_player_show_cards = true
+	await Globals.player_showed_chosen_cards
 	
+	# delay to let player actually see the cards
+	await get_tree().create_timer(3).timeout
+	Globals.let_player_show_cards = false
+	
+	# hide them again
+	for c in Globals.cards_currently_showing:
+		c.hide_card()
+	await get_tree().create_timer(3).timeout
+	#####
+	
+	##### OPPONENT POINTS
+	var chosen_card = opponent_chooses_and_points()
+	####
+	
+	##### WAIT FOR GUESS
+	await Globals.guess_button_clicked
+	####
+	
+	##### SHOW IF DID NOT AGREE
 	if not current_player_guess:
 		chosen_card.show_card_then_hide_it()
 		await get_tree().create_timer(3).timeout
+	####
 	
+	##### CALCULATE POINTS
 	if current_player_guess == told_the_truth:
 		player_points += 1
 	else:
@@ -52,10 +82,15 @@ func do_round():
 	rounds_done += 1
 	if player_points == points_to_win:
 		game_over = true
+		print("WON")
 		Globals.won_game.emit()
+		Globals.see_through_cards.emit(false)
 	elif opponent_points == points_to_win:
+		print("LOST")
 		game_over = true
 		Globals.lost_game.emit()
+		get_tree().reload_current_scene()
+	####
 ##########################
 
 func opponent_chooses_and_points():

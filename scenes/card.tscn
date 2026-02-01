@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bfow1w3qpbfir"]
 
 [ext_resource type="Script" uid="uid://x66si12xdqk" path="res://scripts/card.gd" id="1_d81rb"]
+[ext_resource type="Resource" uid="uid://d3pkwfbcjulgq" path="res://card_images.tres" id="2_6u4wf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxf5b"]
 size = Vector3(0.7, 0.1, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktuci"]
+albedo_color = Color(0.95686275, 0.8784314, 0.6039216, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_kikvd"]
 
@@ -11,7 +15,10 @@ size = Vector3(0.7, 0.1, 0.7)
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.039215688)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u4wf"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_d81rb"]
+material = SubResource("StandardMaterial3D_6u4wf")
 
 [sub_resource type="Animation" id="Animation_d81rb"]
 length = 0.001
@@ -76,6 +83,7 @@ _data = {
 
 [node name="Card" type="Node3D" unique_id=1198251963]
 script = ExtResource("1_d81rb")
+card_images = ExtResource("2_6u4wf")
 
 [node name="area" type="Area3D" parent="." unique_id=782684188]
 
@@ -83,17 +91,18 @@ script = ExtResource("1_d81rb")
 shape = SubResource("BoxShape3D_nxf5b")
 
 [node name="Top" type="MeshInstance3D" parent="area" unique_id=323899331]
-transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, 0.7, 0, -0.7, -3.059797e-08, 0, 0.004, 0)
+transform = Transform3D(0.685, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.004, 0)
+material_override = SubResource("StandardMaterial3D_ktuci")
 mesh = SubResource("QuadMesh_kikvd")
 skeleton = NodePath("../..")
 
 [node name="Middle" type="MeshInstance3D" parent="area" unique_id=1973155792]
-transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, 0.7, 0, -0.7, -3.059797e-08, 0, 0.003, -0.001)
+transform = Transform3D(0.685, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.003, -0.001)
 material_override = SubResource("StandardMaterial3D_d81rb")
 mesh = SubResource("QuadMesh_kikvd")
 
 [node name="Bottom" type="MeshInstance3D" parent="area" unique_id=1446968100]
-transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, -0.7, 0, 0.7, -3.059797e-08, 0, 0.001, 0)
+transform = Transform3D(0.685, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.001, 0)
 mesh = SubResource("QuadMesh_d81rb")
 
 [node name="Label3D" type="Label3D" parent="area" unique_id=624905577]

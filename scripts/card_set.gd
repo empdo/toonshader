@@ -3,8 +3,8 @@ extends Node3D
 
 var card_scene = preload("res://scenes/card.tscn")
 const nr_cards = Vector2(4, 3)
-const cards_spacing = Vector3(1, 0, 1)
-const cards_random_spacing = Vector3(0.03, 0, 0.03)
+const cards_spacing = Vector3(1, 0, 1.2)
+const cards_random_spacing = Vector3(0.06, 0, 0.06)
 
 var cards: Array[Node3D] = []
 

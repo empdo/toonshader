@@ -16,6 +16,8 @@ const camera_move_to_table_duration = 1
 
 var camera_local_when_entered: Transform3D
 
+var seeing_through_cards = false
+
 @onready var cam = $SpringArmPivot/SpringArm3D/Camera3D
 var moving_camera: Camera3D
 @onready var cam_return = $Camreturn
@@ -24,8 +26,22 @@ var moving_camera: Camera3D
 func _ready():
 	Globals.player_entered_table_area_with_targets.connect(on_player_entered_table_area_with_targets)
 	Globals.player_leaving_table_game.connect(on_player_leaving_table_game)
+	Globals.won_game.connect(on_player_leaving_table_game)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	Globals.see_through_cards.connect(on_see_through_cards)
+
+func on_see_through_cards(see: bool):
+	seeing_through_cards = see
+	if see:
+		Globals.time_used_seeingmask += 1
+
+func _process(delta: float):
+	if seeing_through_cards:
+		Globals.time_used_seeingmask += delta
+		if Globals.time_used_seeingmask >= Globals.max_time_used_seeingmask_until_collapse:
+			Globals.lost_game_by_mask.emit()
+			# TODO: SHOW ANIMATION OF LOOSING CONTROL
+			get_tree().reload_current_scene()
 	
 func on_player_leaving_table_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
