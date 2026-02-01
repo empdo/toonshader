@@ -52,7 +52,7 @@ func on_see_through_cards(see: bool):
 
 func _process(delta: float):
 	if seeing_through_cards:
-		Globals.time_used_seeingmask += delta
+		#Globals.time_used_seeingmask += delta
 		if Globals.time_used_seeingmask >= Globals.max_time_used_seeingmask_until_collapse:
 			Globals.lost_game_by_mask.emit()
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
