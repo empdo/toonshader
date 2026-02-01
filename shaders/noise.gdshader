@@ -1,38 +1,39 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture;
-uniform float grain_amount : hint_range(0.0, 1.0) = 0.05;
+
+// Grain
+uniform float grain_amount : hint_range(0.0, 0.2) = 0.05;
 uniform float grain_size : hint_range(0.1, 10.0) = 1.0;
 uniform bool animate = true;
 
-// Vignette Uniforms
-uniform float vignette_intensity : hint_range(0.0, 3.0) = 0.4;
-uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
+// Vignette - Optimized for High Contrast
+uniform float vignette_radius : hint_range(0.0, 1.0) = 0.5; // How much of the center is clear
+uniform float vignette_softness : hint_range(0.0, 1.0) = 0.5; // How blurry the edge is
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.8;
 uniform vec4 vignette_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 void fragment() {
-	// 1. Sample the original screen texture
-	vec4 original_color = texture(screen_texture, SCREEN_UV);
+    vec4 color = texture(screen_texture, SCREEN_UV);
 
-	// 2. Grain Logic
-	float noise = 0.0;
-	if (animate) {
-		noise = (fract(sin(dot(UV * TIME, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
-	} else {
-		noise = (fract(sin(dot(UV, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
-	}
-	original_color.rgb += noise * grain_amount * grain_size;
+    // 1. Grain
+    float noise = (fract(sin(dot(UV * (animate ? TIME : 1.0), vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
+    color.rgb += noise * grain_amount * grain_size;
 
-	// 3. Vignette Logic
-	// Calculate distance from center (0.5, 0.5)
-	float d = distance(UV, vec2(0.5, 0.5));
-	
-	// Apply intensity and smooth out the transition
-	float vignette = pow(d, vignette_intensity);
-	
-	// Mix the current color with the vignette color based on distance
-	original_color.rgb = mix(original_color.rgb, vignette_color.rgb, vignette * vignette_opacity);
+    // 2. High-Contrast Vignette
+    // Distance from center
+    float dist = distance(UV, vec2(0.5));
+    
+    /* CONTRAST MATH:
+       We use smoothstep to create a hard floor for the center. 
+       Anything inside 'vignette_radius' will be 0.0 (no vignette).
+    */
+    float v_step = smoothstep(vignette_radius, vignette_radius + vignette_softness, dist);
+    
+    // Squaring the result "hollows out" the middle further, increasing contrast
+    float final_vignette = pow(v_step, 2.0);
 
-	// 4. Final Output
-	COLOR = clamp(original_color, 0.0, 1.0);
+    color.rgb = mix(color.rgb, vignette_color.rgb, final_vignette * vignette_opacity);
+
+    COLOR = vec4(color.rgb, 1.0);
 }
