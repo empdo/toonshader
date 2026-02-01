@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://cd46v3tyg2b54" path="res://sprite/lie.png" id="1_lxjcv"]
 
 [resource]
+shading_mode = 0
 albedo_texture = ExtResource("1_lxjcv")

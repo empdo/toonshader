@@ -7,6 +7,7 @@
 size = Vector3(1.5758972, 0.15258789, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_af4ex"]
+shading_mode = 0
 albedo_texture = ExtResource("2_r2te2")
 
 [sub_resource type="QuadMesh" id="QuadMesh_5qieg"]
