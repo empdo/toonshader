@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6d10kack1ds2"
+path="res://.godot/imported/You may rise then.ogg-75600bf0d176c559b0da36373e5e027a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Guillaume/You may rise then.ogg"
+dest_files=["res://.godot/imported/You may rise then.ogg-75600bf0d176c559b0da36373e5e027a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4pte4ftmgo5e"
+path="res://.godot/imported/I could leave you here.ogg-97223cc5f6e58086806a28b3b6f08df7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Ivy/I could leave you here.ogg"
+dest_files=["res://.godot/imported/I could leave you here.ogg-97223cc5f6e58086806a28b3b6f08df7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
