@@ -21,8 +21,8 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 Globals="*res://scripts/globals.gd"
-DialogManager="*res://scripts/dialog_manager.gd"
 CardgameManager="*res://scripts/cardgame_manager.gd"
+DialogManager="*res://scripts/dialog_manager.gd"
 
 [display]
 
@@ -32,6 +32,10 @@ window/size/viewport_height=1080
 [global_group]
 
 player=""
+
+[gui]
+
+theme/custom_font="uid://dur6un8urofvf"
 
 [input]
 

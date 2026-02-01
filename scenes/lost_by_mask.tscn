@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://togq3hg4syw6"]
+
+[ext_resource type="Script" uid="uid://clrkgo2yhldy4" path="res://scenes/lost_by_game.gd" id="1_mvsu1"]
+
+[node name="LostByMask" type="Node2D" unique_id=958940610]
+script = ExtResource("1_mvsu1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=992404776]
+offset_left = -681.0
+offset_top = -632.0
+offset_right = 2853.0
+offset_bottom = 1691.0
+color = Color(0.09923177, 0.09923177, 0.09923177, 1)
+
+[node name="Label" type="Label" parent="." unique_id=854783567]
+offset_left = 521.0
+offset_top = 320.0
+offset_right = 973.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 50
+text = "Your mask killed you???"

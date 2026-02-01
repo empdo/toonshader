@@ -48,7 +48,7 @@ func _process(delta: float):
 			Globals.lost_game_by_mask.emit()
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
 			CardgameManager.reset()
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://scenes/lost_by_mask.tscn")
 
 func on_player_leaving_table_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
