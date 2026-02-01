@@ -38,7 +38,7 @@ func on_player_entered_table_area():
 	
 	# show all cards
 	for c in cards:
-		c.show_card_then_hide_it(6)
+		c.show_card_then_hide_it(8)
 	
 	while !game_over:
 		await do_round()
