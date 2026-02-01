@@ -6,35 +6,60 @@
 [ext_resource type="Texture2D" uid="uid://dasv47kj2lw3v" path="res://cards/wood.png" id="3_sd7t6"]
 [ext_resource type="Texture2D" uid="uid://vc8bm2cxe32x" path="res://cards/carce.png" id="4_a44gu"]
 [ext_resource type="Texture2D" uid="uid://c3lrcp7rr4shc" path="res://cards/obelisk.png" id="5_r4rul"]
-[ext_resource type="Texture2D" uid="uid://dhe6n8l8hiqlv" path="res://drawing.png" id="6_ldmrt"]
+[ext_resource type="Texture2D" uid="uid://bxinuu77q3qgp" path="res://cards/mask.png" id="6_ldmrt"]
+[ext_resource type="Texture2D" uid="uid://mvro5gfp005" path="res://cards/moon.png" id="7_yaydk"]
+[ext_resource type="Texture2D" uid="uid://coawyx54uhp2m" path="res://cards/ascent.png" id="8_cqrpl"]
+[ext_resource type="Texture2D" uid="uid://cwitlf7b1gvog" path="res://cards/labirinto.png" id="9_sj7fx"]
 
 [sub_resource type="Resource" id="Resource_3li80"]
 script = ExtResource("1_7oycl")
 image = ExtResource("2_io4xj")
+name = "THE FOOL"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
 [sub_resource type="Resource" id="Resource_yaydk"]
 script = ExtResource("1_7oycl")
 image = ExtResource("3_sd7t6")
+name = "Les Bois Pleureurs"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
 [sub_resource type="Resource" id="Resource_cqrpl"]
 script = ExtResource("1_7oycl")
 image = ExtResource("4_a44gu")
+name = "Carceri d'invenzione"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
 [sub_resource type="Resource" id="Resource_sj7fx"]
 script = ExtResource("1_7oycl")
 image = ExtResource("5_r4rul")
+name = "Éternité"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
-[sub_resource type="Resource" id="Resource_sd7t6"]
+[sub_resource type="Resource" id="Resource_tr31p"]
 script = ExtResource("1_7oycl")
 image = ExtResource("6_ldmrt")
+name = "THE MASK"
+metadata/_custom_type_script = "uid://cpsct6vp34afk"
+
+[sub_resource type="Resource" id="Resource_5w4fg"]
+script = ExtResource("1_7oycl")
+image = ExtResource("7_yaydk")
+name = "THE MOON"
+metadata/_custom_type_script = "uid://cpsct6vp34afk"
+
+[sub_resource type="Resource" id="Resource_f833r"]
+script = ExtResource("1_7oycl")
+image = ExtResource("8_cqrpl")
+name = "THE ASCENT"
+metadata/_custom_type_script = "uid://cpsct6vp34afk"
+
+[sub_resource type="Resource" id="Resource_uoq1v"]
+script = ExtResource("1_7oycl")
+image = ExtResource("9_sj7fx")
+name = "Il labirinto"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
 [resource]
 script = ExtResource("2_50dum")
-cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx")])
-default = SubResource("Resource_sd7t6")
+cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx"), SubResource("Resource_tr31p"), SubResource("Resource_5w4fg"), SubResource("Resource_f833r"), SubResource("Resource_uoq1v")])
 metadata/_custom_type_script = "uid://phqabf70xexi"

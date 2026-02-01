@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var camera = $SpringArmPivot/SpringArm3D/Camera3D
 @onready var armature = $barn/Armature
 @onready var animation_tree = $barn/AnimationTree
-const SPEED = 8.0
+const SPEED = 3.0
 const LERP_VAL = .15
 var focused = false
 
@@ -41,8 +41,9 @@ func _process(delta: float):
 		if Globals.time_used_seeingmask >= Globals.max_time_used_seeingmask_until_collapse:
 			Globals.lost_game_by_mask.emit()
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
+			CardgameManager.reset()
 			get_tree().reload_current_scene()
-	
+
 func on_player_leaving_table_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#global_transform = player_return

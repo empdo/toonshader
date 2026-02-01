@@ -13,6 +13,7 @@ var told_the_truth = false
 var game_over = false
 
 func reset():
+	Globals.reset()
 	rounds_done = 0
 	player_points = 0
 	opponent_points = 0
@@ -38,7 +39,7 @@ func on_player_entered_table_area():
 	for c in cards:
 		c.show_card_then_hide_it()
 	
-	await get_tree().create_timer(9).timeout
+	await get_tree().create_timer(20).timeout
 	
 	while !game_over:
 		await do_round()
@@ -105,7 +106,7 @@ func opponent_chooses_and_points():
 	told_the_truth = chosen_card.card_type_id == card_type_id_to_say
 	
 	Globals.highlight_card.emit(chosen_card)
-	Globals.say_card_type.emit(card_type_id_to_say)
+	Globals.say_card_type.emit(chosen_card)
 	# highlight chosen card
 	# show card_type_id_to_say
 	return chosen_card

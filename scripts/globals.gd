@@ -8,13 +8,18 @@ signal player_showed_chosen_cards
 var time_used_seeingmask = 0
 const max_time_used_seeingmask_until_collapse = 4
 
+func reset():
+	time_used_seeingmask = 0
+	let_player_show_cards = false
+	cards_currently_showing = {}
+	
 signal guess_button_clicked(bool)
 signal see_through_cards(bool)
 signal player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D)
 signal player_entered_table_area
 signal player_leaving_table_game
 signal highlight_card(Node3D)
-signal say_card_type(int)
+signal say_card_type(Node3D)
 
 signal won_game
 signal lost_game
@@ -28,6 +33,8 @@ var current_dialog: DialogResource = null
 var dialog_ui: Control = null
 
 signal dialog_finished(dialog: DialogResource)
+
+
 
 func _ready():
 	# Find DialogUI in the scene tree (deferred to ensure scene is loaded)

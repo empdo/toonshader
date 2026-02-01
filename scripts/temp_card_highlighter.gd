@@ -11,5 +11,6 @@ func on_highlight_card(card: Node3D):
 	await get_tree().create_timer(2).timeout
 	visible = false
 	
-func on_say_card_type(type: int):
-	$Label3D.text = str(type)
+func on_say_card_type(card: Node3D):
+	print(card.data.name)
+	$Label3D.text = card.data.name
