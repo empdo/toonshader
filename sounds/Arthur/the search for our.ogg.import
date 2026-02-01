@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://backe14ug4r67"
+path="res://.godot/imported/the search for our.ogg-8b37cc958fffa803d6fed0eb9b31d10f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Arthur/the search for our.ogg"
+dest_files=["res://.godot/imported/the search for our.ogg-8b37cc958fffa803d6fed0eb9b31d10f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

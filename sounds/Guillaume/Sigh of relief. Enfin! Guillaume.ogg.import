@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjal4ctwo5yjd"
+path="res://.godot/imported/Sigh of relief. Enfin! Guillaume.ogg-346432022aff29df3d811f9ff295e649.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Guillaume/Sigh of relief. Enfin! Guillaume.ogg"
+dest_files=["res://.godot/imported/Sigh of relief. Enfin! Guillaume.ogg-346432022aff29df3d811f9ff295e649.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

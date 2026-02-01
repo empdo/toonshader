@@ -110,5 +110,6 @@ transform = Transform3D(0.7395649, 0, 0, 0, 1, 0, 0, 0, 0.7134072, 1.8459842, 1.
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.4766324, 1.6462934, 1.9123743)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
 
 [editable path="table"]

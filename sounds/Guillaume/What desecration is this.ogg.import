@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvc8nc27si1a"
+path="res://.godot/imported/What desecration is this.ogg-9774e78eea0480f8cf83a639967ca18f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Guillaume/What desecration is this.ogg"
+dest_files=["res://.godot/imported/What desecration is this.ogg-9774e78eea0480f8cf83a639967ca18f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

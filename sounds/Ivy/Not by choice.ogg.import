@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpjeh524ty8sm"
+path="res://.godot/imported/Not by choice.ogg-9fcf707d07742107b7fde1a6841b57cf.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Ivy/Not by choice.ogg"
+dest_files=["res://.godot/imported/Not by choice.ogg-9fcf707d07742107b7fde1a6841b57cf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -6,15 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cmmvik3jcofr" path="res://scenes/tree.tscn" id="6_0lhry"]
 [ext_resource type="PackedScene" uid="uid://hsq4yhuosu4g" path="res://scenes/game_table.tscn" id="6_1ftms"]
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="6_8bn17"]
-[ext_resource type="Script" uid="uid://c7s5a1e7qpx2b" path="res://scripts/vignette_thing.gd" id="6_jtreq"]
+[ext_resource type="Script" path="res://scripts/vignette_thing.gd" id="6_jtreq"]
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
 [ext_resource type="Shader" uid="uid://dtvjtvmtglsov" path="res://materials/pupil.tres" id="8_4p23x"]
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
-[ext_resource type="PackedScene" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
+[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
 [ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
 [ext_resource type="Script" uid="uid://buk8lorcru6kd" path="res://scripts/approach_table.gd" id="14_approach_table"]
 [ext_resource type="PackedScene" uid="uid://iofi0k4l8pv6" path="res://scenes/ObeliskPortal.tscn" id="15_j8b8d"]
+[ext_resource type="AudioStream" uid="uid://nwc0c08q5doc" path="res://sounds/crying_forest_loop.ogg" id="16_j8b8d"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 
@@ -426,49 +427,49 @@ surface_material_override/0 = SubResource("ShaderMaterial_uohem")
 [node name="chair" parent="." unique_id=1035268763 instance=ExtResource("10_4p23x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 2.1023982, -6.872338)
 
-[node name="PINNE" parent="chair" index="0" unique_id=8778128]
+[node name="PINNE" parent="chair" index="0" unique_id=294564955]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_001" parent="chair" index="1" unique_id=605863367]
+[node name="PINNE_001" parent="chair" index="1" unique_id=223936868]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_002" parent="chair" index="2" unique_id=124700894]
+[node name="PINNE_002" parent="chair" index="2" unique_id=1763512135]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_003" parent="chair" index="3" unique_id=610799738]
+[node name="PINNE_003" parent="chair" index="3" unique_id=2040025710]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_004" parent="chair" index="4" unique_id=1794434013]
+[node name="PINNE_004" parent="chair" index="4" unique_id=1191172230]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_005" parent="chair" index="5" unique_id=250571747]
+[node name="PINNE_005" parent="chair" index="5" unique_id=559897886]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_006" parent="chair" index="6" unique_id=1013794722]
+[node name="PINNE_006" parent="chair" index="6" unique_id=971869638]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_007" parent="chair" index="7" unique_id=1906047502]
+[node name="PINNE_007" parent="chair" index="7" unique_id=349421046]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_008" parent="chair" index="8" unique_id=1144127127]
+[node name="PINNE_008" parent="chair" index="8" unique_id=1080810894]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_009" parent="chair" index="9" unique_id=178606505]
+[node name="PINNE_009" parent="chair" index="9" unique_id=59752000]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_010" parent="chair" index="10" unique_id=1312177325]
+[node name="PINNE_010" parent="chair" index="10" unique_id=1048712886]
+surface_material_override/0 = ExtResource("11_jtreq")
+S
+[node name="PINNE_011" parent="chair" index="11" unique_id=65509725]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_011" parent="chair" index="11" unique_id=1436428041]
+[node name="PINNE_012" parent="chair" index="12" unique_id=1000385907]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="PINNE_012" parent="chair" index="12" unique_id=287222625]
+[node name="Plane" parent="chair" index="13" unique_id=284552517]
 surface_material_override/0 = ExtResource("11_jtreq")
 
-[node name="Plane" parent="chair" index="13" unique_id=135117326]
-surface_material_override/0 = ExtResource("11_jtreq")
-
-[node name="Plane_001" parent="chair" index="14" unique_id=1412614504]
+[node name="Plane_001" parent="chair" index="14" unique_id=901824755]
 surface_material_override/0 = ExtResource("11_jtreq")
 
 [node name="opponent" parent="." unique_id=724776570 instance=ExtResource("13_lc52x")]
@@ -486,6 +487,11 @@ shape = SubResource("CylinderShape3D_4ofsq")
 [node name="ObeliskPortal" parent="." unique_id=1078687172 instance=ExtResource("15_j8b8d")]
 transform = Transform3D(7.74, 0, 0, 0, 7.74, 0, 0, 0, 7.74, 30.310783, 0, -25.532888)
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1933529484]
+stream = ExtResource("16_j8b8d")
+volume_db = -9.0
+autoplay = true
 
 [connection signal="body_entered" from="approach_table" to="approach_table" method="_on_body_entered"]
 

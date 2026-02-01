@@ -33,7 +33,8 @@ func on_guess_button_clicked(guess: bool):
 func on_player_entered_table_area():
 	reset()
 	
-	await get_tree().create_timer(3).timeout
+	# Wait for the sit_down dialog to finish before starting the game
+	await _wait_for_sit_down_dialog()
 	
 	# show all cards
 	for c in cards:
@@ -41,6 +42,13 @@ func on_player_entered_table_area():
 	
 	while !game_over:
 		await do_round()
+
+func _wait_for_sit_down_dialog():
+	# Wait for the sit_down dialog (c_sit_down.tres) to finish
+	while true:
+		var finished_dialog: DialogResource = await DialogManager.dialog_finished
+		if finished_dialog.resource_path == "res://resources/c_sit_down.tres":
+			break
 
 ##########################
 # the important thing

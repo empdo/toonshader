@@ -1,8 +1,14 @@
 [gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://csb3wmfa6pggn"]
 
+[ext_resource type="AudioStream" uid="uid://bt2b4t5fd5ut8" path="res://sounds/Arthur/you do not know.ogg" id="1_acmgk"]
 [ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_h6nur"]
+[ext_resource type="AudioStream" uid="uid://c8etf7t4olvtu" path="res://sounds/Guillaume/Tell me why, why ascend.ogg" id="1_qoii1"]
+[ext_resource type="AudioStream" uid="uid://y8g5j17i08u2" path="res://sounds/Ivy/Illness is my reason.ogg" id="2_acmgk"]
+[ext_resource type="AudioStream" uid="uid://bbyxfa4cuyrr2" path="res://sounds/Guillaume/We share a common cause.ogg" id="2_pvqo3"]
+[ext_resource type="AudioStream" uid="uid://backe14ug4r67" path="res://sounds/Arthur/the search for our.ogg" id="4_d8dsb"]
 
 [resource]
 script = ExtResource("1_h6nur")
-lines = Array[String](["Arthur: You do not know the game as I do, sister. Permit me control for but a moment…", "@3", "Guillaume: Tell me, why ascend the orders? Why leave Carceri d'invenzione?", "@1", "Ivy: Illness is my reason. The madness of my brother, my means.", "@1", "Arthur: The search for our father is madness then? How frigid. But expected, for one who so casually sacrificed our youngest kin.", "@1", "Guillaume: We share a common cause then, mademoiselle."])
+lines = Array[String](["Arthur: You do not know the game as I do, sister. Permit me control for but a moment…", "@3", "Guillaume: Tell me, why ascend the orders? Why leave Carceri d'invenzione?", "", "Ivy: Illness is my reason. The madness of my brother, my means.", "", "Arthur: The search for our father is madness then? How frigid. But expected, for one who so casually sacrificed our youngest kin.", "@0.4", "Guillaume: We share a common cause then, mademoiselle."])
+line_audio = Array[AudioStream]([ExtResource("1_acmgk"), null, ExtResource("1_qoii1"), null, ExtResource("2_acmgk"), null, ExtResource("4_d8dsb"), null, ExtResource("2_pvqo3")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"

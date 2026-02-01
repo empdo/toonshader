@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://y8g5j17i08u2"
+path="res://.godot/imported/Illness is my reason.ogg-230afa6c995166ca40c1fadec03e29dd.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Ivy/Illness is my reason.ogg"
+dest_files=["res://.godot/imported/Illness is my reason.ogg-230afa6c995166ca40c1fadec03e29dd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
