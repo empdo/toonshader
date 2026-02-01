@@ -10,13 +10,14 @@ var data: CardData
 func _ready():
 	$area/Label3D.text = str(card_type_id)
 	$area/Label3D2.text = $area/Label3D.text
+	data = card_images.get_data(card_type_id)
 
 	var material = $area/Bottom.material_override.duplicate()
 	if material is StandardMaterial3D:
-		var data = card_images.get_data(card_type_id)
 		material.albedo_texture = data.image
 		$area/Bottom.material_override = material
 		$area/Middle.material_override = material.duplicate()
+		$area/Middle.material_override.uv1_scale.x = -1
 		Globals.see_through_cards.connect(on_see_through_cards)
 	
 func on_see_through_cards(see: bool):
@@ -46,11 +47,10 @@ func _on_area_input_event(camera: Node, event: InputEvent, event_position: Vecto
 				#hide_card()
 				
 
-func show_card_then_hide_it():
+func show_card_then_hide_it(time_shown):
 	hidden = false
 	show_card()
-	var time = $AnimationPlayer.get_animation("show_card").length
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(time_shown).timeout
 	hidden = true
 	hide_card()
 	

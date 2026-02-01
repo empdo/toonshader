@@ -37,9 +37,7 @@ func on_player_entered_table_area():
 	
 	# show all cards
 	for c in cards:
-		c.show_card_then_hide_it()
-	
-	await get_tree().create_timer(20).timeout
+		c.show_card_then_hide_it(6)
 	
 	while !game_over:
 		await do_round()
@@ -71,7 +69,7 @@ func do_round():
 	
 	##### SHOW IF DID NOT AGREE
 	if not current_player_guess:
-		chosen_card.show_card_then_hide_it()
+		chosen_card.show_card_then_hide_it(2)
 		await get_tree().create_timer(3).timeout
 	####
 	
@@ -90,7 +88,7 @@ func do_round():
 		print("LOST")
 		game_over = true
 		Globals.lost_game.emit()
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://scenes/lost_by_game.tscn")
 	####
 ##########################
 

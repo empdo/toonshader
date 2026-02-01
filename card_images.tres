@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mvro5gfp005" path="res://cards/moon.png" id="7_yaydk"]
 [ext_resource type="Texture2D" uid="uid://coawyx54uhp2m" path="res://cards/ascent.png" id="8_cqrpl"]
 [ext_resource type="Texture2D" uid="uid://cwitlf7b1gvog" path="res://cards/labirinto.png" id="9_sj7fx"]
+[ext_resource type="Texture2D" uid="uid://ds7hfeg13ljui" path="res://cards/aspirants.png" id="10_yaydk"]
 
 [sub_resource type="Resource" id="Resource_3li80"]
 script = ExtResource("1_7oycl")
@@ -59,7 +60,13 @@ image = ExtResource("9_sj7fx")
 name = "Il labirinto"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
+[sub_resource type="Resource" id="Resource_dgytk"]
+script = ExtResource("1_7oycl")
+image = ExtResource("10_yaydk")
+name = "ASPIRANTS"
+metadata/_custom_type_script = "uid://cpsct6vp34afk"
+
 [resource]
 script = ExtResource("2_50dum")
-cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx"), SubResource("Resource_tr31p"), SubResource("Resource_5w4fg"), SubResource("Resource_f833r"), SubResource("Resource_uoq1v")])
+cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx"), SubResource("Resource_tr31p"), SubResource("Resource_5w4fg"), SubResource("Resource_f833r"), SubResource("Resource_uoq1v"), SubResource("Resource_dgytk")])
 metadata/_custom_type_script = "uid://phqabf70xexi"
