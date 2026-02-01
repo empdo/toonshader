@@ -58,6 +58,7 @@ func _process(delta: float):
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
 			CardgameManager.reset()
 			get_tree().change_scene_to_file("res://scenes/lost_by_mask.tscn")
+			return  # Prevent further processing after scene change to avoid viewport errors
 	
 	# Apply smooth table camera look-around based on mouse screen position
 	if is_at_table and moving_camera:

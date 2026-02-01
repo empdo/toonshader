@@ -50,8 +50,8 @@ func _ready():
 	call_deferred("_connect_dialog_ui")
 
 func _process(delta: float) -> void:
-	if time_used_seeingmask >= max_time_used_seeingmask_until_collapse:
-		lost_game_by_mask.emit()
+	# Note: lost_game_by_mask is now handled in player.gd which also does the scene change
+	# Removed duplicate emission here to avoid signal being emitted multiple times
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		player_leaving_table_game.emit()
