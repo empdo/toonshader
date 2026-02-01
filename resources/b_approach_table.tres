@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://duvhhxocqoewt" path="res://sounds/Guillaume/Ah, you smell of.ogg" id="1_6rsdk"]
 [ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_hwwm8"]
-[ext_resource type="AudioStream" uid="uid://cvc8nc27si1a" path="res://sounds/Guillaume/What desecration is this?.ogg" id="2_5f7kj"]
+[ext_resource type="AudioStream" uid="uid://cvc8nc27si1a" path="res://sounds/Guillaume/What desecration is this.ogg" id="2_5f7kj"]
 [ext_resource type="AudioStream" uid="uid://dpjeh524ty8sm" path="res://sounds/Ivy/Not by choice.ogg" id="3_5f7kj"]
 [ext_resource type="AudioStream" uid="uid://ihhlovps80no" path="res://sounds/Guillaume/Come sit let us play.ogg" id="3_5v0bt"]
 
