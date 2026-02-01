@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://15liivtra6np" path="res://scenes/card_set.tscn" id="1_ii77m"]
 [ext_resource type="PackedScene" uid="uid://dnl8q4rsvjf3p" path="res://scenes/guess_button.tscn" id="2_4wq7v"]
-[ext_resource type="PackedScene" uid="uid://dpih8pl5iwtno" path="res://scenes/see_mask.tscn" id="3_kg635"]
+[ext_resource type="PackedScene" uid="uid://dpih8pl5iwtno" path="res://scenes/table_mask.tscn" id="3_kg635"]
 [ext_resource type="Script" uid="uid://05mfxr11sr75" path="res://scripts/table_entrance.gd" id="4_oxme1"]
 [ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="5_0o1um"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="6_6mw1m"]
@@ -24,14 +24,14 @@ height = 0.545
 [node name="GameTable" type="StaticBody3D" unique_id=1138061513]
 
 [node name="CardSet" parent="." unique_id=1955352414 instance=ExtResource("1_ii77m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.315486, 1.6330642, -1.1631068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.315486, 1.6330642, -1.5624635)
 
 [node name="YesButton" parent="." unique_id=436893480 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79646206, 1.8048742, 1.834481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1790074, 1.8048743, 1.9083345)
 emit_true = true
 
 [node name="NoButton" parent="." unique_id=1956186392 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2679523, 1.8733056, 1.8883655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7192186, 1.8733057, 1.9667523)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1653842365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3737793, 0.77630615, -0.96362305)
@@ -39,7 +39,7 @@ shape = SubResource("BoxShape3D_4wq7v")
 disabled = true
 
 [node name="SeeMask" parent="." unique_id=1753715017 instance=ExtResource("3_kg635")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25577348, 1.8266919, 1.9143968)
+transform = Transform3D(-0.9178309, 0, 0.39697158, 0, 1, 0, -0.39697158, 0, -0.9178309, 0.07853389, 1.5679682, 1.8751341)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=36434291 node_paths=PackedStringArray("player_target", "camera_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.3132086)

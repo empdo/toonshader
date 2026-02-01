@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var card_images: CardImages
+
 var hidden = true
 var card_type_id = -1
 
@@ -7,6 +9,12 @@ func _ready():
 	$area/Label3D.text = str(card_type_id)
 	$area/Label3D2.text = $area/Label3D.text
 	
+	var material = $area/Bottom.get_active_material(0)
+	print("e")
+	if material is StandardMaterial3D:
+		var data = card_images.get_data(card_type_id)
+		material.albedo_texture = data.image
+		
 	Globals.see_through_cards.connect(on_see_through_cards)
 	
 func on_see_through_cards(see: bool):

@@ -398,8 +398,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.709034, -0.349218, -0.043
 [node name="TextureRect" type="TextureRect" parent="SubViewportContainer/CanvasLayer" unique_id=2093459029]
 material = SubResource("ShaderMaterial_ijgdv")
 custom_minimum_size = Vector2(1920, 1080)
+offset_top = 3.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1083.0
 mouse_filter = 2
 texture = SubResource("ViewportTexture_ow83g")
 
@@ -508,7 +509,7 @@ autoplay = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45436668, -4.733102, -3.1197538)
 
 [node name="GameTable" parent="." unique_id=1138061513 instance=ExtResource("6_1ftms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.184629, -0.00024473667, -2.3707976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1981097, -0.00024485588, -2.378471)
 
 [editable path="chair"]
 [editable path="table"]
