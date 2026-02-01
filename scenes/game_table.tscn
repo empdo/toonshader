@@ -55,42 +55,42 @@ shape = SubResource("BoxShape3D_oxme1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6737622, -0.028, 0.947418)
 
 [node name="CameraTarget" type="Node3D" parent="." unique_id=1735828515]
-transform = Transform3D(1, 0, 0, 0, 0.013805145, 0.9999047, 0, -0.9999047, 0.013805145, 0, 4.7658405, 0.22140515)
+transform = Transform3D(1, 0, 0, 0, 0.26404148, 0.96451145, 0, -0.96451145, 0.26404148, 0, 4.7658405, 1.7577761)
 
 [node name="table" parent="." unique_id=1791531552 instance=ExtResource("5_0o1um")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.45453012, 1.9477087, -4.9584312)
 
-[node name="PINNE_013" parent="table" index="0" unique_id=889302748]
+[node name="PINNE_013" parent="table" index="0" unique_id=218219619]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_014" parent="table" index="1" unique_id=1027697788]
+[node name="PINNE_014" parent="table" index="1" unique_id=79520406]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_015" parent="table" index="2" unique_id=1338605756]
+[node name="PINNE_015" parent="table" index="2" unique_id=1375365924]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_016" parent="table" index="3" unique_id=101436496]
+[node name="PINNE_016" parent="table" index="3" unique_id=469119785]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_003" parent="table" index="4" unique_id=2056502148]
+[node name="Plane_003" parent="table" index="4" unique_id=1673453776]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_005" parent="table" index="5" unique_id=1614102989]
+[node name="Plane_005" parent="table" index="5" unique_id=1842556744]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_006" parent="table" index="6" unique_id=1540684647]
+[node name="Plane_006" parent="table" index="6" unique_id=2003435469]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_004" parent="table" index="7" unique_id=1602784072]
+[node name="Plane_004" parent="table" index="7" unique_id=589699294]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_007" parent="table" index="8" unique_id=1095585054]
+[node name="Plane_007" parent="table" index="8" unique_id=66410576]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_008" parent="table" index="9" unique_id=1154945561]
+[node name="Plane_008" parent="table" index="9" unique_id=1520847275]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_009" parent="table" index="10" unique_id=1799096854]
+[node name="Plane_009" parent="table" index="10" unique_id=257185157]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=881055247]
