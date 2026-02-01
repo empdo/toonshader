@@ -11,13 +11,13 @@ func _ready():
 	$area/Label3D.text = str(card_type_id)
 	$area/Label3D2.text = $area/Label3D.text
 
-	var material = $area/Bottom.get_active_material(0).duplicate()
+	var material = $area/Bottom.material_override.duplicate()
 	if material is StandardMaterial3D:
-		data = card_images.get_data(card_type_id)
+		var data = card_images.get_data(card_type_id)
 		material.albedo_texture = data.image
-		$area/Bottom.set_surface_override_material(0, material)
-		
-	Globals.see_through_cards.connect(on_see_through_cards)
+		$area/Bottom.material_override = material
+		$area/Middle.material_override = material.duplicate()
+		Globals.see_through_cards.connect(on_see_through_cards)
 	
 func on_see_through_cards(see: bool):
 	$area/Top.visible = not see
