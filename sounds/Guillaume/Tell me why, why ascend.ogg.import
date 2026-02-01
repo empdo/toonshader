@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8etf7t4olvtu"
+path="res://.godot/imported/Tell me why, why ascend.ogg-73d4f4d8ea85c799fc9994f2c4ddf2ec.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Guillaume/Tell me why, why ascend.ogg"
+dest_files=["res://.godot/imported/Tell me why, why ascend.ogg-73d4f4d8ea85c799fc9994f2c4ddf2ec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

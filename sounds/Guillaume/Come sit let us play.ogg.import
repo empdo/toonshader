@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ihhlovps80no"
+path="res://.godot/imported/Come sit let us play.ogg-986124d189c166aeac9b3960e206c50a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Guillaume/Come sit let us play.ogg"
+dest_files=["res://.godot/imported/Come sit let us play.ogg-986124d189c166aeac9b3960e206c50a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
