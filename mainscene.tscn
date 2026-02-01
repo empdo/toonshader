@@ -464,7 +464,7 @@ visible = false
 
 [node name="ForestMusic" type="AudioStreamPlayer" parent="." unique_id=1933529484]
 stream = ExtResource("16_j8b8d")
-volume_db = -17.0
+volume_db = -10.0
 autoplay = true
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=1390603309]
