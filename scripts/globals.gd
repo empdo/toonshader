@@ -1,5 +1,7 @@
 extends Node
 
+var will_respawn_at_table = false
+
 const MAX_SHOWABLE_CARDS = 1
 var cards_currently_showing: Dictionary = {}
 var let_player_show_cards = false

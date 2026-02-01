@@ -23,7 +23,13 @@ var moving_camera: Camera3D
 @onready var cam_return = $Camreturn
 @onready var player_return: Transform3D
 
+var player_target2: Node3D
+
 func _ready():
+	if Globals.will_respawn_at_table:
+		position = player_target2.position
+		rotation = player_target2.rotation
+	
 	Globals.player_entered_table_area_with_targets.connect(on_player_entered_table_area_with_targets)
 	Globals.player_leaving_table_game.connect(on_player_leaving_table_game)
 	Globals.won_game.connect(on_player_leaving_table_game)
@@ -60,6 +66,7 @@ func on_player_leaving_table_game():
 
 	
 func on_player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D):
+	player_target2 = player_target
 	prevent_move = true
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
