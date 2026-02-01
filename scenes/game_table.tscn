@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://hsq4yhuosu4g"]
 
 [ext_resource type="PackedScene" uid="uid://15liivtra6np" path="res://scenes/card_set.tscn" id="1_ii77m"]
-[ext_resource type="PackedScene" uid="uid://dnl8q4rsvjf3p" path="res://scenes/guess_button.tscn" id="2_4wq7v"]
+[ext_resource type="PackedScene" uid="uid://dnl8q4rsvjf3p" path="res://scenes/lie_button.tscn" id="2_4wq7v"]
 [ext_resource type="PackedScene" uid="uid://dpih8pl5iwtno" path="res://scenes/table_mask.tscn" id="3_kg635"]
 [ext_resource type="Script" uid="uid://05mfxr11sr75" path="res://scripts/table_entrance.gd" id="4_oxme1"]
 [ext_resource type="PackedScene" uid="uid://tasviocptipd" path="res://glb/table.glb" id="5_0o1um"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="6_6mw1m"]
 [ext_resource type="Script" uid="uid://cda6ci5hkrwhv" path="res://scripts/temp_card_highlighter.gd" id="7_6mw1m"]
+[ext_resource type="PackedScene" uid="uid://dw0ev4fqtwmsy" path="res://scenes/truth_button.tscn" id="8_8w3p3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wq7v"]
 size = Vector3(3.7475586, 1.5623779, 3.449707)
@@ -25,13 +26,6 @@ height = 0.545
 
 [node name="CardSet" parent="." unique_id=1955352414 instance=ExtResource("1_ii77m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.315486, 1.6330642, -1.5624635)
-
-[node name="YesButton" parent="." unique_id=436893480 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1790074, 1.8048743, 1.9083345)
-emit_true = true
-
-[node name="NoButton" parent="." unique_id=1956186392 instance=ExtResource("2_4wq7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7192186, 1.8733057, 1.9667523)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1653842365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3737793, 0.77630615, -0.96362305)
@@ -55,42 +49,42 @@ shape = SubResource("BoxShape3D_oxme1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6737622, -0.028, 0.947418)
 
 [node name="CameraTarget" type="Node3D" parent="." unique_id=1735828515]
-transform = Transform3D(1, 0, 0, 0, 0.26404148, 0.96451145, 0, -0.96451145, 0.26404148, 0, 4.7658405, 1.7577761)
+transform = Transform3D(1, 0, 0, 0, -0.13708149, 0.99055994, 0, -0.99055994, -0.13708149, 0, 4.7658405, 1.7577761)
 
 [node name="table" parent="." unique_id=1791531552 instance=ExtResource("5_0o1um")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.45453012, 1.9477087, -4.9584312)
 
-[node name="PINNE_013" parent="table" index="0" unique_id=218219619]
+[node name="PINNE_013" parent="table" index="0" unique_id=889302748]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_014" parent="table" index="1" unique_id=79520406]
+[node name="PINNE_014" parent="table" index="1" unique_id=1027697788]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_015" parent="table" index="2" unique_id=1375365924]
+[node name="PINNE_015" parent="table" index="2" unique_id=1338605756]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="PINNE_016" parent="table" index="3" unique_id=469119785]
+[node name="PINNE_016" parent="table" index="3" unique_id=101436496]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_003" parent="table" index="4" unique_id=1673453776]
+[node name="Plane_003" parent="table" index="4" unique_id=2056502148]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_005" parent="table" index="5" unique_id=1842556744]
+[node name="Plane_005" parent="table" index="5" unique_id=1614102989]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_006" parent="table" index="6" unique_id=2003435469]
+[node name="Plane_006" parent="table" index="6" unique_id=1540684647]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_004" parent="table" index="7" unique_id=589699294]
+[node name="Plane_004" parent="table" index="7" unique_id=1602784072]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_007" parent="table" index="8" unique_id=66410576]
+[node name="Plane_007" parent="table" index="8" unique_id=1095585054]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_008" parent="table" index="9" unique_id=1520847275]
+[node name="Plane_008" parent="table" index="9" unique_id=1154945561]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
-[node name="Plane_009" parent="table" index="10" unique_id=257185157]
+[node name="Plane_009" parent="table" index="10" unique_id=1799096854]
 surface_material_override/0 = ExtResource("6_6mw1m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=881055247]
@@ -108,6 +102,12 @@ mesh = SubResource("CapsuleMesh_8w3p3")
 [node name="Label3D" type="Label3D" parent="TempCardHighlighter" unique_id=1067805650]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.46048164, 0)
 text = "1"
+
+[node name="GuessButton" parent="." unique_id=436893480 instance=ExtResource("2_4wq7v")]
+transform = Transform3D(0.7395649, 0, 0, 0, 1, 0, 0, 0, 0.7134072, 1.8459842, 1.649448, 1.9171069)
+
+[node name="GuessButton2" parent="." unique_id=477795514 instance=ExtResource("8_8w3p3")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.4766324, 1.6462934, 1.9123743)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 

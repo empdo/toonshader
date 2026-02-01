@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dnl8q4rsvjf3p"]
+
+[ext_resource type="Script" uid="uid://c67ef7ou6u2ke" path="res://scripts/guess_button.gd" id="1_medw0"]
+[ext_resource type="Material" uid="uid://bfqilqvk82oky" path="res://materials/truth.tres" id="2_hf6p8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01g7a"]
+size = Vector3(1.5758972, 0.15258789, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rbapc"]
+material = ExtResource("2_hf6p8")
+size = Vector2(1.46, 1)
+
+[node name="GuessButton" type="Node3D" unique_id=436893480]
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0, 0, 0)
+script = ExtResource("1_medw0")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=822951677]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1455031174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021530151, -0.015014648, 0)
+shape = SubResource("BoxShape3D_01g7a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368458320]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_rbapc")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
