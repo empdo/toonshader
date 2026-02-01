@@ -469,11 +469,11 @@ autoplay = true
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=1390603309]
 stream = ExtResource("17_music_intro")
-volume_db = -5.0
+volume_db = -10.0
 
 [node name="LoopMusic" type="AudioStreamPlayer" parent="." unique_id=124813430]
 stream = ExtResource("18_music_loop")
-volume_db = -5.0
+volume_db = -10.0
 
 [node name="MusicController" type="Node" parent="."]
 script = ExtResource("19_music_ctrl")
