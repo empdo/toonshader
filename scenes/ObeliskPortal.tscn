@@ -1,27 +1,7 @@
 [gd_scene format=3 uid="uid://iofi0k4l8pv6"]
 
 [ext_resource type="Script" uid="uid://1cg6l168d64n" path="res://scripts/obelisk_portal.gd" id="1_5u6c7"]
-[ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="2_1idp5"]
-[ext_resource type="Texture2D" uid="uid://b4fylrq7186v1" path="res://shaders/hatchpattern.jpg" id="3_rwq8b"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwq8b"]
-render_priority = 0
-shader = ExtResource("2_1idp5")
-shader_parameter/base_color = Color(1, 1, 1, 1)
-shader_parameter/use_albedo_tex = false
-shader_parameter/hatch_tex = ExtResource("3_rwq8b")
-shader_parameter/ink_color = Color(0, 0, 0, 1)
-shader_parameter/hatch_world_scale = 0.1
-shader_parameter/hatch_strength = 2.0
-shader_parameter/hatch_fade_start = 10.0
-shader_parameter/hatch_fade_end = 20.0
-shader_parameter/use_distance_fade = true
-shader_parameter/distance_fade_color = Color(0.15, 0.12, 0.1, 1)
-shader_parameter/light_position_ws = Vector3(0, 5, 0)
-shader_parameter/band1 = 0.6
-shader_parameter/band2 = 0.4
-shader_parameter/band3 = 0.2
-shader_parameter/band_softness = 0.05
+[ext_resource type="Material" uid="uid://twmv006rxqct" path="res://materials/öga.tres" id="2_1idp5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_535us"]
 
@@ -33,8 +13,8 @@ transform = Transform3D(7.74, 0, 0, 0, 7.74, 0, 0, 0, 7.74, 0, 0, 0)
 script = ExtResource("1_5u6c7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1684904854]
-transform = Transform3D(2.725, 0, 0, 0, 2.725, 0, 0, 0, 2.725, 0, 1.3700583, 0)
-material_override = SubResource("ShaderMaterial_rwq8b")
+transform = Transform3D(0.0053325617, 0, 0, 0, 1.806732, 0, 0, 0, 1.1783377, 0, 0.90620184, 0)
+material_overlay = ExtResource("2_1idp5")
 mesh = SubResource("BoxMesh_535us")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1117456867]

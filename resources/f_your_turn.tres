@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="DialogResource" format=3]
+[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://dr61y0bsveruw"]
 
 [ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_dialog"]
 
 [resource]
 script = ExtResource("1_dialog")
-lines = Array[String](["It's your turn.", "@3"])
+lines = Array[String](["It's your turn to turn a card.", "@3"])
 line_audio = Array[AudioStream]([null, null])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"

@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cmmvik3jcofr" path="res://scenes/tree.tscn" id="6_0lhry"]
 [ext_resource type="PackedScene" uid="uid://hsq4yhuosu4g" path="res://scenes/game_table.tscn" id="6_1ftms"]
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="6_8bn17"]
-[ext_resource type="Script" path="res://scripts/vignette_thing.gd" id="6_jtreq"]
+[ext_resource type="Script" uid="uid://c7s5a1e7qpx2b" path="res://scripts/vignette_thing.gd" id="6_jtreq"]
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
 [ext_resource type="Shader" path="res://materials/pupil.tres" id="8_4p23x"]
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
-[ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
 [ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
 [ext_resource type="Script" uid="uid://buk8lorcru6kd" path="res://scripts/approach_table.gd" id="14_approach_table"]
@@ -33,26 +33,6 @@ shader_parameter/vignette_color = Color(0.36078432, 0, 0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ow83g"]
 viewport_path = NodePath("SubViewportContainer/SubViewport")
-
-[sub_resource type="QuadMesh" id="QuadMesh_4ofsq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uohem"]
-render_priority = 0
-shader = ExtResource("8_4p23x")
-shader_parameter/base_color = Color(1, 1, 1, 1)
-shader_parameter/use_albedo_tex = false
-shader_parameter/ink_color = Color(0, 0, 0, 1)
-shader_parameter/hatch_world_scale = 1.0
-shader_parameter/hatch_strength = 1.0
-shader_parameter/hatch_fade_start = 10.0
-shader_parameter/hatch_fade_end = 20.0
-shader_parameter/use_distance_fade = true
-shader_parameter/distance_fade_color = Color(0.15, 0.12, 0.1, 1)
-shader_parameter/light_position_ws = Vector3(0, 5, 0)
-shader_parameter/band1 = 0.6
-shader_parameter/band2 = 0.4
-shader_parameter/band3 = 0.2
-shader_parameter/band_softness = 0.05
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4ofsq"]
 height = 100.0
@@ -398,7 +378,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=503254309 instance=ExtResource("4_4p23x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.606672, -0.34921706, 13.378077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.574993, -0.3492185, 110.584656)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer" unique_id=1569141736]
 
@@ -418,11 +398,6 @@ script = ExtResource("6_jtreq")
 transform = Transform3D(0.245341, 0, 0.969437, 0.769806, -0.607819, -0.194819, 0.589243, 0.794075, -0.149123, -0.62990093, 6.349748, -17.40773)
 skeleton = NodePath("")
 script = ExtResource("3_1ftms")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1368017564]
-transform = Transform3D(40.703, 0, 0, 0, 13.3828, -7.69819, 0, 21.1164, 4.87882, 5.13701, 60.9582, -33.1935)
-mesh = SubResource("QuadMesh_4ofsq")
-surface_material_override/0 = SubResource("ShaderMaterial_uohem")
 
 [node name="chair" parent="." unique_id=1035268763 instance=ExtResource("10_4p23x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 2.1023982, -6.872338)
@@ -482,7 +457,7 @@ script = ExtResource("14_approach_table")
 shape = SubResource("CylinderShape3D_4ofsq")
 
 [node name="ObeliskPortal" parent="." unique_id=1078687172 instance=ExtResource("15_j8b8d")]
-transform = Transform3D(7.74, 0, 0, 0, 7.74, 0, 0, 0, 7.74, 30.310783, 0, -25.532888)
+transform = Transform3D(6.334188, 0, 4.448109, 0, 7.7400007, 0, -4.448109, 0, 6.334188, 30.310783, 0, -25.532888)
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1933529484]
