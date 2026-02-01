@@ -61,6 +61,7 @@ func on_player_leaving_table_game():
 	cam.global_position = cam_return.global_position
 	cam.global_rotation = cam_return.global_rotation
 	cam.current = true
+
 	moving_camera.current = false
 	moving_camera.queue_free()
 

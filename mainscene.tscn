@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
 [ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
 [ext_resource type="Script" uid="uid://buk8lorcru6kd" path="res://scripts/approach_table.gd" id="14_approach_table"]
+[ext_resource type="PackedScene" uid="uid://iofi0k4l8pv6" path="res://scenes/ObeliskPortal.tscn" id="15_j8b8d"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 
@@ -396,7 +397,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=503254309 instance=ExtResource("4_4p23x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4683528, -0.34921706, 0.8485111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.513605, -0.34921706, -6.294497)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer" unique_id=1569141736]
 
@@ -481,6 +482,10 @@ script = ExtResource("14_approach_table")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="approach_table" unique_id=261494628]
 shape = SubResource("CylinderShape3D_4ofsq")
+
+[node name="ObeliskPortal" parent="." unique_id=1078687172 instance=ExtResource("15_j8b8d")]
+transform = Transform3D(7.74, 0, 0, 0, 7.74, 0, 0, 0, 7.74, 30.310783, 0, -25.532888)
+visible = false
 
 [connection signal="body_entered" from="approach_table" to="approach_table" method="_on_body_entered"]
 

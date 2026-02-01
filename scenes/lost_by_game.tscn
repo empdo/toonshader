@@ -13,9 +13,21 @@ offset_bottom = 1691.0
 color = Color(0.09923177, 0.09923177, 0.09923177, 1)
 
 [node name="Label" type="Label" parent="." unique_id=854783567]
-offset_left = 659.0
-offset_top = 297.0
-offset_right = 749.0
-offset_bottom = 376.0
+offset_left = 185.0
+offset_top = 370.0
+offset_right = 1841.0
+offset_bottom = 781.0
 theme_override_font_sizes/font_size = 50
-text = "You lost the game"
+text = "You have lost the oldest game, and must pick up the mask of the Liar. You may not leave your seat until another aspirant arrives to challenge you. It’s impossible to be certain of how long you will have to wait.
+"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="." unique_id=75234823]
+offset_left = 640.0
+offset_top = 885.0
+offset_right = 1257.0
+offset_bottom = 1001.0
+theme_override_font_sizes/font_size = 50
+text = "press enter to restart"
+horizontal_alignment = 1
+autowrap_mode = 3

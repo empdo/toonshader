@@ -13,9 +13,21 @@ offset_bottom = 1691.0
 color = Color(0.09923177, 0.09923177, 0.09923177, 1)
 
 [node name="Label" type="Label" parent="." unique_id=854783567]
-offset_left = 521.0
-offset_top = 320.0
-offset_right = 973.0
-offset_bottom = 399.0
+offset_left = 463.0
+offset_top = 395.0
+offset_right = 1534.0
+offset_bottom = 599.0
 theme_override_font_sizes/font_size = 50
-text = "Your mask killed you???"
+text = "Be careful who you trust. Playing with powerful forces is not ill-adviced, so long as one exercises restraint.
+"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="." unique_id=604394813]
+offset_left = 681.0
+offset_top = 892.0
+offset_right = 1298.0
+offset_bottom = 1008.0
+theme_override_font_sizes/font_size = 50
+text = "press enter to restart"
+horizontal_alignment = 1
+autowrap_mode = 3
