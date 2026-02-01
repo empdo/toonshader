@@ -65,7 +65,7 @@ func _connect_dialog_ui():
 		_process_dialog_queue()
 		
 		# TEST: Play intro dialog
-		var intro = load("res://resources/intro.tres") as DialogResource
+		var intro = load("res://resources/a_intro.tres") as DialogResource
 		if intro:
 			queue_dialog(intro)
 	else:
