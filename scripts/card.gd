@@ -8,8 +8,6 @@ var card_type_id = -1
 var data: CardData
 
 func _ready():
-	$area/Label3D.text = str(card_type_id)
-	$area/Label3D2.text = $area/Label3D.text
 	data = card_images.get_data(card_type_id)
 
 	var material = $area/Bottom.material_override.duplicate()

@@ -398,7 +398,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=503254309 instance=ExtResource("4_4p23x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.972168, -0.34921706, -6.294497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.606672, -0.34921706, 13.378077)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer" unique_id=1569141736]
 
@@ -459,7 +459,7 @@ surface_material_override/0 = ExtResource("11_jtreq")
 
 [node name="PINNE_010" parent="chair" index="10" unique_id=1048712886]
 surface_material_override/0 = ExtResource("11_jtreq")
-
+S
 [node name="PINNE_011" parent="chair" index="11" unique_id=65509725]
 surface_material_override/0 = ExtResource("11_jtreq")
 
