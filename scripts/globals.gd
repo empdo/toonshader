@@ -2,6 +2,9 @@ extends Node
 
 var will_respawn_at_table = false
 
+# Debug: Set to true to skip intro, walking, and dialogs - starts directly at the table
+const DEBUG_SKIP_TO_GAME = false
+
 const MAX_SHOWABLE_CARDS = 1
 var cards_currently_showing: Dictionary = {}
 var let_player_show_cards = false
@@ -50,8 +53,8 @@ func _ready():
 	call_deferred("_connect_dialog_ui")
 
 func _process(delta: float) -> void:
-	if time_used_seeingmask >= max_time_used_seeingmask_until_collapse:
-		lost_game_by_mask.emit()
+	# Note: lost_game_by_mask is now handled in player.gd which also does the scene change
+	# Removed duplicate emission here to avoid signal being emitted multiple times
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		player_leaving_table_game.emit()
@@ -64,10 +67,11 @@ func _connect_dialog_ui():
 		# Process any dialogs that were queued before connection
 		_process_dialog_queue()
 		
-		# TEST: Play intro dialog
-		var intro = load("res://resources/a_intro.tres") as DialogResource
-		if intro:
-			queue_dialog(intro)
+		# TEST: Play intro dialog (skip in debug mode)
+		if not DEBUG_SKIP_TO_GAME:
+			var intro = load("res://resources/a_intro.tres") as DialogResource
+			if intro:
+				queue_dialog(intro)
 	else:
 		push_warning("DialogUI not found in scene tree")
 

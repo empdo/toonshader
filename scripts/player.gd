@@ -58,9 +58,10 @@ func _process(delta: float):
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
 			CardgameManager.reset()
 			get_tree().change_scene_to_file("res://scenes/lost_by_mask.tscn")
+			return  # Prevent further processing after scene change to avoid viewport errors
 	
 	# Apply smooth table camera look-around based on mouse screen position
-	if is_at_table and moving_camera:
+	if is_at_table and moving_camera and is_instance_valid(moving_camera):
 		var viewport = get_viewport()
 		var screen_size = viewport.get_visible_rect().size
 		var mouse_pos = viewport.get_mouse_position()
@@ -93,8 +94,10 @@ func on_player_leaving_table_game():
 	cam.global_rotation = cam_return.global_rotation
 	cam.current = true
 
-	moving_camera.current = false
-	moving_camera.queue_free()
+	if moving_camera:
+		moving_camera.current = false
+		moving_camera.queue_free()
+		moving_camera = null
 
 	
 func on_player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D):
@@ -124,8 +127,9 @@ func on_player_entered_table_area_with_targets(player_target: Node3D, camera_tar
 	current_table_yaw = 0.0
 	is_at_table = true
 	
-	# Trigger sit down dialog after camera movement completes
-	Globals.sit_down_dialog_requested.emit()
+	# Trigger sit down dialog after camera movement completes (skip in debug mode)
+	if not Globals.DEBUG_SKIP_TO_GAME:
+		Globals.sit_down_dialog_requested.emit()
 
 	#player_return = global_transform
 	position = player_target.position
@@ -182,6 +186,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _play_intro():
+	if Globals.DEBUG_SKIP_TO_GAME:
+		return
 	var intro = load("res://resources/a_intro.tres") as DialogResource
 	if intro:
 		DialogManager.play(intro)
