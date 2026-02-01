@@ -12,6 +12,10 @@ func _ready():
 	Globals.won_game.connect(on_won)
 	# Wait for approach_table dialog to finish before allowing sit down
 	DialogManager.dialog_finished.connect(_on_dialog_finished)
+	
+	# In debug mode, skip dialog waits and trigger immediately when player enters
+	if Globals.DEBUG_SKIP_TO_GAME:
+		waiting_for_approach_dialog = false
 
 func on_won():
 	monitoring = false

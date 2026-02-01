@@ -44,6 +44,10 @@ func on_player_entered_table_area():
 		await do_round()
 
 func _wait_for_sit_down_dialog():
+	# In debug mode, skip waiting for dialog
+	if Globals.DEBUG_SKIP_TO_GAME:
+		return
+	
 	# Wait for the sit_down dialog (c_sit_down.tres) to finish
 	while true:
 		var finished_dialog: DialogResource = await DialogManager.dialog_finished

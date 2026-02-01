@@ -2,6 +2,9 @@ extends Node
 
 var will_respawn_at_table = false
 
+# Debug: Set to true to skip intro, walking, and dialogs - starts directly at the table
+const DEBUG_SKIP_TO_GAME = false
+
 const MAX_SHOWABLE_CARDS = 1
 var cards_currently_showing: Dictionary = {}
 var let_player_show_cards = false
@@ -64,10 +67,11 @@ func _connect_dialog_ui():
 		# Process any dialogs that were queued before connection
 		_process_dialog_queue()
 		
-		# TEST: Play intro dialog
-		var intro = load("res://resources/a_intro.tres") as DialogResource
-		if intro:
-			queue_dialog(intro)
+		# TEST: Play intro dialog (skip in debug mode)
+		if not DEBUG_SKIP_TO_GAME:
+			var intro = load("res://resources/a_intro.tres") as DialogResource
+			if intro:
+				queue_dialog(intro)
 	else:
 		push_warning("DialogUI not found in scene tree")
 
