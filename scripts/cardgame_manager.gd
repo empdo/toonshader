@@ -86,6 +86,10 @@ func do_round():
 		print("WON")
 		Globals.won_game.emit()
 		Globals.see_through_cards.emit(false)
+		# Trigger you win dialog
+		var you_win_dialog = load("res://resources/g_you_win.tres") as DialogResource
+		if you_win_dialog:
+			DialogManager.play(you_win_dialog)
 	elif opponent_points == points_to_win:
 		print("LOST")
 		game_over = true

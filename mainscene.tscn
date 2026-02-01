@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
 [ext_resource type="PackedScene" uid="uid://c0fyofa7xtgbm" path="res://scenes/opponent.tscn" id="13_lc52x"]
+[ext_resource type="Script" path="res://scripts/approach_table.gd" id="14_approach_table"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fflbf"]
 
@@ -473,8 +474,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45436668, -4.733102, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1981097, -0.00024485588, -2.378471)
 
 [node name="approach_table" type="Area3D" parent="." unique_id=1624841721]
+script = ExtResource("14_approach_table")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="approach_table" unique_id=261494628]
 shape = SubResource("CylinderShape3D_4ofsq")
+
+[connection signal="body_entered" from="approach_table" to="approach_table" method="_on_body_entered"]
 
 [editable path="chair"]

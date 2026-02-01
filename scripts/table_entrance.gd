@@ -13,5 +13,8 @@ func on_won():
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		Globals.player_entered_table_area_with_targets.emit(player_target, camera_target)
-		Globals.player_entered_table_area.emit()
+		if player_target and camera_target:
+			Globals.player_entered_table_area_with_targets.emit(player_target, camera_target)
+			Globals.player_entered_table_area.emit()
+		else:
+			push_error("Player target or camera target is null in table_entrance")

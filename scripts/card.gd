@@ -31,6 +31,13 @@ func _on_area_input_event(camera: Node, event: InputEvent, event_position: Vecto
 	if mouse_click:
 		if hidden:
 			if Globals.cards_currently_showing.size() < Globals.MAX_SHOWABLE_CARDS:
+				# Check if this is the first card click
+				if not Globals.first_card_clicked:
+					Globals.first_card_clicked = true
+					var first_card_dialog = load("res://resources/e_first_card_flipped.tres") as DialogResource
+					if first_card_dialog:
+						DialogManager.play(first_card_dialog)
+				
 				hidden = false
 				show_card()
 				if Globals.cards_currently_showing.size() == Globals.MAX_SHOWABLE_CARDS:

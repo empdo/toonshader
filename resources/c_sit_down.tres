@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://di0ck15tq3pdc"]
 
-[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_3mkyf"]
+[ext_resource type="AudioStream" uid="uid://bkjlrd864kb11" path="res://sounds/heartbeat.wav" id="1_lru5m"]
+[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="2_3mkyf"]
 
 [resource]
-script = ExtResource("1_3mkyf")
-lines = Array[String](["Guillaume: I will warn you. Now that you sit, only one of us will leave. Only one will reach… Éternité."])
+script = ExtResource("2_3mkyf")
+lines = Array[String](["Guillaume: I will warn you. Now that you sit, only one of us will leave. Only one will reach… Éternité.", "@3", "The oldest game is a game of memory and deception. You will take on the role of the Challenger, Guillaume will become the Liar.", "@0.3", "The cards on the table will all be revealed momentarily.", "@0.3", "You may peek at one card at the start of each turn. Simply press the one you want to look at, and the card will be visible for a short time.", "@0.3", "The Liar then points at any card, and makes a claim as to which card it is. You then have to declare whether or not the Liar has made a truthful claim or a deceptive one.", "@0.3", "If you declare Guillaume is lying, the card is flipped over and revealed.", "@0.3", "If you were right, you get a point, else the point goes to the Liar. The points remain hidden until a victor emerges.", "@0.3", "The game goes on until one player reaches 3 points."])
+line_audio = Array[AudioStream]([null, null, ExtResource("1_lru5m"), null, ExtResource("1_lru5m")])
 metadata/_custom_type_script = "uid://datp6bamk0nb5"

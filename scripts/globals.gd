@@ -3,6 +3,7 @@ extends Node
 const MAX_SHOWABLE_CARDS = 1
 var cards_currently_showing: Dictionary = {}
 var let_player_show_cards = false
+var first_card_clicked = false
 signal player_showed_chosen_cards
 
 var time_used_seeingmask = 0
@@ -12,6 +13,7 @@ func reset():
 	time_used_seeingmask = 0
 	let_player_show_cards = false
 	cards_currently_showing = {}
+	first_card_clicked = false
 	
 signal guess_button_clicked(bool)
 signal see_through_cards(bool)
