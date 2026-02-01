@@ -35,7 +35,6 @@ image = ExtResource("5_r4rul")
 name = "Éternité"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
-<<<<<<< HEAD
 [sub_resource type="Resource" id="Resource_tr31p"]
 script = ExtResource("1_7oycl")
 image = ExtResource("6_ldmrt")
@@ -63,9 +62,4 @@ metadata/_custom_type_script = "uid://cpsct6vp34afk"
 [resource]
 script = ExtResource("2_50dum")
 cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx"), SubResource("Resource_tr31p"), SubResource("Resource_5w4fg"), SubResource("Resource_f833r"), SubResource("Resource_uoq1v")])
-=======
-[resource]
-script = ExtResource("2_50dum")
-cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx")])
->>>>>>> 7f3658cae707bcf0333a29e5686eda399ed19ea4
 metadata/_custom_type_script = "uid://phqabf70xexi"
