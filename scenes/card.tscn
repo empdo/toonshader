@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://x66si12xdqk" path="res://scripts/card.gd" id="1_d81rb"]
 [ext_resource type="Resource" uid="uid://d3pkwfbcjulgq" path="res://card_images.tres" id="2_6u4wf"]
+[ext_resource type="Material" uid="uid://dm03ffrf8reh1" path="res://materials/card-top.tres" id="3_ktuci"]
+[ext_resource type="Material" uid="uid://dbg16dp78rbtx" path="res://materials/card-bottom.tres" id="4_kg30u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxf5b"]
 size = Vector3(0.7, 0.1, 0.7)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktuci"]
-albedo_color = Color(0.95686275, 0.8784314, 0.6039216, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_kikvd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d81rb"]
 transparency = 1
+shading_mode = 0
 albedo_color = Color(1, 0, 0, 0.039215688)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u4wf"]
@@ -92,7 +92,7 @@ shape = SubResource("BoxShape3D_nxf5b")
 
 [node name="Top" type="MeshInstance3D" parent="area" unique_id=323899331]
 transform = Transform3D(0.685, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.004, 0)
-material_override = SubResource("StandardMaterial3D_ktuci")
+material_override = ExtResource("3_ktuci")
 mesh = SubResource("QuadMesh_kikvd")
 skeleton = NodePath("../..")
 
@@ -103,6 +103,7 @@ mesh = SubResource("QuadMesh_kikvd")
 
 [node name="Bottom" type="MeshInstance3D" parent="area" unique_id=1446968100]
 transform = Transform3D(-0.685, 8.742278e-08, -3.8213714e-15, 0, -4.3711392e-08, -1, -5.98846e-08, -1, 4.3711392e-08, 0, 0.001, 0)
+material_override = ExtResource("4_kg30u")
 mesh = SubResource("QuadMesh_d81rb")
 
 [node name="Label3D" type="Label3D" parent="area" unique_id=624905577]

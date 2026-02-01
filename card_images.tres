@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardImages" format=3 uid="uid://d3pkwfbcjulgq"]
 
-[ext_resource type="Script" uid="uid://cpsct6vp34afk" path="res://card_data_res.gd" id="1_7oycl"]
-[ext_resource type="Script" uid="uid://phqabf70xexi" path="res://card_images_res.gd" id="2_50dum"]
+[ext_resource type="Script" path="res://card_data_res.gd" id="1_7oycl"]
+[ext_resource type="Script" path="res://card_images_res.gd" id="2_50dum"]
 [ext_resource type="Texture2D" uid="uid://qbv20k0xxt1f" path="res://cards/the_fool.png" id="2_io4xj"]
 [ext_resource type="Texture2D" uid="uid://dasv47kj2lw3v" path="res://cards/wood.png" id="3_sd7t6"]
 [ext_resource type="Texture2D" uid="uid://vc8bm2cxe32x" path="res://cards/carce.png" id="4_a44gu"]
@@ -35,6 +35,7 @@ image = ExtResource("5_r4rul")
 name = "Éternité"
 metadata/_custom_type_script = "uid://cpsct6vp34afk"
 
+<<<<<<< HEAD
 [sub_resource type="Resource" id="Resource_tr31p"]
 script = ExtResource("1_7oycl")
 image = ExtResource("6_ldmrt")
@@ -62,4 +63,9 @@ metadata/_custom_type_script = "uid://cpsct6vp34afk"
 [resource]
 script = ExtResource("2_50dum")
 cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx"), SubResource("Resource_tr31p"), SubResource("Resource_5w4fg"), SubResource("Resource_f833r"), SubResource("Resource_uoq1v")])
+=======
+[resource]
+script = ExtResource("2_50dum")
+cards = Array[ExtResource("1_7oycl")]([SubResource("Resource_3li80"), SubResource("Resource_yaydk"), SubResource("Resource_cqrpl"), SubResource("Resource_sj7fx")])
+>>>>>>> 7f3658cae707bcf0333a29e5686eda399ed19ea4
 metadata/_custom_type_script = "uid://phqabf70xexi"
