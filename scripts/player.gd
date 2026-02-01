@@ -25,6 +25,15 @@ var moving_camera: Camera3D
 
 var player_target2: Node3D
 
+# Table camera look-around settings
+var table_camera_base_transform: Transform3D
+const TABLE_LOOK_MAX_X: float = deg_to_rad(30)  # 45 degrees horizontal
+const TABLE_LOOK_MAX_Y: float = deg_to_rad(100)  # 100 degrees up
+const TABLE_LOOK_SMOOTHING: float = 999999.0
+var is_at_table: bool = false
+var current_table_pitch: float = 0.0
+var current_table_yaw: float = 0.0
+
 func _ready():
 	if Globals.will_respawn_at_table:
 		position = player_target2.position
@@ -49,9 +58,31 @@ func _process(delta: float):
 			# TODO: SHOW ANIMATION OF LOOSING CONTROL
 			CardgameManager.reset()
 			get_tree().change_scene_to_file("res://scenes/lost_by_mask.tscn")
+	
+	# Apply smooth table camera look-around based on mouse screen position
+	if is_at_table and moving_camera:
+		var viewport = get_viewport()
+		var screen_size = viewport.get_visible_rect().size
+		var mouse_pos = viewport.get_mouse_position()
+		
+		# Mouse position: 0-1 range
+		var mx = mouse_pos.x / screen_size.x  # 0=left, 1=right
+		var my = mouse_pos.y / screen_size.y  # 0=top, 1=bottom
+		
+		# Target angles
+		var target_yaw = (mx - 0.5) * 2.0 * TABLE_LOOK_MAX_X  # -45 to +45 deg
+		var target_pitch = (1.0 - my) * TABLE_LOOK_MAX_Y  # bottom=0, top=100 deg
+		
+		# Apply rotation: start from base, rotate by yaw (Y axis), then pitch (local X axis)
+		moving_camera.global_transform = table_camera_base_transform
+		moving_camera.rotate_y(-target_yaw)
+		moving_camera.rotate_object_local(Vector3.RIGHT, target_pitch)
 
 func on_player_leaving_table_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	is_at_table = false
+	current_table_pitch = 0.0
+	current_table_yaw = 0.0
 	#global_transform = player_return
 	#$CollisionShape3D.disabled = false
 	#$SpringArmPivot/SpringArm3D.set_process(true)
@@ -68,7 +99,7 @@ func on_player_leaving_table_game():
 func on_player_entered_table_area_with_targets(player_target: Node3D, camera_target: Node3D):
 	player_target2 = player_target
 	prevent_move = true
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	moving_camera = cam.duplicate()
 	add_child(moving_camera)
@@ -86,6 +117,12 @@ func on_player_entered_table_area_with_targets(player_target: Node3D, camera_tar
 	
 	await tween.finished
 	
+	# Store base transform and enable table look-around
+	table_camera_base_transform = moving_camera.global_transform
+	current_table_pitch = 0.0
+	current_table_yaw = 0.0
+	is_at_table = true
+	
 	# Trigger sit down dialog after camera movement completes
 	Globals.sit_down_dialog_requested.emit()
 
@@ -95,6 +132,11 @@ func on_player_entered_table_area_with_targets(player_target: Node3D, camera_tar
 	
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Handle table look-around when at table (position-based, not relative)
+	if prevent_move and is_at_table:
+		# We handle mouse position in _process instead
+		return
+	
 	if prevent_move:
 		return
 		
