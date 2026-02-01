@@ -3,7 +3,7 @@ extends Node
 var will_respawn_at_table = false
 
 # Debug: Set to true to skip intro, walking, and dialogs - starts directly at the table
-const DEBUG_SKIP_TO_GAME = true
+const DEBUG_SKIP_TO_GAME = false
 
 const MAX_SHOWABLE_CARDS = 1
 var cards_currently_showing: Dictionary = {}
