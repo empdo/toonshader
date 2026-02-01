@@ -15,6 +15,7 @@ func _ready():
 	Globals.approach_table_dialog_requested.connect(_on_approach_table_dialog)
 	Globals.sit_down_dialog_requested.connect(_on_sit_down_dialog)
 	Globals.first_card_clicked_dialog_requested.connect(_on_first_card_clicked_dialog)
+	Globals.your_turn_dialog_requested.connect(_on_your_turn_dialog)
 	Globals.won_game.connect(_on_won_game_dialog)
 
 func play(dialog: DialogResource) -> void:
@@ -67,6 +68,11 @@ func _on_sit_down_dialog():
 
 func _on_first_card_clicked_dialog():
 	var dialog = load("res://resources/e_first_card_flipped.tres") as DialogResource
+	if dialog:
+		play(dialog)
+
+func _on_your_turn_dialog():
+	var dialog = load("res://resources/f_your_turn.tres") as DialogResource
 	if dialog:
 		play(dialog)
 

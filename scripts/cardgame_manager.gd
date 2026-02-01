@@ -58,6 +58,7 @@ func _wait_for_sit_down_dialog():
 # the important thing
 func do_round():
 	##### LET PLAYER CLICK CARD(s) TO PEEK AT
+	Globals.your_turn_dialog_requested.emit()
 	Globals.let_player_show_cards = true
 	await Globals.player_showed_chosen_cards
 	
