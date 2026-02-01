@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="DialogResource" format=3 uid="uid://d10c0ltj33l5m"]
-
-[ext_resource type="Script" uid="uid://datp6bamk0nb5" path="res://resources/dialog_resource.gd" id="1_3tqdf"]
-
-[resource]
-script = ExtResource("1_3tqdf")
-lines = Array[String](["Guillaume: Tell me, why ascend the orders? Why leave Carceri d’invenzione?", "@1", "Ivy: Illness is my reason. The madness of my brother, my means.", "@1", "Arthur: The search for our father is madness then? How frigid. But expected, for one who so casually sacrificed our youngest kin.", "@1", "Guillaume: We share a common cause then, mademoiselle."])
-metadata/_custom_type_script = "uid://datp6bamk0nb5"
