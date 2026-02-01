@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://hsq4yhuosu4g" path="res://scenes/game_table.tscn" id="6_1ftms"]
 [ext_resource type="Material" uid="uid://bc5vvloa4sont" path="res://materials/test2.tres" id="6_8bn17"]
 [ext_resource type="Shader" uid="uid://50uw17ocb46w" path="res://shaders/noise.gdshader" id="7_4p23x"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://b6hqjaxaoeeei" path="res://scenes/playerbarn.tscn" id="8_8bn17"]
 [ext_resource type="Shader" uid="uid://tqm51tke2uyt" path="res://shaders/sobel.gdshader" id="9_0lhry"]
+=======
+[ext_resource type="Shader" uid="uid://dtvjtvmtglsov" path="res://materials/pupil.tres" id="8_4p23x"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://brnnwpv8m3t23" path="res://glb/chair.glb" id="10_4p23x"]
 [ext_resource type="PackedScene" uid="uid://8dc2uwjapx3r" path="res://scenes/dialog_ui.tscn" id="10_dialog"]
 [ext_resource type="Material" uid="uid://3lin4uhk21mp" path="res://materials/table.tres" id="11_jtreq"]
@@ -464,6 +468,47 @@ surface_material_override/0 = ExtResource("11_jtreq")
 [node name="table" parent="." unique_id=859412500 instance=ExtResource("12_j8b8d")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.727162, 1.9477087, -7.2970896)
 
+<<<<<<< Updated upstream
+=======
+[node name="PINNE_013" parent="table" index="0" unique_id=1894323706]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="PINNE_014" parent="table" index="1" unique_id=102800297]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="PINNE_015" parent="table" index="2" unique_id=308053436]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="PINNE_016" parent="table" index="3" unique_id=1033599231]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_003" parent="table" index="4" unique_id=23757526]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_005" parent="table" index="5" unique_id=1770747955]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_006" parent="table" index="6" unique_id=1269364077]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_004" parent="table" index="7" unique_id=1866299117]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_007" parent="table" index="8" unique_id=536604576]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_008" parent="table" index="9" unique_id=24909120]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="Plane_009" parent="table" index="10" unique_id=768982427]
+surface_material_override/0 = ExtResource("11_jtreq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="table" unique_id=80270620]
+stream = ExtResource("12_jtreq")
+unit_size = 4.4
+autoplay = true
+
+>>>>>>> Stashed changes
 [node name="opponent" parent="." unique_id=724776570 instance=ExtResource("13_lc52x")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.45436668, -4.733102, -3.1197538)
 
